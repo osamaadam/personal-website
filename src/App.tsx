@@ -11,7 +11,7 @@ const App: React.FC = () => {
     <Router>
       <h1 className="repeating-background-text">{repeatingText}</h1>
       <Switch>
-        <Suspense fallback={<div>Loading..</div>}>
+        <Suspense fallback={<div>Loading.</div>}>
           <Route exact path="/" component={Home} />
         </Suspense>
       </Switch>
