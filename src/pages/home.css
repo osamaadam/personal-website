@@ -1,6 +1,6 @@
 .home-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min-content, 500px));
+  grid-template-columns: repeat(auto-fit, minmax(min-content, max-content));
   justify-content: center;
 }
 
@@ -11,7 +11,7 @@
   grid-gap: 1rem;
   padding: 1rem;
   margin: 5vh 5vw;
-  max-width: 500px;
+  max-width: 550px;
   min-width: min-content;
   background-color: var(--paper-background);
   border-radius: 1rem;
@@ -30,6 +30,10 @@
   border-radius: 50%;
   justify-content: center;
   border: 0.2rem solid var(--highlight-color);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .home-info {
