@@ -1,13 +1,18 @@
-.home-wrapper {
+.home-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min-content, 500px));
+  justify-content: center;
+}
+
+.home-profile-paper {
   display: grid;
   grid-template-columns: 1fr min-content minmax(min-content, max-content) 1fr;
   grid-template-rows: 1fr minmax(min-content, 20%) max-content 1fr;
   grid-gap: 1rem;
   padding: 1rem;
   margin: 5vh 5vw;
-  height: auto;
-  align-content: center;
-  justify-content: center;
+  max-width: 500px;
+  min-width: min-content;
   background-color: var(--paper-background);
   border-radius: 1rem;
 }
@@ -42,5 +47,7 @@
 }
 
 .home-bio {
-  grid-area: 3 / 2 / 4 / 4;
+  grid-area: 3 / 1 / 4 / -1;
+  margin: auto;
+  text-align: justify;
 }
