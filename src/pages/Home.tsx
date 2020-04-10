@@ -7,10 +7,12 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="home-profile-paper">
-        <img src={profile} alt="Osama Adam" className="profile-picture" />
-        <div className="home-info">
-          <h1>Osama Adam</h1>
-          <p>Full Stack Web Developer</p>
+        <div className="home-info-area">
+          <img src={profile} alt="Osama Adam" className="profile-picture" />
+          <div className="home-info">
+            <h1>Osama Adam</h1>
+            <p>Full Stack Web Developer</p>
+          </div>
         </div>
         <div className="home-bio">
           <p>
