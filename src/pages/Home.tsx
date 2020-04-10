@@ -25,8 +25,9 @@ const Home = () => {
                 <img
                   src={facebook}
                   alt="Facebook Profile"
-                  width="30"
-                  height="30"
+                  title="Facebook Profile"
+                  width="40"
+                  height="40"
                 />
               </a>
               <a
@@ -34,14 +35,26 @@ const Home = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={twitter} alt="@osamaadam98" width="30" height="30" />
+                <img
+                  src={twitter}
+                  alt="@osamaadam98"
+                  title="@osamaadam98"
+                  width="40"
+                  height="40"
+                />
               </a>
               <a
                 href="https://github.com/OsamaAdam98"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={github} alt="GitHub Profile" width="30" height="30" />
+                <img
+                  src={github}
+                  alt="GitHub Profile"
+                  title="GitHub Profile"
+                  width="40"
+                  height="40"
+                />
               </a>
               <a
                 href="https://www.linkedin.com/in/osamaadam98/"
@@ -51,8 +64,9 @@ const Home = () => {
                 <img
                   src={linkedin}
                   alt="Linkedin Profile"
-                  width="30"
-                  height="30"
+                  title="Linkedin Profile"
+                  width="40"
+                  height="40"
                   style={{
                     borderRadius: "50%"
                   }}
