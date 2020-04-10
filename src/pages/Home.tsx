@@ -7,7 +7,7 @@ const facebook = require("../assets/facebook.png");
 const twitter = require("../assets/twitter.svg");
 const linkedin = require("../assets/linkedin.png");
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <div className="home-container">
       <div className="home-profile-paper">
