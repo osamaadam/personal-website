@@ -41,4 +41,8 @@ body {
   text-transform: uppercase;
   text-align: justify;
   z-index: -1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
