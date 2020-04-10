@@ -46,7 +46,7 @@
 .home-info {
   justify-self: start;
   align-self: center;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 .home-info h1 {
@@ -63,4 +63,11 @@
   grid-area: 3 / 1 / 4 / -1;
   margin: auto;
   text-align: justify;
+  padding: 0 1rem;
+}
+
+.social-links {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-evenly;
 }

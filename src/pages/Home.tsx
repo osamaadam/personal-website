@@ -1,7 +1,11 @@
 import React from "react";
 import "./home.css";
 
-const profile = require("../profile.jpg");
+const profile = require("../assets/profile.jpg");
+const github = require("../assets/github.png");
+const facebook = require("../assets/facebook.png");
+const twitter = require("../assets/twitter.svg");
+const linkedin = require("../assets/linkedin.png");
 
 const Home = () => {
   return (
@@ -12,6 +16,49 @@ const Home = () => {
           <div className="home-info">
             <h1>Osama Adam</h1>
             <p>Full Stack Web Developer</p>
+            <div className="social-links">
+              <a
+                href="https://facebook.com/osamaadam98"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={facebook}
+                  alt="Facebook Profile"
+                  width="30"
+                  height="30"
+                />
+              </a>
+              <a
+                href="https://twitter.com/OsamaAdam98"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={twitter} alt="@osamaadam98" width="30" height="30" />
+              </a>
+              <a
+                href="https://github.com/OsamaAdam98"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={github} alt="GitHub Profile" width="30" height="30" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/osamaadam98/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={linkedin}
+                  alt="Linkedin Profile"
+                  width="30"
+                  height="30"
+                  style={{
+                    borderRadius: "50%"
+                  }}
+                />
+              </a>
+            </div>
           </div>
         </div>
         <div className="home-bio">

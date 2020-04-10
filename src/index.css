@@ -16,6 +16,12 @@
 
 *::selection {
   background-color: var(--highlight-color);
+  color: var(--background-color);
+}
+
+a {
+  color: var(--highlight-color);
+  text-transform: lowercase;
 }
 
 body {
