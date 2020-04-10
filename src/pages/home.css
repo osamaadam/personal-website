@@ -41,6 +41,13 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  transition-property: border-width;
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+}
+
+.profile-picture:hover {
+  border-width: 0.4rem;
 }
 
 .home-info {
@@ -70,4 +77,19 @@
   padding: 0.5rem;
   display: flex;
   justify-content: space-evenly;
+}
+
+.social-link {
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: ease-out;
+  border-radius: 50%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.social-link:hover {
+  background-color: var(--highlight-color);
 }

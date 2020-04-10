@@ -23,6 +23,7 @@ const Home = () => {
                 rel="noopener noreferrer"
               >
                 <img
+                  className="social-link"
                   src={facebook}
                   alt="Facebook Profile"
                   title="Facebook Profile"
@@ -36,6 +37,7 @@ const Home = () => {
                 rel="noopener noreferrer"
               >
                 <img
+                  className="social-link"
                   src={twitter}
                   alt="@osamaadam98"
                   title="@osamaadam98"
@@ -49,6 +51,7 @@ const Home = () => {
                 rel="noopener noreferrer"
               >
                 <img
+                  className="social-link"
                   src={github}
                   alt="GitHub Profile"
                   title="GitHub Profile"
@@ -62,14 +65,12 @@ const Home = () => {
                 rel="noopener noreferrer"
               >
                 <img
+                  className="social-link"
                   src={linkedin}
                   alt="Linkedin Profile"
                   title="Linkedin Profile"
                   width="40"
                   height="40"
-                  style={{
-                    borderRadius: "50%"
-                  }}
                 />
               </a>
             </div>
