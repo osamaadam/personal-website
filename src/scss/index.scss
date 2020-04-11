@@ -1,4 +1,4 @@
-@import "src/vars.scss";
+@import "vars.scss";
 
 .home-container {
   display: grid;
@@ -12,8 +12,8 @@
   grid-template-rows: 1fr minmax(min-content, 20%) max-content 1fr;
   grid-gap: 1rem;
   margin: 5vh 5vw;
-  max-width: $maxWidth;
   min-width: min-content;
+  max-width: $maxWidth;
 }
 
 .home-info-area {
