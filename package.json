@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "osama-adam",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A website showcasing Osama Adam's work projects and contact details.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Osama Adam @osamaadam98",
   "dependencies": {
     "@types/react": "^16.9.34",
     "@types/react-helmet": "^5.0.15",
@@ -18,7 +18,6 @@
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-sharp": "^2.4.3",
     "node-sass": "^4.13.1",
-    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
@@ -37,14 +36,10 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "yarn run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/OsamaAdam98/personal-website"
   }
 }
