@@ -9,12 +9,9 @@
   grid-template-columns: 1fr minmax(min-content, max-content) 1fr;
   grid-template-rows: 1fr minmax(min-content, 20%) max-content 1fr;
   grid-gap: 1rem;
-  padding: 1rem;
   margin: 5vh 5vw;
   max-width: 550px;
   min-width: min-content;
-  background-color: var(--paper-background);
-  border-radius: 1rem;
 }
 
 .home-info-area {

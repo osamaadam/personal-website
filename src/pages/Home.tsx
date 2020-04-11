@@ -1,5 +1,5 @@
 import React from "react";
-import "./home.css";
+import "./home.scss";
 
 const profile = require("../assets/profile.jpg");
 const github = require("../assets/github.png");
@@ -10,7 +10,7 @@ const linkedin = require("../assets/linkedin.png");
 const Home: React.FC = () => {
   return (
     <div className="home-container">
-      <div className="home-profile-paper">
+      <div className="home-profile-paper card">
         <div className="home-info-area">
           <img src={profile} alt="Osama Adam" className="profile-picture" />
           <div className="home-info">

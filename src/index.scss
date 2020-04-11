@@ -56,3 +56,9 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
+
+.card {
+  padding: 1rem;
+  background-color: var(--paper-background);
+  border-radius: 1rem;
+}

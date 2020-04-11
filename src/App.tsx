@@ -10,11 +10,11 @@ const App: React.FC = () => {
   return (
     <Router>
       <h1 className="repeating-background-text">{repeatingText}</h1>
-      <Switch>
-        <Suspense fallback={<div>Loading.</div>}>
+      <Suspense fallback={<div />}>
+        <Switch>
           <Route exact path="/" component={Home} />
-        </Suspense>
-      </Switch>
+        </Switch>
+      </Suspense>
     </Router>
   );
 };
