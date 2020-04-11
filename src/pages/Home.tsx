@@ -23,7 +23,6 @@ const Home: React.FC = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  className="social-link"
                   src={facebook}
                   alt="Facebook Profile"
                   title="Facebook Profile"
@@ -37,9 +36,8 @@ const Home: React.FC = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  className="social-link"
                   src={twitter}
-                  alt="@osamaadam98"
+                  alt="Twitter Profile"
                   title="@osamaadam98"
                   width="40"
                   height="40"
@@ -51,7 +49,6 @@ const Home: React.FC = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  className="social-link"
                   src={github}
                   alt="GitHub Profile"
                   title="GitHub Profile"
@@ -65,7 +62,6 @@ const Home: React.FC = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  className="social-link"
                   src={linkedin}
                   alt="Linkedin Profile"
                   title="Linkedin Profile"
