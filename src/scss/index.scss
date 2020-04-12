@@ -27,10 +27,8 @@
 .profile-picture {
   justify-self: center;
   align-self: center;
-  height: 30vmin;
-  width: 30vmin;
-  max-width: 800px;
-  max-height: 800px;
+  min-width: 200px;
+  min-height: 200px;
   object-fit: cover;
   object-position: 50% 50%;
   border-radius: 50%;

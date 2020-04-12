@@ -5,7 +5,6 @@ import Img from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby";
 import Seo from "../components/Seo";
 
-const profile = require("../assets/profile.jpg");
 const github = require("../assets/github.png");
 const facebook = require("../assets/facebook.png");
 const twitter = require("../assets/twitter.svg");
@@ -16,8 +15,8 @@ const Home: React.FC = () => {
     query {
       placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 800) {
-            ...GatsbyImageSharpFluid
+          fixed(width: 200) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -32,7 +31,7 @@ const Home: React.FC = () => {
           <div className="home-profile-paper card">
             <div className="home-info-area">
               <Img
-                fluid={data.placeholderImage.childImageSharp.fluid}
+                fixed={data.placeholderImage.childImageSharp.fixed}
                 alt="Osama Adam"
                 className="profile-picture"
               />
