@@ -13,10 +13,10 @@ const linkedin = require("../assets/linkedin.png");
 const Home: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
+      profile: file(relativePath: { eq: "profile.jpg" }) {
         childImageSharp {
-          fixed(width: 200) {
-            ...GatsbyImageSharpFixed
+          fluid {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
           <div className="home-profile-paper card">
             <div className="home-info-area">
               <Img
-                fixed={data.placeholderImage.childImageSharp.fixed}
+                fluid={data.profile.childImageSharp.fluid}
                 alt="Osama Adam"
                 className="profile-picture"
               />
