@@ -20,6 +20,13 @@ const Home: React.FC = () => {
           }
         }
       }
+      indie: file(relativePath: { eq: "indiePhotographers.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `);
 
@@ -110,10 +117,10 @@ const Home: React.FC = () => {
               </p>
             </div>
           </div>
-          <div className="skills">
+          <div className="brief">
             <div className="card">
               <h1>Skills</h1>
-              <ul className="skills__list">
+              <ul className="brief__list">
                 <li>Familiarity with Progressive Web Apps (PWAs)</li>
                 <p>
                   This one isn't though because it'd be an unnecessary burden.
@@ -197,6 +204,59 @@ const Home: React.FC = () => {
                   </ul>
                 </li>
               </ul>
+            </div>
+          </div>
+          <div className="card portfolio">
+            <h1>Portfolio</h1>
+            <div className="indie">
+              <div className="indie__desc">
+                <h4>Indie Photographers</h4>
+                <p>
+                  Indie Photographers is a hub for well, indie photographers.
+                  The app is a PWA created through create-react-app. The
+                  frontend is a React app with Material-UI on top. The backend
+                  is mostly a node RESTful API with Express on top and MongoDB
+                  for a database.
+                  <br />
+                  It's important to mention that this is a concept app not an
+                  actual commercial product. Nevertheless, this is a perfect
+                  showcase and reflection of my skills at this point in my
+                  career.
+                  <br />
+                  You may check the project repository{" "}
+                  <a
+                    href="https://github.com/osamaadam98/indie-photographers"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    here
+                  </a>
+                  . or check the actual website by pressing its logo.
+                </p>
+              </div>
+              <div className="indie__logo">
+                <a
+                  href="https://indieapp.herokuapp.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="indie__logo__img"
+                >
+                  <Img
+                    fluid={data.indie.childImageSharp.fluid}
+                    alt="Indie Photographer's logo"
+                  />
+                </a>
+                <a
+                  href="https://indieapp.herokuapp.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="indie__logo__text"
+                >
+                  <p>
+                    <span className="highlight">Indie Photographers</span>
+                  </p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
