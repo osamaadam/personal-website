@@ -106,7 +106,7 @@ const Home: React.FC = () => {
                 Chances are you're here because you're a recruiter looking for a
                 web developer.
                 <br />
-                The next card has my portfolio where my feats are highlighted.
+                Check the rest of the page to know more about my abilities.
               </p>
             </div>
           </div>
@@ -131,7 +131,7 @@ const Home: React.FC = () => {
               <h1>Stack</h1>
               <ul className="stack">
                 <li className="stack__li">
-                  <h5>frontend</h5>
+                  <h4>frontend</h4>
                   <ul>
                     <li>
                       <span className="highlight">Typescript</span>
@@ -144,7 +144,7 @@ const Home: React.FC = () => {
                   </ul>
                 </li>
                 <li className="stack__li">
-                  <h5>backend</h5>
+                  <h4>backend</h4>
                   <ul>
                     <li>
                       <span className="highlight">Node</span>
@@ -155,7 +155,7 @@ const Home: React.FC = () => {
                   </ul>
                 </li>
                 <li className="stack__li">
-                  <h5>libraries</h5>
+                  <h4>libraries</h4>
                   <ul>
                     <li>
                       <span className="highlight">React</span>
@@ -168,7 +168,7 @@ const Home: React.FC = () => {
                   </ul>
                 </li>
                 <li className="stack__li">
-                  <h5>tools</h5>
+                  <h4>tools</h4>
                   <ul>
                     <li>
                       <span className="highlight">Git</span>
@@ -184,7 +184,7 @@ const Home: React.FC = () => {
                   </ul>
                 </li>
                 <li className="stack__li">
-                  <h5>additional languages</h5>
+                  <h4>additional languages</h4>
                   <ul>
                     <li>
                       <span className="highlight">C++</span>
@@ -194,9 +194,6 @@ const Home: React.FC = () => {
                     </li>
                     <li>Python</li>
                     <li>Java</li>
-                    <li>SystemVerilog</li>
-                    <li>Verilog</li>
-                    <li>Matlab</li>
                   </ul>
                 </li>
               </ul>

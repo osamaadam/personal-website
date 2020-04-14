@@ -52,6 +52,7 @@
   }
   p {
     font-weight: 500;
+    text-align: center;
   }
 }
 
@@ -80,7 +81,10 @@
 
 .skills {
   flex: 2;
+  display: flex;
+  flex-direction: column;
   min-width: 300px;
+  justify-content: space-between;
   h1 {
     margin-bottom: 0.5rem;
   }
@@ -102,19 +106,19 @@
   .stack {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 1rem;
     list-style: none;
-    h5 {
+    margin: 0 -0.5rem;
+    h4 {
       text-transform: uppercase;
       padding-bottom: 0.2rem;
     }
     &__li {
       flex: 1;
-      padding: 0 1rem;
+      padding: 0 0.5rem;
       ul {
         list-style: none;
         li {
-          padding: 0.25rem 0;
+          padding: 0.3rem 0;
         }
       }
     }
