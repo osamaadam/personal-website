@@ -212,6 +212,7 @@ const Home: React.FC = () => {
                 <h4>
                   <a
                     href="https://indie.osamaadam.tech"
+                    title="Indie Photographers"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -230,13 +231,14 @@ const Home: React.FC = () => {
                   showcase and reflection of my skills at this point in my
                   career.
                   <br />
-                  You may check the project repository{" "}
+                  You may check the{" "}
                   <a
                     href="https://github.com/osamaadam98/indie-photographers"
+                    title="Repository link"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    here
+                    project repository here
                   </a>
                   . or check the actual website by pressing its logo.
                 </p>
@@ -244,6 +246,7 @@ const Home: React.FC = () => {
               <div className="indie__logo">
                 <a
                   href="https://indie.osamaadam.tech"
+                  title="Indie Photographers"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="indie__logo__img"
@@ -255,6 +258,7 @@ const Home: React.FC = () => {
                 </a>
                 <a
                   href="https://indie.osamaadam.tech"
+                  title="Indie Photographers"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="indie__logo__text"

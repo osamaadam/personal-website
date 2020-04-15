@@ -16,7 +16,6 @@ a {
   text-decoration: none;
   &:hover {
     text-decoration: underline;
-    font-weight: $medium;
   }
 }
 
@@ -72,5 +71,5 @@ h6 {
 
 h4 {
   text-transform: uppercase;
-  padding-bottom: 0.2rem;
+  padding-bottom: 0.2em;
 }
