@@ -207,10 +207,17 @@ const Home: React.FC = () => {
             </div>
           </div>
           <div className="card portfolio">
-            <h1>Portfolio</h1>
             <div className="indie">
               <div className="indie__desc">
-                <h4>Indie Photographers</h4>
+                <h4>
+                  <a
+                    href="https://indie.osamaadam.tech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Indie Photographers
+                  </a>
+                </h4>
                 <p>
                   Indie Photographers is a hub for well, indie photographers.
                   The app is a PWA created through create-react-app. The
@@ -226,8 +233,8 @@ const Home: React.FC = () => {
                   You may check the project repository{" "}
                   <a
                     href="https://github.com/osamaadam98/indie-photographers"
-                    rel="noopener noreferrer"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     here
                   </a>
@@ -236,7 +243,7 @@ const Home: React.FC = () => {
               </div>
               <div className="indie__logo">
                 <a
-                  href="https://indieapp.herokuapp.com"
+                  href="https://indie.osamaadam.tech"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="indie__logo__img"
@@ -247,7 +254,7 @@ const Home: React.FC = () => {
                   />
                 </a>
                 <a
-                  href="https://indieapp.herokuapp.com"
+                  href="https://indie.osamaadam.tech"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="indie__logo__text"

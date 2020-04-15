@@ -13,7 +13,6 @@
   grid-template-columns: minmax(min-content, 100%);
   grid-template-rows: minmax(min-content, 20%) 1fr;
   grid-gap: 1rem;
-  min-width: 300px;
   max-width: $maxWidth;
 }
 
@@ -128,16 +127,12 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  h1 {
-    margin-bottom: 0.5rem;
-    font-weight: $bold;
-  }
 }
 
 .indie {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: auto;
 
   &__desc {
     flex: 4;
