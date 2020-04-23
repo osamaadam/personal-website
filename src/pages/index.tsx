@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import Img from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby";
 import Seo from "../components/Seo";
+import Showcase from "../components/Showcase";
 
 const github = require("../assets/github.png");
 const facebook = require("../assets/facebook.png");
@@ -206,69 +207,73 @@ const Home: React.FC = () => {
               </ul>
             </div>
           </div>
-          <div className="card portfolio">
-            <div className="indie">
-              <div className="indie__desc">
-                <h4>
-                  <a
-                    href="https://indie.osamaadam.tech"
-                    title="Indie Photographers"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Indie Photographers
-                  </a>
-                </h4>
+          <Showcase
+            title="Indie Photographers"
+            url="https://indieapp.herokuapp.com"
+            icon={data.indie.childImageSharp.fluid}
+            description={
+              <p>
+                Indie Photographers is a hub for well, indie photographers. The
+                app is a PWA created through create-react-app. The frontend is a
+                React app with Material-UI on top. The backend is mostly a node
+                RESTful API with Express on top and MongoDB for a database.
+                <br />
+                It's important to mention that this is a concept app not an
+                actual commercial product. Nevertheless, this is a perfect
+                showcase and reflection of my skills at this point in my career.
+                <br />
+                You may check the{" "}
+                <a
+                  href="https://github.com/osamaadam98/indie-photographers"
+                  title="Repository link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  project repository here
+                </a>
+                . or check the actual website by pressing its logo.
+              </p>
+            }
+          />
+          <div className="two-column-projects">
+            <Showcase
+              className="two-column-projects__project"
+              title="Personal Website"
+              url="https://www.osamaadam.tech"
+              description={
                 <p>
-                  Indie Photographers is a hub for well, indie photographers.
-                  The app is a PWA created through create-react-app. The
-                  frontend is a React app with Material-UI on top. The backend
-                  is mostly a node RESTful API with Express on top and MongoDB
-                  for a database.
-                  <br />
-                  It's important to mention that this is a concept app not an
-                  actual commercial product. Nevertheless, this is a perfect
-                  showcase and reflection of my skills at this point in my
-                  career.
-                  <br />
-                  You may check the{" "}
+                  This is the Website you're currently on. It was created using
+                  Gatsby and is purely a static website. You may think the
+                  design is minimal because I got lazy and I'm not a great web
+                  designer. And you'd be partially correct. I'm not a great web
+                  designer but I got a better reasoning behind the minimal
+                  design. The website is built with speed and performance in
+                  mind. You may check the{" "}
                   <a
-                    href="https://github.com/osamaadam98/indie-photographers"
+                    href="https://github.com/osamaadam98/personal-website"
                     title="Repository link"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     project repository here
                   </a>
-                  . or check the actual website by pressing its logo.
                 </p>
-              </div>
-              <div className="indie__logo">
-                <a
-                  href="https://indie.osamaadam.tech"
-                  title="Indie Photographers"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="indie__logo__img"
-                >
-                  <Img
-                    fluid={data.indie.childImageSharp.fluid}
-                    alt="Indie Photographer's logo"
-                  />
-                </a>
-                <a
-                  href="https://indie.osamaadam.tech"
-                  title="Indie Photographers"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="indie__logo__text"
-                >
-                  <p>
-                    <span className="highlight">Indie Photographers</span>
-                  </p>
-                </a>
-              </div>
-            </div>
+              }
+            />
+            <Showcase
+              className="two-column-projects__project"
+              title="Unix Shell"
+              url="https://github.com/osamaadam98/unix-shell"
+              description={
+                <p>
+                  This is a simple Unix shell written in C++. C++ is the
+                  language I mainly use for problem solving, simply because it's
+                  very easy to build a performant solution using it. It's also
+                  however very easy to miss up if not careful. You may check the
+                  project repository by clicking the project title.
+                </p>
+              }
+            />
           </div>
         </div>
       </Layout>

@@ -1,0 +1,52 @@
+.portfolio {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.showcase {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+
+  &__desc {
+    flex: 4;
+    align-self: center;
+    min-width: 25ch;
+    p {
+      text-align: justify;
+      padding: 0.5em 0;
+    }
+  }
+
+  &__logo {
+    flex: 1;
+    display: grid;
+    min-width: 200px;
+    width: 100%;
+    justify-content: center;
+    user-select: none;
+    margin: auto;
+    padding: 1rem;
+    cursor: pointer;
+
+    &__img {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+    &__text {
+      grid-area: 1 / 1 / 2 / 2;
+      margin: auto;
+      opacity: 0;
+    }
+
+    &:hover {
+      .showcase__logo__text {
+        z-index: 1;
+        opacity: 1;
+      }
+      .showcase__logo__img {
+        opacity: 0.5;
+      }
+    }
+  }
+}
