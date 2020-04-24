@@ -63,8 +63,10 @@
 .social-links {
   padding: 0.5em;
   display: flex;
-  justify-content: space-evenly;
-
+  justify-content: center;
+  a {
+    margin: 0 0.5em;
+  }
   img {
     transition-property: background-color;
     transition-duration: 250ms;

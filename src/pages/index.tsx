@@ -7,8 +7,6 @@ import Seo from "../components/Seo";
 import Showcase from "../components/Showcase";
 
 const github = require("../assets/github.png");
-const facebook = require("../assets/facebook.png");
-const twitter = require("../assets/twitter.svg");
 const linkedin = require("../assets/linkedin.png");
 
 const Home: React.FC = () => {
@@ -45,34 +43,8 @@ const Home: React.FC = () => {
               />
               <div className="home-info">
                 <h1>Osama Adam</h1>
-                <p>Full Stack Web Developer</p>
+                <p>Software Developer</p>
                 <div className="social-links">
-                  <a
-                    href="https://facebook.com/osamaadam98"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={facebook}
-                      alt="Facebook Profile"
-                      title="Facebook Profile"
-                      width="40"
-                      height="40"
-                    />
-                  </a>
-                  <a
-                    href="https://twitter.com/OsamaAdam98"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={twitter}
-                      alt="Twitter Profile"
-                      title="@osamaadam98"
-                      width="40"
-                      height="40"
-                    />
-                  </a>
                   <a
                     href="https://github.com/OsamaAdam98"
                     target="_blank"
@@ -104,17 +76,14 @@ const Home: React.FC = () => {
             </div>
             <div className="home-bio">
               <p>
-                Hello,
+                I'm an Electronics and Communication Engineering student.
+                Currently going through my junior year. I like to create so
+                naturally I started learning web development and this is where
+                we are right now.
                 <br />
-                <br />
-                I'm a student, currently going through my junior year studying
-                Electronics and Communication Engineering at the University of
-                Alexandria.
-                <br />
-                Chances are you're here because you're a recruiter looking for a
-                web developer.
-                <br />
-                Check the rest of the page to know more about my abilities.
+                Throughout this page, I'll be showcasing my most significant
+                projects and accomplishments. I mostly work with React, Node,
+                C++, and their derivatives.
               </p>
             </div>
           </div>
@@ -147,7 +116,6 @@ const Home: React.FC = () => {
                     <li>
                       <span className="highlight">SCSS</span>
                     </li>
-                    <li>Javascript</li>
                     <li>HTML</li>
                   </ul>
                 </li>
@@ -163,7 +131,7 @@ const Home: React.FC = () => {
                   </ul>
                 </li>
                 <li className="stack__li">
-                  <h4>libraries</h4>
+                  <h4>tech</h4>
                   <ul>
                     <li>
                       <span className="highlight">React</span>
@@ -185,10 +153,9 @@ const Home: React.FC = () => {
                       <span className="highlight">VSCode</span>
                     </li>
                     <li>
-                      <span className="highlight">Yarn</span>
+                      <span className="highlight">NPM/Yarn</span>
                     </li>
                     <li>Heroku</li>
-                    <li>VIM</li>
                   </ul>
                 </li>
                 <li className="stack__li">
@@ -245,10 +212,9 @@ const Home: React.FC = () => {
                   This is the Website you're currently on. It was created using
                   Gatsby and is purely a static website. You may think the
                   design is minimal because I got lazy and I'm not a great web
-                  designer. And you'd be partially correct. I'm not a great web
-                  designer but I got a better reasoning behind the minimal
-                  design. The website is built with speed and performance in
-                  mind. You may check the{" "}
+                  designer. And you'd be partially correct. But, I got better
+                  reasoning behind the minimal design. The website is built with
+                  speed and performance in mind. You may check the{" "}
                   <a
                     href="https://github.com/osamaadam98/personal-website"
                     title="Repository link"
