@@ -8,10 +8,13 @@
   display: flex;
   flex-wrap: wrap;
   width: auto;
+  height: 100%;
 
   &__desc {
     flex: 4;
-    align-self: center;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
     min-width: 25ch;
     p {
       text-align: justify;
@@ -24,14 +27,15 @@
     display: grid;
     min-width: 200px;
     width: 100%;
+    border-radius: 50%;
     justify-content: center;
     user-select: none;
     margin: auto;
-    padding: auto;
     cursor: pointer;
 
     &__img {
       grid-area: 1 / 1 / 2 / 2;
+      border-radius: 50%;
     }
     &__text {
       grid-area: 1 / 1 / 2 / 2;

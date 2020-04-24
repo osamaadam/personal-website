@@ -4,8 +4,9 @@ import "../scss/showcase.scss";
 
 interface Props {
   title: string;
-  description: JSX.Element;
+  description: string;
   url: string;
+  repository: string;
   icon?: FluidObject;
   className?: string;
 }
@@ -14,6 +15,7 @@ const Showcase: React.FC<Props> = ({
   title,
   description,
   url,
+  repository,
   icon,
   className
 }) => {
@@ -31,7 +33,19 @@ const Showcase: React.FC<Props> = ({
               {title}
             </a>
           </h4>
-          {description}
+          <p>{description}</p>
+          <p>
+            You may check the{" "}
+            <a
+              href={repository}
+              title="Repository link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              project repository here
+            </a>
+            .
+          </p>
         </div>
         {icon && (
           <div className="showcase__logo">
