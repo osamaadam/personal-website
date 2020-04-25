@@ -5,9 +5,11 @@ import Img from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby";
 import Seo from "../components/Seo";
 import Showcase from "../components/Showcase";
+import SkillsColumn from "../components/SkillsColumn";
+import SocialLink from "../components/SocialLink";
 
-const github = require("../assets/github.png");
-const linkedin = require("../assets/linkedin.png");
+const github = require("../assets/github.png") as string;
+const linkedin = require("../assets/linkedin.png") as string;
 
 const Home: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -45,32 +47,16 @@ const Home: React.FC = () => {
                 <h1>Osama Adam</h1>
                 <p>Software Developer</p>
                 <div className="social-links">
-                  <a
-                    href="https://github.com/OsamaAdam98"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={github}
-                      alt="GitHub Profile"
-                      title="GitHub Profile"
-                      width="40"
-                      height="40"
-                    />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/osamaadam98/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={linkedin}
-                      alt="Linkedin Profile"
-                      title="Linkedin Profile"
-                      width="40"
-                      height="40"
-                    />
-                  </a>
+                  <SocialLink
+                    title="GitHub Profile"
+                    url="https://github.com/OsamaAdam98"
+                    icon={github}
+                  />
+                  <SocialLink
+                    title="Linkedin Profile"
+                    url="https://www.linkedin.com/in/osamaadam98/"
+                    icon={linkedin}
+                  />
                 </div>
               </div>
             </div>
@@ -107,70 +93,30 @@ const Home: React.FC = () => {
             <div className="card">
               <h1>Stack</h1>
               <ul className="stack">
-                <li className="stack__li">
-                  <h4>frontend</h4>
-                  <ul>
-                    <li>
-                      <span className="highlight">Typescript</span>
-                    </li>
-                    <li>
-                      <span className="highlight">SCSS</span>
-                    </li>
-                    <li>HTML</li>
-                  </ul>
-                </li>
-                <li className="stack__li">
-                  <h4>backend</h4>
-                  <ul>
-                    <li>
-                      <span className="highlight">Node</span>
-                    </li>
-                    <li>
-                      <span className="highlight">MongoDB</span>
-                    </li>
-                  </ul>
-                </li>
-                <li className="stack__li">
-                  <h4>tech</h4>
-                  <ul>
-                    <li>
-                      <span className="highlight">React</span>
-                    </li>
-                    <li>
-                      <span className="highlight">Express</span>
-                    </li>
-                    <li>Mongoose</li>
-                    <li>Bootstrap</li>
-                  </ul>
-                </li>
-                <li className="stack__li">
-                  <h4>tools</h4>
-                  <ul>
-                    <li>
-                      <span className="highlight">Git</span>
-                    </li>
-                    <li>
-                      <span className="highlight">VSCode</span>
-                    </li>
-                    <li>
-                      <span className="highlight">NPM/Yarn</span>
-                    </li>
-                    <li>Heroku</li>
-                  </ul>
-                </li>
-                <li className="stack__li">
-                  <h4>additional languages</h4>
-                  <ul>
-                    <li>
-                      <span className="highlight">C++</span>
-                    </li>
-                    <li>
-                      <span className="highlight">C</span>
-                    </li>
-                    <li>Python</li>
-                    <li>Java</li>
-                  </ul>
-                </li>
+                <SkillsColumn
+                  columnTitle="frontend"
+                  highlighted={["TypeScript", "SCSS"]}
+                  normal={["HTML"]}
+                />
+                <SkillsColumn
+                  columnTitle="backend"
+                  highlighted={["Node", "MongoDB"]}
+                />
+                <SkillsColumn
+                  columnTitle="tech"
+                  highlighted={["React", "Express"]}
+                  normal={["Mongoose", "Bootstrap"]}
+                />
+                <SkillsColumn
+                  columnTitle="tools"
+                  highlighted={["Git", "VSCode", "NPM/Yarn"]}
+                  normal={["Heroku"]}
+                />
+                <SkillsColumn
+                  columnTitle="additional languages"
+                  highlighted={["C++", "C"]}
+                  normal={["Python", "Java"]}
+                />
               </ul>
             </div>
           </div>
