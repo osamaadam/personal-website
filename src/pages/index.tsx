@@ -122,7 +122,7 @@ const Home: React.FC = () => {
           </div>
           <Showcase
             title="Indie Photographers"
-            url="https://indieapp.herokuapp.com"
+            url="https://indie.osamaadam.tech"
             repository="https://github.com/osamaadam98/indie-photographers"
             icon={data.indie.childImageSharp.fluid}
             description={`
