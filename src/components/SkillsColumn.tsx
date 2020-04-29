@@ -11,12 +11,12 @@ const SkillsColumn: React.FC<Props> = ({
   highlighted = [],
   normal = []
 }) => {
-  const Highlighted = highlighted.map((element) => (
-    <li>
+  const Highlighted = highlighted.map((element, index) => (
+    <li key={index}>
       <span className="highlight">{element}</span>
     </li>
   ));
-  const Normal = normal.map((element) => <li>{element}</li>);
+  const Normal = normal.map((element, index) => <li key={index}>{element}</li>);
 
   return (
     <li className="stack__li">

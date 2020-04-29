@@ -35,14 +35,11 @@
 
   &__link {
     font-size: 1.1rem;
-    transition-property: background-color, color;
-    transition-duration: 300ms;
-    transition-timing-function: ease-out;
     cursor: pointer;
     padding: 1em;
-  }
-  &__link:hover {
-    background-color: $highlightColor;
-    color: $backgroundColor;
+    &--highlighted {
+      background-color: $highlightColor;
+      color: $backgroundColor;
+    }
   }
 }
