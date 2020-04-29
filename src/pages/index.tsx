@@ -7,6 +7,8 @@ import Seo from "../components/Seo";
 import Showcase from "../components/Showcase";
 import SkillsColumn from "../components/SkillsColumn";
 import SocialLink from "../components/SocialLink";
+import NavBar from "../components/NavBar";
+import useScroll from "../hooks/useScroll";
 
 const github = require("../assets/github.png") as string;
 const linkedin = require("../assets/linkedin.png") as string;
@@ -31,9 +33,13 @@ const Home: React.FC = () => {
     }
   `);
 
+  const projects = React.useRef(null);
+  const scrollTo = (ref?: React.RefObject<HTMLDivElement>) => useScroll(ref);
+
   return (
     <>
       <Seo title="Osama Adam" />
+      <NavBar scrollTo={scrollTo} projectsRef={projects} />
       <Layout>
         <div className="home-container">
           <div className="home-profile-paper card">
@@ -121,6 +127,7 @@ const Home: React.FC = () => {
             </div>
           </div>
           <Showcase
+            elementRef={projects}
             title="Indie Photographers"
             url="https://indie.osamaadam.tech"
             repository="https://github.com/osamaadam98/indie-photographers"

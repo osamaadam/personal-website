@@ -9,6 +9,7 @@ interface Props {
   repository: string;
   icon?: FluidObject;
   className?: string;
+  elementRef?: React.RefObject<HTMLDivElement>;
 }
 
 const Showcase: React.FC<Props> = ({
@@ -17,10 +18,11 @@ const Showcase: React.FC<Props> = ({
   url,
   repository,
   icon,
-  className
+  className,
+  elementRef
 }) => {
   return (
-    <div className={`card portfolio ${className}`}>
+    <div className={`card portfolio ${className}`} ref={elementRef}>
       <div className="showcase">
         <div className="showcase__desc">
           <h4>
