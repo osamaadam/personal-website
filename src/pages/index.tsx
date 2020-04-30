@@ -8,7 +8,6 @@ import Showcase from "../components/Showcase";
 import SkillsColumn from "../components/SkillsColumn";
 import SocialLink from "../components/SocialLink";
 import NavBar from "../components/NavBar";
-import useScroll from "../hooks/useScroll";
 
 const github = require("../assets/github.png") as string;
 const linkedin = require("../assets/linkedin.png") as string;
@@ -34,12 +33,12 @@ const Home: React.FC = () => {
   `);
 
   const projects = React.useRef(null);
-  const scrollTo = (ref?: React.RefObject<HTMLDivElement>) => useScroll(ref);
+  const refMap: Refs = { projects };
 
   return (
     <>
       <Seo title="Osama Adam" />
-      <NavBar scrollTo={scrollTo} projectsRef={projects} />
+      <NavBar refs={refMap} />
       <Layout>
         <div className="home-container">
           <div className="home-profile-paper card">
@@ -142,9 +141,9 @@ const Home: React.FC = () => {
                 showcase and reflection of my skills at this point in my career.
             `}
           />
-          <div className="two-column-projects">
+          <div className="multi-column-projects">
             <Showcase
-              className="two-column-projects__project"
+              className="multi-column-projects__project"
               title="Personal Website"
               url="https://www.osamaadam.tech"
               repository="https://github.com/osamaadam98/personal-website"
@@ -159,7 +158,7 @@ const Home: React.FC = () => {
               `}
             />
             <Showcase
-              className="two-column-projects__project"
+              className="multi-column-projects__project"
               title="Unix Shell"
               url="https://github.com/osamaadam98/unix-shell"
               repository="http://github.com/osamaadam98/unix-shell"
@@ -172,9 +171,9 @@ const Home: React.FC = () => {
               `}
             />
           </div>
-          <div className="two-column-projects">
+          <div className="multi-column-projects">
             <Showcase
-              className="two-column-projects__project"
+              className="multi-column-projects__project"
               title="Lyrics Genius"
               url="https://lyricsgenius.herokuapp.com/"
               repository="https://github.com/OsamaAdam98/LyricsGenius"
@@ -185,7 +184,7 @@ const Home: React.FC = () => {
               `}
             />
             <Showcase
-              className="two-column-projects__project"
+              className="multi-column-projects__project"
               title="AESChipions"
               url="https://github.com/mohamednour98/AESchipions"
               repository="https://github.com/mohamednour98/AESchipions"
@@ -197,7 +196,7 @@ const Home: React.FC = () => {
               `}
             />
             <Showcase
-              className="two-column-projects__project"
+              className="multi-column-projects__project"
               title="todoNumeroUno"
               url="https://github.com/OsamaAdam98/todoNumeroUno"
               repository="https://github.com/OsamaAdam98/todoNumeroUno"
