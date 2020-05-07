@@ -18,14 +18,14 @@ const Home: React.FC = () => {
       profile: file(relativePath: { eq: "profile.jpg" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid
           }
         }
       }
       indie: file(relativePath: { eq: "indiePhotographers.png" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -128,7 +128,7 @@ const Home: React.FC = () => {
           <Showcase
             elementRef={projects}
             title="Indie Photographers"
-            url="https://indie.osamaadam.tech"
+            url="https://indieapp.herokuapp.com"
             repository="https://github.com/osamaadam98/indie-photographers"
             icon={data.indie.childImageSharp.fluid}
             description={`
