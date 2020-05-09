@@ -5,8 +5,8 @@ import "../scss/showcase.scss";
 interface Props {
   title: string;
   description: string;
-  url: string;
   repository: string;
+  url?: string;
   icon?: FluidObject;
   className?: string;
   elementRef?: React.RefObject<HTMLDivElement>;
@@ -15,10 +15,10 @@ interface Props {
 const Showcase: React.FC<Props> = ({
   title,
   description,
-  url,
   repository,
+  url = repository,
   icon,
-  className,
+  className = "",
   elementRef
 }) => {
   return (

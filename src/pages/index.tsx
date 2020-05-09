@@ -29,6 +29,13 @@ const Home: React.FC = () => {
           }
         }
       }
+      personalIcon: file(relativePath: { eq: "personal-website.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `);
 
@@ -128,7 +135,7 @@ const Home: React.FC = () => {
           <Showcase
             elementRef={projects}
             title="Indie Photographers"
-            url="https://indie.osamaadam.tech"
+            url="https://indieapp.herokuapp.com"
             repository="https://github.com/osamaadam98/indie-photographers"
             icon={data.indie.childImageSharp.fluid}
             description={`
@@ -147,6 +154,7 @@ const Home: React.FC = () => {
               title="Personal Website"
               url="https://www.osamaadam.tech"
               repository="https://github.com/osamaadam98/personal-website"
+              icon={data.personalIcon.childImageSharp.fluid}
               description={`
                   This is the Website you're currently on. It was created using
                   Gatsby and is purely a static website. You may think the
@@ -160,7 +168,6 @@ const Home: React.FC = () => {
             <Showcase
               className="multi-column-projects__project"
               title="Unix Shell"
-              url="https://github.com/osamaadam98/unix-shell"
               repository="http://github.com/osamaadam98/unix-shell"
               description={`
                   This is a simple Unix shell written in C++. C++ is the
@@ -186,7 +193,6 @@ const Home: React.FC = () => {
             <Showcase
               className="multi-column-projects__project"
               title="AESChipions"
-              url="https://github.com/mohamednour98/AESchipions"
               repository="https://github.com/mohamednour98/AESchipions"
               description={`
                 AESChipions is a team effort between myself and Mohamed Nour. It was the
@@ -198,7 +204,6 @@ const Home: React.FC = () => {
             <Showcase
               className="multi-column-projects__project"
               title="todoNumeroUno"
-              url="https://github.com/OsamaAdam98/todoNumeroUno"
               repository="https://github.com/OsamaAdam98/todoNumeroUno"
               description={`
                 The magnum opus, the chef d'oeuvre, the masterpiece, my first ever todo list.
