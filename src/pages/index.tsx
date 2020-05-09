@@ -61,7 +61,7 @@ const Home: React.FC = () => {
                 <div className="social-links">
                   <SocialLink
                     title="GitHub Profile"
-                    url="https://github.com/OsamaAdam98"
+                    url="https://github.com/osamaadam"
                     icon={github}
                   />
                   <SocialLink
@@ -136,7 +136,7 @@ const Home: React.FC = () => {
             elementRef={projects}
             title="Indie Photographers"
             url="https://indieapp.herokuapp.com"
-            repository="https://github.com/osamaadam98/indie-photographers"
+            repository="https://github.com/osamaadam/indie-photographers"
             icon={data.indie.childImageSharp.fluid}
             description={`
                 Indie Photographers is a hub for well, indie photographers. The
@@ -153,7 +153,7 @@ const Home: React.FC = () => {
               className="multi-column-projects__project"
               title="Personal Website"
               url="https://www.osamaadam.tech"
-              repository="https://github.com/osamaadam98/personal-website"
+              repository="https://github.com/osamaadam/personal-website"
               icon={data.personalIcon.childImageSharp.fluid}
               description={`
                   This is the Website you're currently on. It was created using
@@ -168,7 +168,7 @@ const Home: React.FC = () => {
             <Showcase
               className="multi-column-projects__project"
               title="Unix Shell"
-              repository="http://github.com/osamaadam98/unix-shell"
+              repository="http://github.com/osamaadam/unix-shell"
               description={`
                   This is a simple Unix shell written in C++. C++ is the
                   language I mainly use for problem solving, simply because it's
@@ -183,7 +183,7 @@ const Home: React.FC = () => {
               className="multi-column-projects__project"
               title="Lyrics Genius"
               url="https://lyricsgenius.herokuapp.com/"
-              repository="https://github.com/OsamaAdam98/LyricsGenius"
+              repository="https://github.com/osamaadam/LyricsGenius"
               description={`
                 Lyrics Genius is tiny little app built using Musixmatch's free developer
                 APIs. I built this in a day back when I started learning web development.
@@ -204,7 +204,7 @@ const Home: React.FC = () => {
             <Showcase
               className="multi-column-projects__project"
               title="todoNumeroUno"
-              repository="https://github.com/OsamaAdam98/todoNumeroUno"
+              repository="https://github.com/osamaadam/todoNumeroUno"
               description={`
                 The magnum opus, the chef d'oeuvre, the masterpiece, my first ever todo list.
                 Sadly this one isn't hosted. If only the world knew what I was withholding!
