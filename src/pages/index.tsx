@@ -18,14 +18,14 @@ const Home: React.FC = () => {
       profile: file(relativePath: { eq: "profile.jpg" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid
           }
         }
       }
       indie: file(relativePath: { eq: "indiePhotographers.png" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid
           }
         }
       }
