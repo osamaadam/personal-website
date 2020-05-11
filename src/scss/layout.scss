@@ -23,6 +23,20 @@ p {
   line-height: 1.45em;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--highlightColor);
+}
+
+h4 {
+  text-transform: uppercase;
+  padding-bottom: 0.2em;
+}
+
 body {
   background-color: var(--backgroundColor);
   color: var(--primaryColor);
@@ -105,16 +119,56 @@ body {
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--highlightColor);
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
 }
 
-h4 {
-  text-transform: uppercase;
-  padding-bottom: 0.2em;
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--backgroundColor);
+  transition: 0.4s;
+  transition-property: background-color;
+  &::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 1.6em;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    transition-property: transform;
+  }
+}
+
+input:checked + .slider {
+  background-color: var(--highlightColor);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--highlightColor);
+}
+
+input:checked + .slider:before {
+  transform: translateX(calc(100%));
+}
+
+.slider.round {
+  border-radius: 34px;
+  &::before {
+    border-radius: 50%;
+  }
 }

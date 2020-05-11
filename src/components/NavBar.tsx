@@ -11,9 +11,18 @@ interface Props {
 }
 
 const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
+  const currentTheme = localStorage.getItem("theme");
+
   const [scrollPos, setScrollPos] = React.useState<number>(0);
+  const [theme, setTheme] = React.useState<boolean>(
+    currentTheme === "light" ? true : false
+  );
   const isMountedRef = React.useRef(false);
   let projectsRef: number;
+
+  const changeTheme = (event: any) => {
+    setTheme(event.target.checked);
+  };
 
   const scrollTo = (
     reference?: React.RefObject<HTMLDivElement>,
@@ -28,6 +37,14 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
       }, 250);
     }
   };
+
+  React.useEffect(() => {
+    localStorage.setItem("theme", theme ? "light" : "dark");
+    document.documentElement.setAttribute(
+      "data-theme",
+      theme ? "light" : "dark"
+    );
+  }, [theme]);
 
   React.useEffect(() => {
     isMountedRef.current = true;
@@ -87,6 +104,19 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
           Projects
         </li>
       </ul>
+      <div>
+        <label className="switch">
+          <input
+            type="checkbox"
+            id="theme-toggle"
+            name="theme-toggle"
+            checked={theme}
+            onChange={changeTheme}
+            aria-label="theme toggle"
+          />
+          <span className="slider round" />
+        </label>
+      </div>
     </nav>
   );
 };

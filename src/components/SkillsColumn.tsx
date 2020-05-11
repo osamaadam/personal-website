@@ -19,13 +19,15 @@ const SkillsColumn: React.FC<Props> = ({
   const Normal = normal.map((element, index) => <li key={index}>{element}</li>);
 
   return (
-    <li className="stack__li">
-      <h4>{columnTitle}</h4>
-      <ul>
-        {Highlighted}
-        {Normal}
-      </ul>
-    </li>
+    <>
+      <li className="stack__li">
+        <h4>{columnTitle}</h4>
+        <ul>
+          {Highlighted}
+          {Normal}
+        </ul>
+      </li>
+    </>
   );
 };
 
