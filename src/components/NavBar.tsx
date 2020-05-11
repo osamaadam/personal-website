@@ -11,7 +11,8 @@ interface Props {
 }
 
 const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
-  const currentTheme = localStorage.getItem("theme");
+  const currentTheme =
+    typeof window !== "undefined" && localStorage.getItem("theme");
 
   const [scrollPos, setScrollPos] = React.useState<number>(0);
   const [theme, setTheme] = React.useState<boolean>(
