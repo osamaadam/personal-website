@@ -2,12 +2,12 @@ import React from "react";
 import "../scss/index.scss";
 import Layout from "../components/Layout";
 import Img from "gatsby-image";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import Seo from "../components/Seo";
-import Showcase from "../components/Showcase";
 import SkillsColumn from "../components/SkillsColumn";
 import SocialLink from "../components/SocialLink";
 import NavBar from "../components/NavBar";
+import ProjectIcon from "../components/ProjectIcon";
 
 const github = require("../assets/github.png") as string;
 const linkedin = require("../assets/linkedin.png") as string;
@@ -36,6 +36,34 @@ const Home: React.FC = () => {
           }
         }
       }
+      unixShellIcon: file(relativePath: { eq: "unix-shell/cowsay.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      lyricsGeniusIcon: file(relativePath: { eq: "lyricsGenius/home.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      AESChipionsIcon: file(relativePath: { eq: "AESChipions/github.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      todoNumeroUnoIcon: file(relativePath: { eq: "todoNumeroUno/home.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `);
 
@@ -48,170 +76,126 @@ const Home: React.FC = () => {
       <NavBar refs={refMap} />
       <Layout>
         <div className="home-container">
-          <div className="home-profile-paper card">
-            <div className="home-info-area">
-              <Img
-                fluid={data.profile.childImageSharp.fluid}
-                alt="Osama Adam"
-                className="profile-picture"
-              />
-              <div className="home-info">
-                <h1>Osama Adam</h1>
-                <p>Software Developer</p>
-                <div className="social-links">
-                  <SocialLink
-                    title="GitHub Profile"
-                    url="https://github.com/osamaadam"
-                    icon={github}
-                  />
-                  <SocialLink
-                    title="Linkedin Profile"
-                    url="https://www.linkedin.com/in/osamaadam98/"
-                    icon={linkedin}
-                  />
+          <div className="home-container__brief">
+            <div className="home-profile-paper card">
+              <div className="home-info-area">
+                <Img
+                  fluid={data.profile.childImageSharp.fluid}
+                  alt="Osama Adam"
+                  className="profile-picture"
+                />
+                <div className="home-info">
+                  <h1>Osama Adam</h1>
+                  <p>Software Developer</p>
+                  <div className="social-links">
+                    <SocialLink
+                      title="GitHub Profile"
+                      url="https://github.com/osamaadam"
+                      icon={github}
+                    />
+                    <SocialLink
+                      title="Linkedin Profile"
+                      url="https://www.linkedin.com/in/osamaadam98/"
+                      icon={linkedin}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="home-bio">
-              <p>
-                I'm an Electronics and Communication Engineering student.
-                Currently going through my junior year. I like to create so
-                naturally I started learning web development and this is where
-                we are right now.
-                <br />
-                Throughout this page, I'll be showcasing my most significant
-                projects and accomplishments. I mostly work with React, Node,
-                C++, and their derivatives.
-              </p>
-            </div>
-          </div>
-          <div className="brief">
-            <div className="card">
-              <h1>Skills</h1>
-              <ul className="brief__list">
-                <li>Familiarity with Progressive Web Apps (PWAs)</li>
+              <div className="home-bio">
                 <p>
-                  This one isn't though because it'd be an unnecessary burden.
-                  An example project is in the showcase!
+                  I'm an Electronics and Communication Engineering student.
+                  Currently going through my junior year. I like to create so
+                  naturally I started learning web development and this is where
+                  we are right now.
+                  <br />
+                  Throughout this page, I'll be showcasing my most significant
+                  projects and accomplishments. I mostly work with React, Node,
+                  C++, and their derivatives.
                 </p>
-                <li>Experience with the MERN stack</li>
-                <p>
-                  MongoDB? Express? React? Node? I've got all bases covered.
-                </p>
-                <li>Git magician</li>
-                <p>99% guarantee of not ruining the git history.</p>
-              </ul>
+              </div>
             </div>
-            <div className="card">
-              <h1>Stack</h1>
-              <ul className="stack">
-                <SkillsColumn
-                  columnTitle="frontend"
-                  highlighted={["TypeScript", "SCSS"]}
-                  normal={["HTML"]}
-                />
-                <SkillsColumn
-                  columnTitle="backend"
-                  highlighted={["Node", "MongoDB"]}
-                />
-                <SkillsColumn
-                  columnTitle="tech"
-                  highlighted={["React", "Express"]}
-                  normal={["Mongoose", "Bootstrap"]}
-                />
-                <SkillsColumn
-                  columnTitle="tools"
-                  highlighted={["Git", "VSCode", "NPM/Yarn"]}
-                  normal={["Heroku"]}
-                />
-                <SkillsColumn
-                  columnTitle="additional languages"
-                  highlighted={["C++", "C"]}
-                  normal={["Python", "Java"]}
-                />
-              </ul>
+            <div className="brief">
+              <div className="card">
+                <h1>Skills</h1>
+                <ul className="brief__list">
+                  <li>Familiarity with Progressive Web Apps (PWAs)</li>
+                  <p>
+                    This one isn't though because it'd be an unnecessary burden.
+                    An example project is in the showcase!
+                  </p>
+                  <li>Experience with the MERN stack</li>
+                  <p>
+                    MongoDB? Express? React? Node? I've got all bases covered.
+                  </p>
+                  <li>Git magician</li>
+                  <p>99% guarantee of not ruining the git history.</p>
+                </ul>
+              </div>
+              <div className="card">
+                <h1>Stack</h1>
+                <ul className="stack">
+                  <SkillsColumn
+                    columnTitle="frontend"
+                    highlighted={["TypeScript", "SCSS"]}
+                    normal={["HTML"]}
+                  />
+                  <SkillsColumn
+                    columnTitle="backend"
+                    highlighted={["Node", "MongoDB"]}
+                  />
+                  <SkillsColumn
+                    columnTitle="tech"
+                    highlighted={["React", "Express"]}
+                    normal={["Mongoose", "Bootstrap"]}
+                  />
+                  <SkillsColumn
+                    columnTitle="tools"
+                    highlighted={["Git", "VSCode", "NPM/Yarn"]}
+                    normal={["Heroku"]}
+                  />
+                  <SkillsColumn
+                    columnTitle="additional languages"
+                    highlighted={["C++", "C"]}
+                    normal={["Python", "Java"]}
+                  />
+                </ul>
+              </div>
             </div>
           </div>
-          <Showcase
-            elementRef={projects}
-            title="Indie Photographers"
-            url="https://indieapp.herokuapp.com"
-            repository="https://github.com/osamaadam/indie-photographers"
-            icon={data.indie.childImageSharp.fluid}
-            description={`
-                Indie Photographers is a hub for well, indie photographers. The
-                app is a PWA created through create-react-app. The frontend is a
-                React app with Material-UI on top. The backend is mostly a node
-                RESTful API with Express on top and MongoDB for a database.
-                It's important to mention that this is a concept app not an
-                actual commercial product. Nevertheless, this is a perfect
-                showcase and reflection of my skills at this point in my career.
-            `}
-          />
-          <div className="multi-column-projects">
-            <Showcase
-              className="multi-column-projects__project"
-              title="Personal Website"
-              url="https://www.osamaadam.tech"
-              repository="https://github.com/osamaadam/personal-website"
-              icon={data.personalIcon.childImageSharp.fluid}
-              description={`
-                  This is the Website you're currently on. It was created using
-                  Gatsby and is purely a static website. You may think the
-                  design is minimal because I got lazy and I'm not a great web
-                  designer. And you'd be partially correct. But, I got better
-                  reasoning behind the minimal design. The website is built with
-                  speed and performance in mind. The project is stylized purely using
-                  SCSS. No external UI libraries were used.
-              `}
-            />
-            <Showcase
-              className="multi-column-projects__project"
-              title="Unix Shell"
-              repository="http://github.com/osamaadam/unix-shell"
-              description={`
-                  This is a simple Unix shell written in C++. C++ is the
-                  language I mainly use for problem solving, simply because it's
-                  very easy to build a performant solution using it. It's also
-                  however very easy to miss up if not careful. You may check the
-                  project repository by clicking the project title.
-              `}
-            />
-          </div>
-          <div className="multi-column-projects">
-            <Showcase
-              className="multi-column-projects__project"
-              title="Lyrics Genius"
-              url="https://lyricsgenius.herokuapp.com/"
-              repository="https://github.com/osamaadam/LyricsGenius"
-              description={`
-                Lyrics Genius is tiny little app built using Musixmatch's free developer
-                APIs. I built this in a day back when I started learning web development.
-                It's built using React and Bootstrap.
-              `}
-            />
-            <Showcase
-              className="multi-column-projects__project"
-              title="AESChipions"
-              repository="https://github.com/mohamednour98/AESchipions"
-              description={`
-                AESChipions is a team effort between myself and Mohamed Nour. It was the
-                final project of Chipions; which is a student program for digital design
-                engineering. The project is basically an AES encryption system (counter mode)
-                written entirely in Verilog.
-              `}
-            />
-            <Showcase
-              className="multi-column-projects__project"
-              title="todoNumeroUno"
-              repository="https://github.com/osamaadam/todoNumeroUno"
-              description={`
-                The magnum opus, the chef d'oeuvre, the masterpiece, my first ever todo list.
-                Sadly this one isn't hosted. If only the world knew what I was withholding!
-                So yeah, nothing special about this one, it's a todolist built in React with
-                the worst backend known to mankind using Node and Mongodb.
-              `}
-            />
+          <div className="card projects" ref={refMap["projects"]}>
+            <h1>Projects</h1>
+            <ul className="projects__list">
+              <ProjectIcon
+                title="Indie Photographers"
+                pathname="/projects/indiephotographers"
+                icon={data.indie.childImageSharp.fluid}
+              />
+              <ProjectIcon
+                title="Personal Website"
+                pathname="/projects/personalwebsite"
+                icon={data.personalIcon.childImageSharp.fluid}
+              />
+              <ProjectIcon
+                title="Unix Shell"
+                pathname="/projects/unixshell"
+                icon={data.unixShellIcon.childImageSharp.fluid}
+              />
+              <ProjectIcon
+                title="Lyrics Genius"
+                pathname="/projects/lyricsgenius"
+                icon={data.lyricsGeniusIcon.childImageSharp.fluid}
+              />
+              <ProjectIcon
+                title="AESChipions"
+                pathname="/projects/aeschipions"
+                icon={data.AESChipionsIcon.childImageSharp.fluid}
+              />
+              <ProjectIcon
+                title="todoNumeroUno"
+                pathname="/projects/todonumerouno"
+                icon={data.todoNumeroUnoIcon.childImageSharp.fluid}
+              />
+            </ul>
           </div>
         </div>
       </Layout>

@@ -1,0 +1,29 @@
+@import "vars.scss";
+
+.project-icon {
+  display: grid;
+  min-width: 100%;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+
+  &__img {
+    grid-area: 1 / 1 / 2 / 2;
+    min-width: 100%;
+  }
+  &__text {
+    grid-area: 1 / 1 / 2 / 2;
+    margin: auto;
+    opacity: 0;
+  }
+
+  &:hover {
+    .project-icon__text {
+      z-index: 1;
+      opacity: 1;
+    }
+    .project-icon__img {
+      opacity: 0.5;
+    }
+  }
+}

@@ -34,7 +34,7 @@ body {
   background: $highlightColor;
   display: inline;
   font-weight: $medium;
-  padding: 0.2rem 0.2rem;
+  padding: 0.2em 0.2em;
   color: $backgroundColor;
   border-radius: 4px;
 }
@@ -58,11 +58,32 @@ body {
 
 .card {
   background-color: $paperBackground;
-  border-radius: 1rem;
-  margin: 0.5rem;
-  padding: 1.5rem;
+  border-radius: 1em;
+  margin: 0.5em;
+  padding: 1.5em;
   min-width: 300px;
   box-shadow: 0 6px 6px -6px black;
+}
+
+.button {
+  border: 0;
+  width: max-content;
+  padding: 0.5em 1em;
+  margin-right: 0.5em;
+  background-color: $highlightColor;
+  color: $backgroundColor;
+  font-size: 1.1em;
+  font-weight: $medium;
+  border-radius: 4px;
+  transition-property: background-color color;
+  transition-duration: 250ms;
+  transition-timing-function: ease-out;
+  &:hover {
+    background-color: $hover;
+    color: $highlightColor;
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
 
 h1,

@@ -1,6 +1,7 @@
 import React from "react";
 import Img, { FluidObject } from "gatsby-image";
 import "../scss/showcase.scss";
+import { Link } from "gatsby";
 
 interface Props {
   title: string;
@@ -8,6 +9,7 @@ interface Props {
   repository: string;
   url?: string;
   icon?: FluidObject;
+  images?: FluidObject[];
   className?: string;
   elementRef?: React.RefObject<HTMLDivElement>;
 }
@@ -21,6 +23,7 @@ const Showcase: React.FC<Props> = ({
   className = "",
   elementRef
 }) => {
+  const appUrl = url !== repository ? url : undefined;
   return (
     <div className={`card portfolio ${className}`} ref={elementRef}>
       <div className="showcase">
@@ -36,18 +39,28 @@ const Showcase: React.FC<Props> = ({
             </a>
           </h4>
           <p>{description}</p>
-          <p>
-            You may check the{" "}
+          <div className="showcase__button-container">
             <a
               href={repository}
-              title="Repository link"
+              title="Repository"
               target="_blank"
               rel="noopener noreferrer"
+              className="button"
             >
-              project repository here
+              Repository
             </a>
-            .
-          </p>
+            {appUrl && (
+              <a
+                href={appUrl}
+                title="Deployed application"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button"
+              >
+                Visit App
+              </a>
+            )}
+          </div>
         </div>
         {icon && (
           <div className="showcase__logo">

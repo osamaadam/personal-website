@@ -2,9 +2,13 @@
 
 .home-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   margin: 0.5em;
+  &__brief {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .home-profile-paper {
@@ -131,10 +135,18 @@
   }
 }
 
-.multi-column-projects {
+.projects {
   display: flex;
-  flex-wrap: wrap;
-  &__project {
-    flex: 1;
+  flex-direction: column;
+  h1 {
+    margin-bottom: 0.5em;
+  }
+  &__list {
+    list-style: none;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 200px));
+    gap: 3em;
+    justify-content: center;
   }
 }
