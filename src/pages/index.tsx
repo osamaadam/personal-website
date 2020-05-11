@@ -73,7 +73,7 @@ const Home: React.FC = () => {
   return (
     <>
       <Seo title="Osama Adam" />
-      <NavBar refs={refMap} />
+      <NavBar refs={refMap} currentLocation="/" />
       <Layout>
         <div className="home-container">
           <div className="home-container__brief">

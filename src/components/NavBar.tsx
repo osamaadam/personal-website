@@ -7,25 +7,26 @@ const logo = require("../assets/favicon.svg") as string;
 
 interface Props {
   refs?: Refs;
+  currentLocation?: string;
 }
 
-const NavBar: React.FC<Props> = ({ refs }) => {
+const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
   const [scrollPos, setScrollPos] = React.useState<number>(0);
 
   const scrollTo = (reference?: React.RefObject<HTMLDivElement>) => {
-    if (location.pathname === "/") useScroll(reference);
+    if (currentLocation === "/") useScroll(reference);
     else navigate("/");
   };
 
   React.useEffect(() => {
-    if (location.pathname === "/") {
+    if (currentLocation === "/") {
       window.addEventListener("scroll", () => setScrollPos(window.pageYOffset));
     }
     return () =>
       window.removeEventListener("scroll", () =>
         console.log("scroll eventlistener removed.")
       );
-  }, [location.pathname]);
+  }, [currentLocation]);
 
   return (
     <nav className="navbar">
@@ -35,7 +36,7 @@ const NavBar: React.FC<Props> = ({ refs }) => {
         </li>
         <li
           className={`navlinks__link ${
-            location.pathname === "/" &&
+            currentLocation === "/" &&
             ((refs && scrollPos < refs["projects"]?.current?.offsetTop! - 70) ||
               scrollPos === 0)
               ? `navlinks__link--highlighted`
