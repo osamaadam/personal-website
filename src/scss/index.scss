@@ -34,7 +34,7 @@
   max-width: 20vmin;
   border-radius: 50%;
   justify-content: center;
-  border: 0.2em solid $highlightColor;
+  border: 0.2em solid var(--highlightColor);
   user-select: none;
   transition-property: border-width;
   transition-duration: 300ms;
@@ -79,7 +79,7 @@
     user-select: none;
 
     &:hover {
-      background-color: $highlightColor;
+      background-color: var(--highlightColor);
     }
   }
 }
@@ -106,7 +106,7 @@
     list-style: none;
     li {
       font-weight: $medium;
-      color: $highlightColor;
+      color: var(--highlightColor);
     }
 
     li + li {

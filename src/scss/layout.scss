@@ -7,12 +7,12 @@
 }
 
 *::selection {
-  background-color: $highlightColor;
-  color: $backgroundColor;
+  background-color: var(--highlightColor);
+  color: var(--backgroundColor);
 }
 
 a {
-  color: $highlightColor;
+  color: var(--highlightColor);
   text-decoration: none;
   &:hover {
     text-decoration: underline;
@@ -24,18 +24,18 @@ p {
 }
 
 body {
-  background-color: $backgroundColor;
-  color: $primaryColor;
+  background-color: var(--backgroundColor);
+  color: var(--primaryColor);
   font-family: "Montserrat", sans-serif;
 }
 
 .highlight {
   box-sizing: border-box;
-  background: $highlightColor;
+  background: var(--highlightColor);
   display: inline;
   font-weight: $medium;
   padding: 0.2em 0.2em;
-  color: $backgroundColor;
+  color: var(--backgroundColor);
   border-radius: 4px;
 }
 
@@ -48,7 +48,7 @@ body {
   margin-left: -150vw;
   margin-right: -150vw;
   transform: rotate(-45deg);
-  color: $highlightColor;
+  color: var(--highlightColor);
   text-transform: uppercase;
   text-align: justify;
   z-index: -1;
@@ -57,7 +57,7 @@ body {
 }
 
 .card {
-  background-color: $paperBackground;
+  background-color: var(--paperBackground);
   border-radius: 1em;
   margin: 0.5em;
   padding: 1.5em;
@@ -70,8 +70,8 @@ body {
   width: max-content;
   padding: 0.5em 1em;
   margin-right: 0.5em;
-  background-color: $highlightColor;
-  color: $backgroundColor;
+  background-color: var(--highlightColor);
+  color: var(--backgroundColor);
   font-size: 1.1em;
   font-weight: $medium;
   border-radius: 4px;
@@ -79,8 +79,8 @@ body {
   transition-duration: 250ms;
   transition-timing-function: ease-out;
   &:hover {
-    background-color: $hover;
-    color: $highlightColor;
+    background-color: var(--hover);
+    color: var(--highlightColor);
     text-decoration: none;
     cursor: pointer;
   }
@@ -90,16 +90,16 @@ body {
   border: 0;
   width: max-content;
   padding: 1em;
-  background-color: $highlightColor;
-  color: $backgroundColor;
+  background-color: var(--highlightColor);
+  color: var(--backgroundColor);
   font-size: 1.1em;
   font-weight: $medium;
   transition-property: background-color color;
   transition-duration: 250ms;
   transition-timing-function: ease-out;
   &:hover {
-    background-color: $backgroundColor;
-    color: $highlightColor;
+    background-color: var(--backgroundColor);
+    color: var(--highlightColor);
     text-decoration: none;
     cursor: pointer;
   }
@@ -111,7 +111,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $highlightColor;
+  color: var(--highlightColor);
 }
 
 h4 {

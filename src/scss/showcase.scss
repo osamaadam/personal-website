@@ -60,7 +60,7 @@
     justify-content: center;
     margin: 1em -1.5em -1.5em -1.5em;
     border-radius: 0 0 10px 10px;
-    background-color: $highlightColor;
+    background-color: var(--highlightColor);
     .button--outline {
       flex: 1;
       text-align: center;
