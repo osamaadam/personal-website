@@ -86,6 +86,25 @@ body {
   }
 }
 
+.button--outline {
+  border: 0;
+  width: max-content;
+  padding: 1em;
+  background-color: $highlightColor;
+  color: $backgroundColor;
+  font-size: 1.1em;
+  font-weight: $medium;
+  transition-property: background-color color;
+  transition-duration: 250ms;
+  transition-timing-function: ease-out;
+  &:hover {
+    background-color: $backgroundColor;
+    color: $highlightColor;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
 h1,
 h2,
 h3,

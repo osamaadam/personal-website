@@ -12,20 +12,50 @@ interface Props {
 
 const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
   const [scrollPos, setScrollPos] = React.useState<number>(0);
+  const isMountedRef = React.useRef(false);
+  let projectsRef: number;
 
-  const scrollTo = (reference?: React.RefObject<HTMLDivElement>) => {
+  const scrollTo = (
+    reference?: React.RefObject<HTMLDivElement>,
+    pos: number = 0
+  ) => {
     if (currentLocation === "/") useScroll(reference);
     else navigate("/");
+    if (currentLocation !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        useScroll(reference, pos);
+      }, 250);
+    }
   };
 
   React.useEffect(() => {
+    isMountedRef.current = true;
+
+    if (!refs)
+      projectsRef =
+        JSON.parse(localStorage.getItem("projectsRef") as string) - 70;
+    else projectsRef = refs["projects"]?.current?.offsetTop! - 70;
+
     if (currentLocation === "/") {
-      window.addEventListener("scroll", () => setScrollPos(window.pageYOffset));
+      window.addEventListener("scroll", () => {
+        if (isMountedRef.current) setScrollPos(window.pageYOffset);
+      });
     }
-    return () =>
+
+    if (refs) {
+      localStorage.setItem(
+        "projectsRef",
+        JSON.stringify(refs["projects"]?.current?.offsetTop)
+      );
+    }
+
+    return () => {
       window.removeEventListener("scroll", () =>
         console.log("scroll eventlistener removed.")
       );
+      isMountedRef.current = false;
+    };
   }, [currentLocation]);
 
   return (
@@ -52,7 +82,7 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
               ? `navlinks__link--highlighted`
               : ``
           }`}
-          onClick={() => scrollTo(refs && refs["projects"])}
+          onClick={() => scrollTo(refs && refs["projects"], projectsRef)}
         >
           Projects
         </li>
