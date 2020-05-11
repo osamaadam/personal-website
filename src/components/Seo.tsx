@@ -2,6 +2,8 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
+const siteImage = require("../assets/personal-website.png") as string;
+
 interface Props {
   description?: string;
   lang?: string;
@@ -50,6 +52,10 @@ const Seo: React.FC<Props> = ({
         {
           property: `og:description`,
           content: metaDescription
+        },
+        {
+          name: `og:image`,
+          content: siteImage
         },
         {
           property: `og:type`,
