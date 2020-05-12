@@ -9,7 +9,8 @@ interface Props {
 const ContactForm: React.FC<Props> = ({ reference }) => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.target as HTMLFormElement);
+    const form = event.target;
+    const data = new FormData(form as HTMLFormElement);
 
     try {
       await fetch(process.env.GATSBY_EMAIL_API!, {
@@ -19,8 +20,8 @@ const ContactForm: React.FC<Props> = ({ reference }) => {
         },
         body: data
       });
+      form.reset();
       useSnackbar("Email sent!", "success");
-      event.target.reset();
     } catch (error) {
       console.error(error);
       useSnackbar("Request failed. Please try again later.", "error");
