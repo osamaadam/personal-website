@@ -50,7 +50,7 @@ textarea {
   border-width: 0;
   padding: 1em;
   border-radius: 0.5em;
-  border: 1px solid var(--primaryColor);
+  border: 2px solid var(--primaryColor);
   transition-property: border-color;
   transition-duration: 250ms;
   &:focus {
@@ -91,7 +91,7 @@ textarea {
   border-radius: 1em;
   margin: 0.5em;
   padding: 1.5em;
-  min-width: 300px;
+  min-width: 280px;
   box-shadow: 0 6px 6px -6px black;
 }
 
@@ -175,6 +175,7 @@ input:checked + .slider {
 
 input:focus + .slider {
   box-shadow: 0 0 1px var(--highlightColor);
+  outline: none;
 }
 
 input:checked + .slider:before {

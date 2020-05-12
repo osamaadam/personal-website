@@ -18,8 +18,9 @@ const ContactForm: React.FC<Props> = ({ reference }) => {
         },
         body: data
       });
+      event.target.reset();
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -31,6 +32,7 @@ const ContactForm: React.FC<Props> = ({ reference }) => {
         onSubmit={handleSubmit}
         method="post"
         className="contact-form"
+        id="contact-form"
       >
         <div className="contact-form__info">
           <div className="contact-form__container">

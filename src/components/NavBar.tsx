@@ -92,10 +92,8 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
           <img src={logo} alt="logo" />
         </li>
         <li
-          className={`navlinks__link ${
-            currentLocation === "/" &&
-            ((refs && scrollPos < refs["projects"]?.current?.offsetTop! - 70) ||
-              scrollPos === 0)
+          className={`navlinks__link navlinks__home ${
+            refs && scrollPos < refs["projects"]?.current?.offsetTop! - 70
               ? `navlinks__link--highlighted`
               : ``
           }`}
@@ -125,20 +123,20 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
         >
           Contact
         </li>
+        <div className="navbar__switch-container">
+          <label className="switch">
+            <input
+              type="checkbox"
+              id="theme-toggle"
+              name="theme-toggle"
+              checked={theme}
+              onChange={changeTheme}
+              aria-label="theme toggle"
+            />
+            <span className="slider round" />
+          </label>
+        </div>
       </ul>
-      <div>
-        <label className="switch">
-          <input
-            type="checkbox"
-            id="theme-toggle"
-            name="theme-toggle"
-            checked={theme}
-            onChange={changeTheme}
-            aria-label="theme toggle"
-          />
-          <span className="slider round" />
-        </label>
-      </div>
     </nav>
   );
 };

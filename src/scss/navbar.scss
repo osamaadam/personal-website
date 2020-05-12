@@ -12,6 +12,9 @@
   position: sticky;
   top: 0;
   bottom: auto;
+  &__switch-container {
+    margin-left: auto;
+  }
 }
 
 .navlinks {
@@ -33,12 +36,25 @@
   }
 
   &__link {
-    font-size: 1.1rem;
+    font-size: 1em;
     cursor: pointer;
-    padding: 1em 0.5em;
+    padding: 1.2em 0.5em;
     &--highlighted {
       background-color: var(--highlightColor);
       color: var(--backgroundColor);
     }
+  }
+}
+
+@media (max-width: 380px) {
+  .navlinks__logo {
+    margin-left: -0.7em;
+    padding: 0;
+  }
+}
+
+@media (max-width: 340px) {
+  .navlinks__link {
+    padding: 1.2em 0.2em;
   }
 }
