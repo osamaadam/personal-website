@@ -67,8 +67,10 @@ const ContactForm: React.FC<Props> = ({ reference }) => {
             id="email-body"
             className="contact-form__text-area"
             placeholder="Carthago delenda est."
-            required
+            autoCapitalize="sentences"
+            spellCheck="true"
             dir="auto"
+            required
           />
         </div>
         <div className="contact-form__button-container">
