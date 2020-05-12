@@ -1,5 +1,6 @@
 import React from "react";
 import "../scss/contact-form.scss";
+import useSnackbar from "../hooks/useSnackbar";
 
 interface Props {
   reference: React.RefObject<HTMLDivElement>;
@@ -18,9 +19,11 @@ const ContactForm: React.FC<Props> = ({ reference }) => {
         },
         body: data
       });
+      useSnackbar("Email sent!", "success");
       event.target.reset();
     } catch (error) {
       console.error(error);
+      useSnackbar("Request failed. Please try again later.", "error");
     }
   };
 

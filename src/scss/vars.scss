@@ -6,6 +6,8 @@ html {
   --secondaryColor: rgba(255, 255, 255, 0.7);
   --disabled: rgba(255, 255, 255, 0.5);
   --hover: rgba(255, 255, 255, 0.08);
+  --success: #4caf50;
+  --error: #f44336;
 }
 
 html[data-theme="light"] {
@@ -13,11 +15,12 @@ html[data-theme="light"] {
   --paperBackground: #eeeeee;
   --primaryColor: rgba(0, 0, 0, 0.87);
   --highlightColor: #098203;
+  --highlightColorComplement: #f67dfc;
   .social-links {
     img {
       filter: invert(1);
       &:hover {
-        background-color: #f67dfc;
+        background-color: var(--highlightColorComplement);
       }
     }
   }

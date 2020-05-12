@@ -16,6 +16,9 @@ const Layout = ({ children }: { children: JSX.Element }) => {
       </Helmet>
       <h1 className="repeating-background-text">{repeatingText}</h1>
       <main>{children}</main>
+      <div className="snackbar-container" id="snackbar-container">
+        <div className="snackbar" id="snackbar" />
+      </div>
       <footer className="footer" />
     </>
   );

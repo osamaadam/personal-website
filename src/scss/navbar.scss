@@ -50,10 +50,7 @@
   .navlinks__logo {
     display: none;
   }
-}
-
-@media (max-width: 340px) {
-  .navlinks__link {
-    padding: 1.2em 0.2em;
+  .navbar {
+    padding-left: 0;
   }
 }

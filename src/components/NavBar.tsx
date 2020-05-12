@@ -93,8 +93,9 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
         </li>
         <li
           className={`navlinks__link navlinks__home ${
-            (refs && scrollPos < refs["projects"]?.current?.offsetTop! - 70) ||
-            scrollPos === 0
+            currentLocation === "/" &&
+            ((refs && scrollPos < refs["projects"]?.current?.offsetTop! - 70) ||
+              scrollPos === 0)
               ? `navlinks__link--highlighted`
               : ``
           }`}
