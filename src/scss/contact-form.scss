@@ -1,0 +1,49 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 30vh;
+  &__info,
+  &__text-area {
+    margin-bottom: 1em;
+  }
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+    align-items: center;
+    width: 100%;
+  }
+  &__name,
+  &__email {
+    flex: 1;
+  }
+  &__text-area {
+    resize: none;
+    flex: 1;
+    &-div {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 35vh;
+    }
+  }
+  &__container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  &__button {
+    width: 100%;
+    border-radius: 0 0 1em 1em;
+    &-container {
+      margin: 0 -1.5em -1.5em -1.5em;
+    }
+  }
+}
+
+.contact {
+  &__title {
+    margin-bottom: 0.5em;
+  }
+}

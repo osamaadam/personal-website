@@ -8,6 +8,7 @@ import SkillsColumn from "../components/SkillsColumn";
 import SocialLink from "../components/SocialLink";
 import NavBar from "../components/NavBar";
 import ProjectIcon from "../components/ProjectIcon";
+import ContactForm from "../components/ContactForm";
 
 const github = require("../assets/github.png") as string;
 const linkedin = require("../assets/linkedin.png") as string;
@@ -68,7 +69,8 @@ const Home: React.FC = () => {
   `);
 
   const projects = React.useRef(null);
-  const refMap: Refs = { projects };
+  const contact = React.useRef(null);
+  const refMap: Refs = { projects, contact };
 
   return (
     <>
@@ -197,6 +199,7 @@ const Home: React.FC = () => {
               />
             </ul>
           </div>
+          <ContactForm reference={contact} />
         </div>
       </Layout>
     </>

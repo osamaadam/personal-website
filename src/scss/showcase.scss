@@ -59,19 +59,19 @@
     display: flex;
     justify-content: center;
     margin: 1em -1.5em -1.5em -1.5em;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 1.5em 1.5em;
     background-color: var(--highlightColor);
     .button--outline {
       flex: 1;
       text-align: center;
       &:first-child {
-        border-radius: 0 0 0 4px;
+        border-radius: 0 0 0 1em;
       }
       &:last-child {
-        border-radius: 0 0 4px 0;
+        border-radius: 0 0 1em 0;
       }
       &:only-child {
-        border-radius: 0 0 4px 4px;
+        border-radius: 0 0 1em 1em;
       }
     }
   }

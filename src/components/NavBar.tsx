@@ -20,6 +20,7 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
   );
   const isMountedRef = React.useRef(false);
   let projectsRef: number;
+  let contactRef: number;
 
   const changeTheme = (event: any) => {
     setTheme(event.target.checked);
@@ -50,11 +51,15 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
   React.useEffect(() => {
     isMountedRef.current = true;
 
-    if (!refs)
+    if (!refs) {
       projectsRef =
         JSON.parse(localStorage.getItem("projectsRef") as string) - 70;
-    else projectsRef = refs["projects"]?.current?.offsetTop! - 70;
-
+      contactRef =
+        JSON.parse(localStorage.getItem("contactRef") as string) - 70;
+    } else {
+      projectsRef = refs["projects"]?.current?.offsetTop! - 70;
+      contactRef = refs["contact"]?.current?.offsetTop! - 70;
+    }
     if (currentLocation === "/") {
       window.addEventListener("scroll", () => {
         if (isMountedRef.current) setScrollPos(window.pageYOffset);
@@ -65,6 +70,10 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
       localStorage.setItem(
         "projectsRef",
         JSON.stringify(refs["projects"]?.current?.offsetTop)
+      );
+      localStorage.setItem(
+        "contactRef",
+        JSON.stringify(refs["contact"]?.current?.offsetTop)
       );
     }
 
@@ -96,13 +105,25 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
         </li>
         <li
           className={`navlinks__link ${
-            refs && scrollPos >= refs["projects"]?.current?.offsetTop! - 70
+            refs &&
+            scrollPos >= refs["projects"]?.current?.offsetTop! - 70 &&
+            scrollPos < refs["contact"]?.current?.offsetTop! - 70
               ? `navlinks__link--highlighted`
               : ``
           }`}
           onClick={() => scrollTo(refs && refs["projects"], projectsRef)}
         >
           Projects
+        </li>
+        <li
+          className={`navlinks__link ${
+            refs && scrollPos >= refs["contact"]?.current?.offsetTop! - 70
+              ? `navlinks__link--highlighted`
+              : ``
+          }`}
+          onClick={() => scrollTo(refs && refs["contact"], contactRef)}
+        >
+          Contact
         </li>
       </ul>
       <div>

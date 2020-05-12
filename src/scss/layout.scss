@@ -43,6 +43,22 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+input[type="text"],
+input[type="email"],
+textarea {
+  background-color: #fafafa;
+  border-width: 0;
+  padding: 1em;
+  border-radius: 0.5em;
+  border: 1px solid var(--primaryColor);
+  transition-property: border-color;
+  transition-duration: 250ms;
+  &:focus {
+    border-color: var(--highlightColor);
+    outline: none;
+  }
+}
+
 .highlight {
   box-sizing: border-box;
   background: var(--highlightColor);
@@ -81,9 +97,8 @@ body {
 
 .button {
   border: 0;
-  width: max-content;
+  min-width: max-content;
   padding: 0.5em 1em;
-  margin-right: 0.5em;
   background-color: var(--highlightColor);
   color: var(--backgroundColor);
   font-size: 1.1em;
@@ -171,4 +186,8 @@ input:checked + .slider:before {
   &::before {
     border-radius: 50%;
   }
+}
+
+.footer {
+  min-height: 30vh;
 }
