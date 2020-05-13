@@ -117,13 +117,13 @@ textarea {
 
 .button--outline {
   border: 0;
-  width: max-content;
+  min-width: max-content;
   padding: 1em;
   background-color: var(--highlightColor);
   color: var(--backgroundColor);
   font-size: 1.1em;
   font-weight: $medium;
-  transition-property: background-color color;
+  transition-property: background-color, color;
   transition-duration: 250ms;
   transition-timing-function: ease-out;
   &:hover {
