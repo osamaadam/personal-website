@@ -1,6 +1,6 @@
+import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import { Helmet } from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
 
 const siteImage = require("../assets/personal-website.png") as string;
 

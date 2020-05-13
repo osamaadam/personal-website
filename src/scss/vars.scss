@@ -1,5 +1,6 @@
 html {
   --highlightColor: #ffc107;
+  --highlightColorComplement: #003ef8;
   --backgroundColor: #303030;
   --paperBackground: #424242;
   --primaryColor: #fff;
@@ -16,6 +17,9 @@ html[data-theme="light"] {
   --primaryColor: rgba(0, 0, 0, 0.87);
   --highlightColor: #098203;
   --highlightColorComplement: #f67dfc;
+}
+
+html[data-theme="dark"] {
   .social-links {
     img {
       filter: invert(1);

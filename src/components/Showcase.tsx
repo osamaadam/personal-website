@@ -1,7 +1,6 @@
-import React from "react";
 import Img, { FluidObject } from "gatsby-image";
+import React from "react";
 import "../scss/showcase.scss";
-import { Link } from "gatsby";
 
 interface Props {
   title: string;

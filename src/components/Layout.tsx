@@ -1,6 +1,6 @@
 import React from "react";
-import "../scss/layout.scss";
 import { Helmet } from "react-helmet";
+import "../scss/layout.scss";
 
 let repeatingText = "";
 for (let i = 0; i < 500; i++) repeatingText += "Osama Adam ";

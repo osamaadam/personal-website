@@ -1,6 +1,6 @@
 import React from "react";
-import "../scss/contact-form.scss";
 import useSnackbar from "../hooks/useSnackbar";
+import "../scss/contact-form.scss";
 
 interface Props {
   reference: React.RefObject<HTMLDivElement>;

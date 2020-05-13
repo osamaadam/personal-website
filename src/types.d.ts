@@ -3,3 +3,8 @@ type Refs = {
   contact?: React.RefObject<HTMLDivElement>;
   [key: string]: React.RefObject<HTMLDivElement>;
 };
+
+declare module "*.svg" {
+  const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
+  export default content;
+}

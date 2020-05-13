@@ -1,8 +1,8 @@
 import React from "react";
-import Showcase from "../../components/Showcase";
 import Layout from "../../components/Layout";
 import NavBar from "../../components/NavBar";
 import Seo from "../../components/Seo";
+import Showcase from "../../components/Showcase";
 
 const aeschipions: React.FC = () => {
   const title = "AESChipions";

@@ -1,9 +1,9 @@
+import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
-import Showcase from "../../components/Showcase";
 import Layout from "../../components/Layout";
 import NavBar from "../../components/NavBar";
 import Seo from "../../components/Seo";
-import { useStaticQuery, graphql } from "gatsby";
+import Showcase from "../../components/Showcase";
 
 const personalwebsite: React.FC = () => {
   const data = useStaticQuery(graphql`

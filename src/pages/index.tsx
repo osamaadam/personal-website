@@ -1,17 +1,16 @@
-import React from "react";
-import "../scss/index.scss";
-import Layout from "../components/Layout";
+import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import React from "react";
+import * as github from "../assets/github.svg";
+import * as linkedin from "../assets/linkedin.svg";
+import ContactForm from "../components/ContactForm";
+import Layout from "../components/Layout";
+import NavBar from "../components/NavBar";
+import ProjectIcon from "../components/ProjectIcon";
 import Seo from "../components/Seo";
 import SkillsColumn from "../components/SkillsColumn";
 import SocialLink from "../components/SocialLink";
-import NavBar from "../components/NavBar";
-import ProjectIcon from "../components/ProjectIcon";
-import ContactForm from "../components/ContactForm";
-
-const github = require("../assets/github.png") as string;
-const linkedin = require("../assets/linkedin.png") as string;
+import "../scss/index.scss";
 
 const Home: React.FC = () => {
   const data = useStaticQuery(graphql`
