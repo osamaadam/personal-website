@@ -64,6 +64,15 @@ const Home: React.FC = () => {
           }
         }
       }
+      cpuScheduleIcon: file(
+        relativePath: { eq: "cpu-schedule/cpu-schedule.png" }
+      ) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `);
 
@@ -175,6 +184,11 @@ const Home: React.FC = () => {
                 title="Personal Website"
                 pathname="/projects/personalwebsite"
                 icon={data.personalIcon.childImageSharp.fluid}
+              />
+              <ProjectIcon
+                title="CPU Schedule"
+                pathname="/projects/cpuschedule"
+                icon={data.cpuScheduleIcon.childImageSharp.fluid}
               />
               <ProjectIcon
                 title="Unix Shell"
