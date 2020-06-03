@@ -41,5 +41,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/OsamaAdam98/personal-website"
+  },
+  "engines": {
+    "node": "12.x",
+    "yarn": "1.x"
   }
 }
