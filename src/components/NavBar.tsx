@@ -26,6 +26,10 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
     setTheme(event.target.checked);
   };
 
+  const mountedListener = () => {
+    if (isMountedRef.current) setScrollPos(window.pageYOffset);
+  };
+
   const scrollTo = (
     reference?: React.RefObject<HTMLDivElement>,
     pos: number = 0
@@ -36,7 +40,7 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
       navigate("/");
       setTimeout(() => {
         useScroll(reference, pos);
-      }, 250);
+      }, 0);
     }
   };
 
@@ -61,9 +65,7 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
       contactRef = refs["contact"]?.current?.offsetTop! - 70;
     }
     if (currentLocation === "/") {
-      window.addEventListener("scroll", () => {
-        if (isMountedRef.current) setScrollPos(window.pageYOffset);
-      });
+      window.addEventListener("scroll", mountedListener);
     }
 
     if (refs) {
@@ -78,9 +80,7 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
     }
 
     return () => {
-      window.removeEventListener("scroll", () =>
-        console.log("scroll eventlistener removed.")
-      );
+      window.removeEventListener("scroll", mountedListener);
       isMountedRef.current = false;
     };
   }, [currentLocation]);
