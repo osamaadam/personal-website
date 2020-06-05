@@ -1,19 +1,15 @@
 export type Severity = "success" | "error";
 
 const useSnackbar = (msg: string, severity: Severity = "success") => {
-  const snackbar = document.getElementById("snackbar");
-  const snackbarContainer = document.getElementById("snackbar-container");
+  const snackbar = document.querySelector("#snackbar");
+  const snackbarContainer = document.querySelector("#snackbar-container");
   if (snackbar && snackbarContainer) {
-    snackbarContainer.className =
-      snackbarContainer.className + ` snackbar-container--show`;
-    snackbar.className = snackbar.className + ` ${severity}`;
+    snackbarContainer.classList.add("snackbar-container--show");
+    snackbar.classList.add(severity);
     snackbar.textContent = msg;
     setTimeout(() => {
-      snackbarContainer.className = snackbarContainer.className.replace(
-        `snackbar-container--show`,
-        ""
-      );
-      snackbar.className = snackbar.className.replace(severity, "");
+      snackbarContainer.classList.remove("snackbar-container--show");
+      snackbar.classList.remove(severity);
       snackbar.textContent = "";
     }, 3000);
   }

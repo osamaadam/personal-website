@@ -40,7 +40,7 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
       navigate("/");
       setTimeout(() => {
         useScroll(reference, pos);
-      }, 0);
+      }, 250);
     }
   };
 
