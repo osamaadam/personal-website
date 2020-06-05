@@ -19,18 +19,7 @@ const personalwebsite: React.FC = () => {
   `);
 
   const title = "Personal Website";
-
-  return (
-    <>
-      <Seo title={title} />
-      <NavBar />
-      <Layout>
-        <Showcase
-          title={title}
-          url="https://www.osamaadam.tech"
-          repository="https://github.com/osamaadam/personal-website"
-          icon={data.personalIcon.childImageSharp.fluid}
-          description={`
+  const description = `
                   This is the Website you're currently on. It was created using
                   Gatsby and is purely a static website. You may think the
                   design is minimal because I got lazy and I'm not a great web
@@ -38,7 +27,19 @@ const personalwebsite: React.FC = () => {
                   reasoning behind the minimal design. The website is built with
                   speed and performance in mind. The project is stylized purely using
                   SCSS. No external UI libraries were used.
-              `}
+              `;
+
+  return (
+    <>
+      <Seo title={title} description={description} />
+      <NavBar />
+      <Layout>
+        <Showcase
+          title={title}
+          url="https://www.osamaadam.tech"
+          repository="https://github.com/osamaadam/personal-website"
+          icon={data.personalIcon.childImageSharp.fluid}
+          description={description}
         />
       </Layout>
     </>

@@ -4,8 +4,12 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Osama Adam`,
-    description: `A website showcasing Osama Adam's work projects and contact details.`,
+    title: `Osama Adam's Portfolio`,
+    description:
+      "Portfolio website for full stack web developer, Osama Adam. " +
+      "Osama Adam is experienced with React, Gatsby, Node, Express, and MongoDB. " +
+      "Osama Adam also has some experience contributing in open source. " +
+      "Osama Adam is a web developer in Egypt.",
     author: `@osamaadam98`
   },
   plugins: [

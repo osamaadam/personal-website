@@ -6,22 +6,23 @@ import Showcase from "../../components/Showcase";
 
 const unixshell: React.FC = () => {
   const title = "Unix Shell";
-
-  return (
-    <>
-      <Seo title={title} />
-      <NavBar />
-      <Layout>
-        <Showcase
-          title={title}
-          repository="http://github.com/osamaadam/unix-shell"
-          description={`
+  const description = `
                   This is a simple Unix shell written in C++. C++ is the
                   language I mainly use for problem solving, simply because it's
                   very easy to build a performant solution using it. It's also
                   however very easy to miss up if not careful. You may check the
                   project repository by clicking the project title.
-              `}
+              `;
+
+  return (
+    <>
+      <Seo title={title} description={description} />
+      <NavBar />
+      <Layout>
+        <Showcase
+          title={title}
+          repository="http://github.com/osamaadam/unix-shell"
+          description={description}
         />
       </Layout>
     </>

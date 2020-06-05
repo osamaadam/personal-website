@@ -6,21 +6,22 @@ import Showcase from "../../components/Showcase";
 
 const lyricsgenius: React.FC = () => {
   const title = "Lyrics Genius";
+  const description = `
+                Lyrics Genius is tiny little app built using Musixmatch's free developer
+                APIs. I built this in a day back when I started learning web development.
+                It's built using React and Bootstrap.
+              `;
 
   return (
     <>
-      <Seo title={title} />
+      <Seo title={title} description={description} />
       <NavBar />
       <Layout>
         <Showcase
           title={title}
           url="https://lyricsgenius.herokuapp.com/"
           repository="https://github.com/osamaadam/LyricsGenius"
-          description={`
-                Lyrics Genius is tiny little app built using Musixmatch's free developer
-                APIs. I built this in a day back when I started learning web development.
-                It's built using React and Bootstrap.
-              `}
+          description={description}
         />
       </Layout>
     </>

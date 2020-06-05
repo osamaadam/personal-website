@@ -19,18 +19,7 @@ const indiephotographers: React.FC = () => {
   `);
 
   const title = "Indie Photographers";
-
-  return (
-    <>
-      <Seo title={title} />
-      <NavBar />
-      <Layout>
-        <Showcase
-          title={title}
-          url="https://indieapp.herokuapp.com"
-          repository="https://github.com/osamaadam/indie-photographers"
-          icon={data.indieIcon.childImageSharp.fluid}
-          description={`
+  const description = `
                 Indie Photographers is a hub for well, indie photographers. The
                 app is a PWA created through create-react-app. The frontend is a
                 React app with Material-UI on top. The backend is mostly a node
@@ -38,7 +27,19 @@ const indiephotographers: React.FC = () => {
                 It's important to mention that this is a concept app not an
                 actual commercial product. Nevertheless, this is a perfect
                 showcase and reflection of my skills at this point in my career.
-            `}
+            `;
+
+  return (
+    <>
+      <Seo title={title} description={description} />
+      <NavBar />
+      <Layout>
+        <Showcase
+          title={title}
+          url="https://indieapp.herokuapp.com"
+          repository="https://github.com/osamaadam/indie-photographers"
+          icon={data.indieIcon.childImageSharp.fluid}
+          description={description}
         />
       </Layout>
     </>

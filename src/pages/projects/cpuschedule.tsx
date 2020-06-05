@@ -6,20 +6,21 @@ import Showcase from "../../components/Showcase";
 
 const cpuschedule: React.FC = () => {
   const title = "CPU Schedule";
+  const description = `
+                  A simulation for both First Come First Serve (FCFS) and Round Robin
+                  CPU scheduling algorithms, written in C++. Built as part of a college course
+                  (Operating Systems). Read the repository readme for more details.
+              `;
 
   return (
     <>
-      <Seo title={title} />
+      <Seo title={title} description={description} />
       <NavBar />
       <Layout>
         <Showcase
           title={title}
           repository="http://github.com/osamaadam/cpu-schedule"
-          description={`
-                  A simulation for both First Come First Serve (FCFS) and Round Robin
-                  CPU scheduling algorithms, written in C++. Built as part of a college course
-                  (Operating Systems). Read the repository readme for more details.
-              `}
+          description={description}
         />
       </Layout>
     </>
