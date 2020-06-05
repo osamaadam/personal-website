@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: ".env"
+});
+
 module.exports = {
   siteMetadata: {
     title: `Osama Adam`,
@@ -5,16 +9,13 @@ module.exports = {
     author: `@osamaadam98`
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/assets`
+        trackingId: process.env.GATSBY_ANALYTICS,
+        head: false
       }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -27,6 +28,16 @@ module.exports = {
         icon: `src/assets/favicon.svg`
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/assets`
+      }
+    },
+    `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`
   ]

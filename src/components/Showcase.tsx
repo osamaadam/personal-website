@@ -1,6 +1,7 @@
 import Img, { FluidObject } from "gatsby-image";
 import React from "react";
 import "../scss/showcase.scss";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 interface Props {
   title: string;
@@ -28,21 +29,21 @@ const Showcase: React.FC<Props> = ({
       <div className="showcase">
         <div className="showcase__desc">
           <h4>
-            <a
+            <OutboundLink
               href={url}
               title={title}
               target="_blank"
               rel="noopener noreferrer"
             >
               {title}
-            </a>
+            </OutboundLink>
           </h4>
           <p>{description}</p>
         </div>
 
         {icon && (
           <div className="showcase__logo">
-            <a
+            <OutboundLink
               href={url}
               title={title}
               target="_blank"
@@ -50,8 +51,8 @@ const Showcase: React.FC<Props> = ({
               className="showcase__logo__img"
             >
               <Img fluid={icon} alt={`${title}'s logo`} />
-            </a>
-            <a
+            </OutboundLink>
+            <OutboundLink
               href={url}
               title={title}
               target="_blank"
@@ -61,13 +62,13 @@ const Showcase: React.FC<Props> = ({
               <p>
                 <span className="highlight">{title}</span>
               </p>
-            </a>
+            </OutboundLink>
           </div>
         )}
       </div>
 
       <div className="showcase__button-container">
-        <a
+        <OutboundLink
           href={repository}
           title="Repository"
           target="_blank"
@@ -75,9 +76,9 @@ const Showcase: React.FC<Props> = ({
           className="button--outline"
         >
           Repository
-        </a>
+        </OutboundLink>
         {appUrl && (
-          <a
+          <OutboundLink
             href={appUrl}
             title="Deployed application"
             target="_blank"
@@ -85,7 +86,7 @@ const Showcase: React.FC<Props> = ({
             className="button--outline"
           >
             Visit App
-          </a>
+          </OutboundLink>
         )}
       </div>
     </div>

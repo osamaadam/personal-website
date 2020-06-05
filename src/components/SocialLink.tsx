@@ -1,4 +1,5 @@
 import React from "react";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 interface Props {
   title: string;
@@ -7,7 +8,7 @@ interface Props {
 }
 
 const SocialLink: React.FC<Props> = ({ title, url, icon }) => (
-  <a href={url} target="_blank" rel="noopener noreferrer">
+  <OutboundLink href={url} target="_blank" rel="noopener noreferrer">
     <img
       src={icon as string}
       alt={title}
@@ -15,7 +16,7 @@ const SocialLink: React.FC<Props> = ({ title, url, icon }) => (
       width="40"
       height="40"
     />
-  </a>
+  </OutboundLink>
 );
 
 export default SocialLink;
