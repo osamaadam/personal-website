@@ -172,7 +172,7 @@ const Home: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="card projects" ref={refMap["projects"]}>
+          <div className="card projects" ref={refMap["projects"]} id="projects">
             <h1>Projects</h1>
             <ul className="projects__list">
               <ProjectIcon

@@ -10,14 +10,14 @@ module.exports = {
       "Osama Adam is experienced with React, Gatsby, Node, Express, and MongoDB. " +
       "Osama Adam also has some experience contributing in open source. " +
       "Osama Adam is a web developer in Egypt.",
-    author: `@osamaadam98`
+    author: `@osamaadam98`,
+    siteUrl: `https://osamaadam.tech`
   },
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GATSBY_ANALYTICS,
-        head: false
+        trackingId: process.env.GATSBY_ANALYTICS
       }
     },
     {
