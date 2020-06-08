@@ -3,7 +3,7 @@ exports.createPages = ({ actions }) => {
 
   projects.forEach((project) => {
     createPage({
-      path: `/test-projects/${project.path}`,
+      path: `/projects/${project.path}`,
       component: require.resolve("./src/templates/project-template.tsx"),
       context: { project }
     });

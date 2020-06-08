@@ -177,37 +177,37 @@ const Home: React.FC = () => {
             <ul className="projects__list">
               <ProjectIcon
                 title="Indie Photographers"
-                pathname="/projects/indiephotographers"
+                pathname="/projects/indie-photographers"
                 icon={data.indie.childImageSharp.fluid}
               />
               <ProjectIcon
                 title="Personal Website"
-                pathname="/projects/personalwebsite"
+                pathname="/projects/personal-website"
                 icon={data.personalIcon.childImageSharp.fluid}
               />
               <ProjectIcon
                 title="CPU Schedule"
-                pathname="/projects/cpuschedule"
+                pathname="/projects/cpu-schedule"
                 icon={data.cpuScheduleIcon.childImageSharp.fluid}
               />
               <ProjectIcon
                 title="Unix Shell"
-                pathname="/projects/unixshell"
+                pathname="/projects/unix-shell"
                 icon={data.unixShellIcon.childImageSharp.fluid}
               />
               <ProjectIcon
                 title="Lyrics Genius"
-                pathname="/projects/lyricsgenius"
+                pathname="/projects/lyrics-genius"
                 icon={data.lyricsGeniusIcon.childImageSharp.fluid}
               />
               <ProjectIcon
                 title="AESChipions"
-                pathname="/projects/aeschipions"
+                pathname="/projects/aes-chipions"
                 icon={data.AESChipionsIcon.childImageSharp.fluid}
               />
               <ProjectIcon
                 title="todoNumeroUno"
-                pathname="/projects/todonumerouno"
+                pathname="/projects/todo-numero-uno"
                 icon={data.todoNumeroUnoIcon.childImageSharp.fluid}
               />
             </ul>
