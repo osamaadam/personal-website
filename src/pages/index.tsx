@@ -18,14 +18,14 @@ const Home: React.FC = () => {
       profile: file(relativePath: { eq: "profile.jpg" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       indie: file(relativePath: { eq: "indiePhotographers.png" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
   return (
     <>
       <Seo title="Osama Adam" />
-      <NavBar refs={refMap} currentLocation="/" />
+      <NavBar refs={refMap} />
       <Layout>
         <div className="home-container">
           <div className="home-container__brief">

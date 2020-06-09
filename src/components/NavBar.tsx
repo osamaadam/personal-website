@@ -7,36 +7,31 @@ const logo = require("../assets/favicon.svg") as string;
 
 interface Props {
   refs?: Refs;
-  currentLocation?: string;
 }
 
-const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
-  const currentTheme =
-    typeof window !== "undefined" && localStorage.getItem("theme");
+const NavBar: React.FC<Props> = ({ refs }) => {
+  const location = typeof window !== "undefined" && window.location.pathname;
 
   const [scrollPos, setScrollPos] = React.useState<number>(0);
-  const [theme, setTheme] = React.useState<boolean>(
-    currentTheme === "light" ? true : false
+  const [theme, setTheme] = React.useState<string | undefined>(
+    typeof window !== "undefined" && localStorage.getItem("theme")
+      ? (localStorage.getItem("theme") as string)
+      : "dark"
   );
   const isMountedRef = React.useRef(false);
   let projectsRef: number;
   let contactRef: number;
 
   const changeTheme = (event: any) => {
-    setTheme(event.target.checked);
-  };
-
-  const mountedListener = () => {
-    if (isMountedRef.current) setScrollPos(window.pageYOffset);
+    setTheme(event.target.checked ? "light" : "dark");
   };
 
   const scrollTo = (
     reference?: React.RefObject<HTMLDivElement>,
     pos: number = 0
   ) => {
-    if (currentLocation === "/") useScroll(reference);
-    else navigate("/");
-    if (currentLocation !== "/") {
+    if (location === "/") useScroll(reference);
+    else {
       navigate("/");
       setTimeout(() => {
         useScroll(reference, pos);
@@ -44,16 +39,19 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
     }
   };
 
-  React.useEffect(() => {
-    localStorage.setItem("theme", theme ? "light" : "dark");
-    document.documentElement.setAttribute(
-      "data-theme",
-      theme ? "light" : "dark"
-    );
+  React.useLayoutEffect(() => {
+    if (theme) {
+      typeof window !== "undefined" && localStorage.setItem("theme", theme);
+      document.documentElement.setAttribute("data-theme", theme);
+    }
   }, [theme]);
 
   React.useEffect(() => {
     isMountedRef.current = true;
+
+    const mountedListener = () => {
+      if (isMountedRef.current) setScrollPos(window.pageYOffset);
+    };
 
     if (!refs) {
       projectsRef =
@@ -64,26 +62,26 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
       projectsRef = refs["projects"]?.current?.offsetTop! - 70;
       contactRef = refs["contact"]?.current?.offsetTop! - 70;
     }
-    if (currentLocation === "/") {
-      window.addEventListener("scroll", mountedListener);
-    }
 
-    if (refs) {
-      localStorage.setItem(
-        "projectsRef",
-        JSON.stringify(refs["projects"]?.current?.offsetTop)
-      );
-      localStorage.setItem(
-        "contactRef",
-        JSON.stringify(refs["contact"]?.current?.offsetTop)
-      );
+    if (location === "/") {
+      window.addEventListener("scroll", mountedListener);
+      if (refs) {
+        localStorage.setItem(
+          "projectsRef",
+          JSON.stringify(refs["projects"]?.current?.offsetTop)
+        );
+        localStorage.setItem(
+          "contactRef",
+          JSON.stringify(refs["contact"]?.current?.offsetTop)
+        );
+      }
     }
 
     return () => {
       window.removeEventListener("scroll", mountedListener);
       isMountedRef.current = false;
     };
-  }, [currentLocation]);
+  }, []);
 
   return (
     <nav className="navbar">
@@ -93,7 +91,7 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
         </li>
         <li
           className={`navlinks__link navlinks__home ${
-            currentLocation === "/" &&
+            location === "/" &&
             ((refs && scrollPos < refs["projects"]?.current?.offsetTop! - 70) ||
               scrollPos === 0)
               ? `navlinks__link--highlighted`
@@ -131,7 +129,7 @@ const NavBar: React.FC<Props> = ({ refs, currentLocation = "nope" }) => {
               type="checkbox"
               id="theme-toggle"
               name="theme-toggle"
-              checked={theme}
+              checked={theme === "light" ? true : false}
               onChange={changeTheme}
               aria-label="theme toggle"
             />

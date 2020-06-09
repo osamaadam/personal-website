@@ -8,14 +8,14 @@ const useStaticImage = (fileName: Files) => {
       personal: file(relativePath: { eq: "personal-website.png" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       indie: file(relativePath: { eq: "indiePhotographers.png" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
