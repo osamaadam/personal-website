@@ -1,7 +1,9 @@
-import { navigate } from "gatsby";
+import { navigate, Link } from "gatsby";
 import React from "react";
 import useScroll from "../hooks/useScroll";
+import { SwipeableDrawer } from "@material-ui/core";
 import "../scss/navbar.scss";
+import HamburgerMenu from "./HamburgerMenu";
 
 const logo = require("../assets/favicon.svg") as string;
 
@@ -18,6 +20,8 @@ const NavBar: React.FC<Props> = ({ refs }) => {
       ? (localStorage.getItem("theme") as string)
       : "dark"
   );
+  const [drawer, setDrawer] = React.useState<boolean>(false);
+
   const isMountedRef = React.useRef(false);
   let projectsRef: number;
   let contactRef: number;
@@ -85,7 +89,28 @@ const NavBar: React.FC<Props> = ({ refs }) => {
 
   return (
     <nav className="navbar">
+      <SwipeableDrawer
+        className="drawer"
+        anchor="left"
+        open={drawer}
+        onOpen={() => setDrawer(true)}
+        onClose={() => setDrawer(false)}
+        onClick={() => setDrawer(false)}
+      >
+        <ul className="drawer__list">
+          <Link to="/#">
+            <li className="drawer__item">Home</li>
+          </Link>
+          <Link to="/#projects">
+            <li className="drawer__item">Projects</li>
+          </Link>
+          <Link to="/#contact">
+            <li className="drawer__item">Contact</li>
+          </Link>
+        </ul>
+      </SwipeableDrawer>
       <ul className="navlinks">
+        <HamburgerMenu handleClick={() => setDrawer(true)} />
         <li className="navlinks__logo" onClick={() => scrollTo()}>
           <img src={logo} alt="logo" />
         </li>

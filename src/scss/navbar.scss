@@ -1,4 +1,5 @@
 @import "vars.scss";
+@import "drawer.scss";
 
 .navbar {
   display: flex;
@@ -46,11 +47,16 @@
   }
 }
 
-@media (max-width: 380px) {
-  .navlinks__logo {
-    display: none;
+@media (max-width: 450px) {
+  .navlinks {
+    &__link {
+      display: none;
+    }
+    &__logo {
+      display: none;
+    }
   }
-  .navbar {
-    padding-left: 0;
+  .hamburger-menu {
+    display: block;
   }
 }

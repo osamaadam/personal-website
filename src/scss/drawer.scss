@@ -1,0 +1,42 @@
+@import "vars.scss";
+
+.drawer {
+  .MuiDrawer-paper {
+    background-color: var(--paperBackground);
+    color: var(--primaryColor);
+  }
+  &__list {
+    a {
+      color: var(--primaryColor);
+      text-decoration: none;
+    }
+  }
+  &__item {
+    padding: 1em 10em 1em 1em;
+    &:hover {
+      background-color: var(--highlightColor);
+      color: var(--backgroundColor);
+      cursor: pointer;
+    }
+  }
+}
+
+.hamburger-menu {
+  display: none;
+  padding-right: 0.5em;
+  &__bar {
+    width: 35px;
+    height: 5px;
+    margin: 6px 0;
+    background-color: var(--primaryColor);
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: ease-out;
+  }
+  &:hover {
+    cursor: pointer;
+    .hamburger-menu__bar {
+      background-color: var(--highlightColor);
+    }
+  }
+}
