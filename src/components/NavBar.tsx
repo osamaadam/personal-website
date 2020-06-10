@@ -79,7 +79,6 @@ const NavBar: React.FC<Props> = ({ refs }) => {
     }
 
     if (location === "/") {
-      window.addEventListener("scroll", scrollListener);
       if (refs) {
         localStorage.setItem(
           "projectsRef",
@@ -91,6 +90,8 @@ const NavBar: React.FC<Props> = ({ refs }) => {
         );
       }
     }
+
+    window.addEventListener("scroll", scrollListener);
 
     return () => {
       window.removeEventListener("scroll", scrollListener);
