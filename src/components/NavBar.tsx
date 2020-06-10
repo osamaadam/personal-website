@@ -22,7 +22,7 @@ const NavBar: React.FC<Props> = ({ refs }) => {
       ? (localStorage.getItem("theme") as string)
       : "dark"
   );
-  const [drawer, setDrawer] = React.useState<boolean>(false);
+  const [openDrawer, setOpenDrawer] = React.useState<boolean>(false);
 
   const isMountedRef = React.useRef(false);
   const navbar = React.useRef<HTMLElement | null>(null);
@@ -104,12 +104,17 @@ const NavBar: React.FC<Props> = ({ refs }) => {
       <SwipeableDrawer
         className="drawer"
         anchor="left"
-        open={drawer}
-        onOpen={() => setDrawer(true)}
-        onClose={() => setDrawer(false)}
-        onClick={() => setDrawer(false)}
+        open={openDrawer}
+        onOpen={() => setOpenDrawer(true)}
+        onClose={() => setOpenDrawer(false)}
+        onClick={() => setOpenDrawer(false)}
       >
         <ul className="drawer__list">
+          <Link to="/#">
+            <li className="drawer__logo">
+              <img src={logo} alt="logo" />
+            </li>
+          </Link>
           <Link to="/#">
             <li className="drawer__item">Home</li>
           </Link>
@@ -123,7 +128,7 @@ const NavBar: React.FC<Props> = ({ refs }) => {
       </SwipeableDrawer>
       <nav className="navbar" ref={navbar}>
         <ul className="navlinks">
-          <HamburgerMenu handleClick={() => setDrawer(true)} />
+          <HamburgerMenu handleClick={() => setOpenDrawer(true)} />
           <li className="navlinks__logo" onClick={() => scrollTo()}>
             <img src={logo} alt="logo" />
           </li>

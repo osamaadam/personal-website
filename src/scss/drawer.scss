@@ -6,6 +6,8 @@
     color: var(--primaryColor);
   }
   &__list {
+    display: flex;
+    flex-direction: column;
     a {
       color: var(--primaryColor);
       text-decoration: none;
@@ -17,6 +19,19 @@
       background-color: var(--highlightColor);
       color: var(--backgroundColor);
       cursor: pointer;
+    }
+  }
+  &__logo {
+    max-height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--backgroundColor);
+    padding: 1em;
+    img {
+      width: 30vw;
+      height: 100%;
     }
   }
 }
