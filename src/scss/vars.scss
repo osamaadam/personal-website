@@ -35,3 +35,10 @@ $maxWidth: 800px;
 $regular: 400;
 $medium: 500;
 $bold: 700;
+
+.no-style-link {
+  color: var(--primaryColor);
+  &:hover {
+    text-decoration: none;
+  }
+}

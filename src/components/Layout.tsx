@@ -7,7 +7,7 @@ for (let i = 0; i < 500; i++) repeatingText += "Osama Adam ";
 
 const Layout = ({ children }: { children: JSX.Element }) => {
   return (
-    <>
+    <div className="layout-container">
       <Helmet>
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400&display=swap"
@@ -21,7 +21,7 @@ const Layout = ({ children }: { children: JSX.Element }) => {
       <footer className="footer">
         Created by Osama Adam, {new Date().getFullYear()} ©
       </footer>
-    </>
+    </div>
   );
 };
 

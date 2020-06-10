@@ -1,7 +1,6 @@
 import { SwipeableDrawer } from "@material-ui/core";
-import { Link, navigate } from "gatsby";
+import { Link } from "gatsby";
 import React from "react";
-import useScroll from "../hooks/useScroll";
 import "../scss/navbar.scss";
 import HamburgerMenu from "./HamburgerMenu";
 
@@ -31,19 +30,6 @@ const NavBar: React.FC<Props> = ({ refs }) => {
 
   const changeTheme = (event: any) => {
     setTheme(event.target.checked ? "light" : "dark");
-  };
-
-  const scrollTo = (
-    reference?: React.RefObject<HTMLDivElement>,
-    pos: number = 0
-  ) => {
-    if (location === "/") useScroll(reference);
-    else {
-      navigate("/");
-      setTimeout(() => {
-        useScroll(reference, pos);
-      }, 250);
-    }
   };
 
   React.useLayoutEffect(() => {
@@ -129,44 +115,49 @@ const NavBar: React.FC<Props> = ({ refs }) => {
       <nav className="navbar" ref={navbar}>
         <ul className="navlinks">
           <HamburgerMenu handleClick={() => setOpenDrawer(true)} />
-          <li className="navlinks__logo" onClick={() => scrollTo()}>
-            <img src={logo} alt="logo" />
-          </li>
-          <li
-            className={`navlinks__link navlinks__home ${
-              location === "/" &&
-              ((refs &&
-                scrollPos < refs["projects"]?.current?.offsetTop! - 70) ||
-                scrollPos === 0)
-                ? `navlinks__link--highlighted`
-                : ``
-            }`}
-            onClick={() => scrollTo()}
-          >
-            Home
-          </li>
-          <li
-            className={`navlinks__link ${
-              refs &&
-              scrollPos >= refs["projects"]?.current?.offsetTop! - 70 &&
-              scrollPos < refs["contact"]?.current?.offsetTop! - 70
-                ? `navlinks__link--highlighted`
-                : ``
-            }`}
-            onClick={() => scrollTo(refs && refs["projects"], projectsRef)}
-          >
-            Projects
-          </li>
-          <li
-            className={`navlinks__link ${
-              refs && scrollPos >= refs["contact"]?.current?.offsetTop! - 70
-                ? `navlinks__link--highlighted`
-                : ``
-            }`}
-            onClick={() => scrollTo(refs && refs["contact"], contactRef)}
-          >
-            Contact
-          </li>
+          <Link to="/#" className="no-style-link">
+            <li className="navlinks__logo">
+              <img src={logo} alt="logo" />
+            </li>
+          </Link>
+          <Link to="/#" className="no-style-link">
+            <li
+              className={`navlinks__link navlinks__home ${
+                location === "/" &&
+                ((refs &&
+                  scrollPos < refs["projects"]?.current?.offsetTop! - 70) ||
+                  scrollPos === 0)
+                  ? `navlinks__link--highlighted`
+                  : ``
+              }`}
+            >
+              Home
+            </li>
+          </Link>
+          <Link to="/#projects" className="no-style-link">
+            <li
+              className={`navlinks__link ${
+                refs &&
+                scrollPos >= refs["projects"]?.current?.offsetTop! - 70 &&
+                scrollPos < refs["contact"]?.current?.offsetTop! - 70
+                  ? `navlinks__link--highlighted`
+                  : ``
+              }`}
+            >
+              Projects
+            </li>
+          </Link>
+          <Link to="/#contact" className="no-style-link">
+            <li
+              className={`navlinks__link ${
+                refs && scrollPos >= refs["contact"]?.current?.offsetTop! - 70
+                  ? `navlinks__link--highlighted`
+                  : ``
+              }`}
+            >
+              Contact
+            </li>
+          </Link>
           <div className="navbar__switch-container">
             <label className="switch">
               <input

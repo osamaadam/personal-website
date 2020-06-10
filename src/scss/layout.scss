@@ -252,4 +252,12 @@ input:checked + .slider:before {
   justify-content: center;
   min-height: 10vh;
   background-color: var(--paperBackground);
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.layout-container {
+  min-height: calc(100vh - 56px);
+  display: flex;
+  flex-direction: column;
 }
