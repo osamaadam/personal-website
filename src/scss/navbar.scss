@@ -13,8 +13,14 @@
   position: sticky;
   top: 0;
   bottom: auto;
+  transition-property: top;
+  transition-duration: 250ms;
+  transition-timing-function: ease-out;
   &__switch-container {
     margin-left: auto;
+  }
+  &--hidden {
+    top: -56px;
   }
 }
 

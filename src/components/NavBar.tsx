@@ -1,7 +1,7 @@
-import { navigate, Link } from "gatsby";
+import { SwipeableDrawer } from "@material-ui/core";
+import { Link, navigate } from "gatsby";
 import React from "react";
 import useScroll from "../hooks/useScroll";
-import { SwipeableDrawer } from "@material-ui/core";
 import "../scss/navbar.scss";
 import HamburgerMenu from "./HamburgerMenu";
 
@@ -14,7 +14,9 @@ interface Props {
 const NavBar: React.FC<Props> = ({ refs }) => {
   const location = typeof window !== "undefined" && window.location.pathname;
 
-  const [scrollPos, setScrollPos] = React.useState<number>(0);
+  const [scrollPos, setScrollPos] = React.useState<number | false>(
+    typeof window !== "undefined" && window.pageYOffset
+  );
   const [theme, setTheme] = React.useState<string | undefined>(
     typeof window !== "undefined" && localStorage.getItem("theme")
       ? (localStorage.getItem("theme") as string)
@@ -23,6 +25,7 @@ const NavBar: React.FC<Props> = ({ refs }) => {
   const [drawer, setDrawer] = React.useState<boolean>(false);
 
   const isMountedRef = React.useRef(false);
+  const navbar = React.useRef<HTMLElement | null>(null);
   let projectsRef: number;
   let contactRef: number;
 
@@ -53,8 +56,16 @@ const NavBar: React.FC<Props> = ({ refs }) => {
   React.useEffect(() => {
     isMountedRef.current = true;
 
-    const mountedListener = () => {
-      if (isMountedRef.current) setScrollPos(window.pageYOffset);
+    const scrollListener = () => {
+      if (isMountedRef.current)
+        setScrollPos((prevPos) => {
+          const currentPos = window.pageYOffset;
+          if (currentPos > prevPos)
+            navbar.current?.classList.add("navbar--hidden");
+          else navbar.current?.classList.remove("navbar--hidden");
+
+          return currentPos;
+        });
     };
 
     if (!refs) {
@@ -68,7 +79,7 @@ const NavBar: React.FC<Props> = ({ refs }) => {
     }
 
     if (location === "/") {
-      window.addEventListener("scroll", mountedListener);
+      window.addEventListener("scroll", scrollListener);
       if (refs) {
         localStorage.setItem(
           "projectsRef",
@@ -82,13 +93,13 @@ const NavBar: React.FC<Props> = ({ refs }) => {
     }
 
     return () => {
-      window.removeEventListener("scroll", mountedListener);
+      window.removeEventListener("scroll", scrollListener);
       isMountedRef.current = false;
     };
   }, []);
 
   return (
-    <nav className="navbar">
+    <>
       <SwipeableDrawer
         className="drawer"
         anchor="left"
@@ -109,60 +120,63 @@ const NavBar: React.FC<Props> = ({ refs }) => {
           </Link>
         </ul>
       </SwipeableDrawer>
-      <ul className="navlinks">
-        <HamburgerMenu handleClick={() => setDrawer(true)} />
-        <li className="navlinks__logo" onClick={() => scrollTo()}>
-          <img src={logo} alt="logo" />
-        </li>
-        <li
-          className={`navlinks__link navlinks__home ${
-            location === "/" &&
-            ((refs && scrollPos < refs["projects"]?.current?.offsetTop! - 70) ||
-              scrollPos === 0)
-              ? `navlinks__link--highlighted`
-              : ``
-          }`}
-          onClick={() => scrollTo()}
-        >
-          Home
-        </li>
-        <li
-          className={`navlinks__link ${
-            refs &&
-            scrollPos >= refs["projects"]?.current?.offsetTop! - 70 &&
-            scrollPos < refs["contact"]?.current?.offsetTop! - 70
-              ? `navlinks__link--highlighted`
-              : ``
-          }`}
-          onClick={() => scrollTo(refs && refs["projects"], projectsRef)}
-        >
-          Projects
-        </li>
-        <li
-          className={`navlinks__link ${
-            refs && scrollPos >= refs["contact"]?.current?.offsetTop! - 70
-              ? `navlinks__link--highlighted`
-              : ``
-          }`}
-          onClick={() => scrollTo(refs && refs["contact"], contactRef)}
-        >
-          Contact
-        </li>
-        <div className="navbar__switch-container">
-          <label className="switch">
-            <input
-              type="checkbox"
-              id="theme-toggle"
-              name="theme-toggle"
-              checked={theme === "light" ? true : false}
-              onChange={changeTheme}
-              aria-label="theme toggle"
-            />
-            <span className="slider round" />
-          </label>
-        </div>
-      </ul>
-    </nav>
+      <nav className="navbar" ref={navbar}>
+        <ul className="navlinks">
+          <HamburgerMenu handleClick={() => setDrawer(true)} />
+          <li className="navlinks__logo" onClick={() => scrollTo()}>
+            <img src={logo} alt="logo" />
+          </li>
+          <li
+            className={`navlinks__link navlinks__home ${
+              location === "/" &&
+              ((refs &&
+                scrollPos < refs["projects"]?.current?.offsetTop! - 70) ||
+                scrollPos === 0)
+                ? `navlinks__link--highlighted`
+                : ``
+            }`}
+            onClick={() => scrollTo()}
+          >
+            Home
+          </li>
+          <li
+            className={`navlinks__link ${
+              refs &&
+              scrollPos >= refs["projects"]?.current?.offsetTop! - 70 &&
+              scrollPos < refs["contact"]?.current?.offsetTop! - 70
+                ? `navlinks__link--highlighted`
+                : ``
+            }`}
+            onClick={() => scrollTo(refs && refs["projects"], projectsRef)}
+          >
+            Projects
+          </li>
+          <li
+            className={`navlinks__link ${
+              refs && scrollPos >= refs["contact"]?.current?.offsetTop! - 70
+                ? `navlinks__link--highlighted`
+                : ``
+            }`}
+            onClick={() => scrollTo(refs && refs["contact"], contactRef)}
+          >
+            Contact
+          </li>
+          <div className="navbar__switch-container">
+            <label className="switch">
+              <input
+                type="checkbox"
+                id="theme-toggle"
+                name="theme-toggle"
+                checked={theme === "light" ? true : false}
+                onChange={changeTheme}
+                aria-label="theme toggle"
+              />
+              <span className="slider round" />
+            </label>
+          </div>
+        </ul>
+      </nav>
+    </>
   );
 };
 

@@ -24,6 +24,7 @@
 .hamburger-menu {
   display: none;
   padding-right: 0.5em;
+  user-select: none;
   &__bar {
     width: 35px;
     height: 5px;
