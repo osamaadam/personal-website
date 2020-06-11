@@ -8,6 +8,7 @@
   &__list {
     display: flex;
     flex-direction: column;
+    list-style: none;
     a {
       color: var(--primaryColor);
       text-decoration: none;

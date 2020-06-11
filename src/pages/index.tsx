@@ -121,7 +121,6 @@ const Home: React.FC = () => {
   return (
     <>
       <Seo title="Osama Adam" />
-      <NavBar refs={refMap} />
       <Layout>
         <div className="home-container">
           <section className="home-container__brief" id="home">

@@ -19,7 +19,7 @@ interface Props {
   };
 }
 
-const projectTemplate: React.FC<Props> = ({ pageContext: { project } }) => {
+const ProjectTemplate: React.FC<Props> = ({ pageContext: { project } }) => {
   const img = useStaticImage(project.icon);
 
   return (
@@ -29,7 +29,6 @@ const projectTemplate: React.FC<Props> = ({ pageContext: { project } }) => {
         description={project.description}
         image={img?.childImageSharp.fluid.srcWebp}
       />
-      <NavBar />
       <Layout>
         <Showcase
           title={project.title}
@@ -43,4 +42,4 @@ const projectTemplate: React.FC<Props> = ({ pageContext: { project } }) => {
   );
 };
 
-export default projectTemplate;
+export default ProjectTemplate;

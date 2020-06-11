@@ -1,4 +1,4 @@
-const projects = require("./projects.json");
+const projects = require("./content/projects.json");
 
 exports.createPages = ({ actions }) => {
   const { createPage } = actions;

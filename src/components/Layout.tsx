@@ -1,10 +1,11 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Helmet } from "react-helmet";
 import "../scss/layout.scss";
-import GithubLink from "./GithubLink";
-import LinkedinLink from "./LinkedinLink";
+import Footer from "./Footer";
+import NavBar from "./NavBar";
+import SnackBar from "./SnackBar";
 
-const Layout = ({ children }: { children: JSX.Element }) => {
+const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="layout-container">
       <Helmet>
@@ -13,17 +14,10 @@ const Layout = ({ children }: { children: JSX.Element }) => {
           rel="stylesheet"
         />
       </Helmet>
+      <NavBar />
       <main>{children}</main>
-      <div className="snackbar-container" id="snackbar-container">
-        <div className="snackbar" id="snackbar" />
-      </div>
-      <footer className="footer">
-        <div className="social-links">
-          <GithubLink />
-          <LinkedinLink />
-        </div>
-        <p>Created by Osama Adam, {new Date().getFullYear()} &copy;</p>
-      </footer>
+      <SnackBar />
+      <Footer />
     </div>
   );
 };

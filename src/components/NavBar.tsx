@@ -6,13 +6,7 @@ import HamburgerMenu from "./HamburgerMenu";
 
 const logo = require("../assets/favicon.svg") as string;
 
-interface Props {
-  refs?: Refs;
-}
-
-const NavBar: React.FC<Props> = ({ refs }) => {
-  const location = typeof window !== "undefined" && window.location.pathname;
-
+const NavBar: React.FC = () => {
   const [scrollPos, setScrollPos] = React.useState<number | false>(
     typeof window !== "undefined" && window.pageYOffset
   );
@@ -25,8 +19,6 @@ const NavBar: React.FC<Props> = ({ refs }) => {
 
   const isMountedRef = React.useRef(false);
   const navbar = React.useRef<HTMLElement | null>(null);
-  let projectsRef: number;
-  let contactRef: number;
 
   const changeTheme = (event: any) => {
     setTheme(event.target.checked ? "light" : "dark");
@@ -54,29 +46,6 @@ const NavBar: React.FC<Props> = ({ refs }) => {
         });
     };
 
-    if (!refs) {
-      projectsRef =
-        JSON.parse(localStorage.getItem("projectsRef") as string) - 70;
-      contactRef =
-        JSON.parse(localStorage.getItem("contactRef") as string) - 70;
-    } else {
-      projectsRef = refs["projects"]?.current?.offsetTop! - 70;
-      contactRef = refs["contact"]?.current?.offsetTop! - 70;
-    }
-
-    if (location === "/") {
-      if (refs) {
-        localStorage.setItem(
-          "projectsRef",
-          JSON.stringify(refs["projects"]?.current?.offsetTop)
-        );
-        localStorage.setItem(
-          "contactRef",
-          JSON.stringify(refs["contact"]?.current?.offsetTop)
-        );
-      }
-    }
-
     window.addEventListener("scroll", scrollListener);
 
     return () => {
@@ -97,10 +66,6 @@ const NavBar: React.FC<Props> = ({ refs }) => {
     {
       path: "/#contact",
       name: "Contact"
-    },
-    {
-      path: "/blogs",
-      name: "Blog"
     }
   ];
 
@@ -125,8 +90,9 @@ const NavBar: React.FC<Props> = ({ refs }) => {
               to={directory.path}
               key={directory.path}
               data-nav={directory.name.toLowerCase()}
+              className="no-style-link drawer__item"
             >
-              <li className="drawer__item">{directory.name}</li>
+              <li>{directory.name}</li>
             </Link>
           ))}
         </ul>

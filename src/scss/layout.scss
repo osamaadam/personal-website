@@ -253,12 +253,12 @@ input:checked + .slider:before {
   justify-content: center;
   min-height: 10vh;
   background-color: var(--paperBackground);
-  margin-top: auto;
-  margin-bottom: 0;
+  margin: auto 0 0 0;
+  width: 100%;
 }
 
 .layout-container {
-  min-height: calc(100vh - 56px);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
