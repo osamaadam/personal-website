@@ -97,6 +97,10 @@ const NavBar: React.FC<Props> = ({ refs }) => {
     {
       path: "/#contact",
       name: "Contact"
+    },
+    {
+      path: "/blogs",
+      name: "Blog"
     }
   ];
 
