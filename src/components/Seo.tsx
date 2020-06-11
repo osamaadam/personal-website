@@ -7,6 +7,7 @@ interface Props {
   title: string;
   image?: string;
   description?: string;
+  cardType?: `summary` | `summary_large_image`;
   meta?: {
     name?: string;
     content?: string;
@@ -19,6 +20,7 @@ const Seo: React.FC<Props> = ({
   title = "Osama Adam",
   image,
   description,
+  cardType = `summary`,
   meta = [{}]
 }) => {
   const { site, siteImage } = useStaticQuery(graphql`
@@ -86,7 +88,7 @@ const Seo: React.FC<Props> = ({
         },
         {
           name: `twitter:card`,
-          content: `summary`
+          content: cardType
         },
         {
           name: `twitter:creator`,

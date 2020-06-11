@@ -248,6 +248,7 @@ input:checked + .slider:before {
 .footer {
   padding: 1em;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 10vh;
@@ -260,4 +261,24 @@ input:checked + .slider:before {
   min-height: calc(100vh - 56px);
   display: flex;
   flex-direction: column;
+}
+
+.social-links {
+  padding: 0.5em;
+  display: flex;
+  justify-content: center;
+  a {
+    margin: 0 0.5em;
+  }
+  img {
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: ease-out;
+    border-radius: 50%;
+    user-select: none;
+
+    &:hover {
+      background-color: var(--highlightColor);
+    }
+  }
 }

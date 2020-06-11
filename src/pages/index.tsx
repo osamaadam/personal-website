@@ -1,15 +1,14 @@
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import React from "react";
-import * as github from "../assets/github.svg";
-import * as linkedin from "../assets/linkedin.svg";
 import ContactForm from "../components/ContactForm";
+import GithubLink from "../components/GithubLink";
 import Layout from "../components/Layout";
+import LinkedinLink from "../components/LinkedinLink";
 import NavBar from "../components/NavBar";
 import ProjectIcon from "../components/ProjectIcon";
 import Seo from "../components/Seo";
 import SkillsColumn from "../components/SkillsColumn";
-import SocialLink from "../components/SocialLink";
 import "../scss/index.scss";
 
 const Home: React.FC = () => {
@@ -98,16 +97,8 @@ const Home: React.FC = () => {
                   <h1>Osama Adam</h1>
                   <p>Software Developer</p>
                   <div className="social-links">
-                    <SocialLink
-                      title="GitHub Profile"
-                      url="https://github.com/osamaadam"
-                      icon={github}
-                    />
-                    <SocialLink
-                      title="Linkedin Profile"
-                      url="https://www.linkedin.com/in/osamaadam98/"
-                      icon={linkedin}
-                    />
+                    <GithubLink />
+                    <LinkedinLink />
                   </div>
                 </div>
               </div>

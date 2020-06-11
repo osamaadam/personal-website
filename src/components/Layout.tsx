@@ -1,6 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import "../scss/layout.scss";
+import GithubLink from "./GithubLink";
+import LinkedinLink from "./LinkedinLink";
 
 const Layout = ({ children }: { children: JSX.Element }) => {
   return (
@@ -16,7 +18,11 @@ const Layout = ({ children }: { children: JSX.Element }) => {
         <div className="snackbar" id="snackbar" />
       </div>
       <footer className="footer">
-        Created by Osama Adam, {new Date().getFullYear()} ©
+        <div className="social-links">
+          <GithubLink />
+          <LinkedinLink />
+        </div>
+        <p>Created by Osama Adam, {new Date().getFullYear()} &copy;</p>
       </footer>
     </div>
   );
