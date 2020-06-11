@@ -6,10 +6,8 @@ module.exports = {
   siteMetadata: {
     title: `Osama Adam's Portfolio`,
     description:
-      "Portfolio website for full stack web developer, Osama Adam. " +
-      "Osama Adam is experienced with React, Gatsby, Node, Express, and MongoDB. " +
-      "Osama Adam also has some experience contributing in open source. " +
-      "Osama Adam is a web developer in Egypt.",
+      "Portfolio website for web developer, Osama Adam. " +
+      "Browse to see Osama Adam's projects and to contact him.",
     author: `@osamaadam98`,
     siteUrl: `https://osamaadam.tech`
   },

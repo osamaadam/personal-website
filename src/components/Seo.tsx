@@ -2,12 +2,11 @@ import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import { Helmet } from "react-helmet";
 
-const siteImage = require("../assets/personal-website.png") as string;
-
 interface Props {
-  description?: string;
   lang?: string;
   title: string;
+  image?: string;
+  description?: string;
   meta?: {
     name?: string;
     content?: string;
@@ -16,12 +15,13 @@ interface Props {
 }
 
 const Seo: React.FC<Props> = ({
-  description,
   lang = "en-US",
   title = "Osama Adam",
+  image,
+  description,
   meta = [{}]
 }) => {
-  const { site } = useStaticQuery(graphql`
+  const { site, siteImage } = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -30,10 +30,18 @@ const Seo: React.FC<Props> = ({
           author
         }
       }
+      siteImage: file(relativePath: { eq: "personal-website.png" }) {
+        childImageSharp {
+          fixed(width: 800) {
+            srcWebp
+          }
+        }
+      }
     }
   `);
 
   const metaDescription = description || site.siteMetadata.description;
+  const metaImage = image || siteImage.childImageSharp.fixed.srcWebp;
 
   return (
     <Helmet
@@ -46,6 +54,10 @@ const Seo: React.FC<Props> = ({
           content: metaDescription
         },
         {
+          name: `keywords`,
+          content: `portfolio, web developer, Egypt, React, Node, frontend, backend, web`
+        },
+        {
           property: `og:title`,
           content: title
         },
@@ -55,7 +67,7 @@ const Seo: React.FC<Props> = ({
         },
         {
           name: `og:image`,
-          content: siteImage
+          content: metaImage
         },
         {
           property: `og:type`,
@@ -76,6 +88,10 @@ const Seo: React.FC<Props> = ({
         {
           name: `twitter:description`,
           content: metaDescription
+        },
+        {
+          name: `twitter:image`,
+          content: metaImage
         }
       ]}
     />

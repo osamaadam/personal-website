@@ -7,14 +7,14 @@ const useStaticImage = (fileName: Files) => {
     query {
       personal: file(relativePath: { eq: "personal-website.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       indie: file(relativePath: { eq: "indiePhotographers.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

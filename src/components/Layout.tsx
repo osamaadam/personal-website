@@ -2,9 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import "../scss/layout.scss";
 
-let repeatingText = "";
-for (let i = 0; i < 500; i++) repeatingText += "Osama Adam ";
-
 const Layout = ({ children }: { children: JSX.Element }) => {
   return (
     <div className="layout-container">

@@ -24,7 +24,11 @@ const projectTemplate: React.FC<Props> = ({ pageContext: { project } }) => {
 
   return (
     <>
-      <Seo title={project.title} description={project.description} />
+      <Seo
+        title={project.title}
+        description={project.description}
+        image={img?.childImageSharp.fluid.srcWebp}
+      />
       <NavBar />
       <Layout>
         <Showcase

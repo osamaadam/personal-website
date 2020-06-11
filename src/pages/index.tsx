@@ -17,49 +17,49 @@ const Home: React.FC = () => {
     query {
       profile: file(relativePath: { eq: "profile.jpg" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       indie: file(relativePath: { eq: "indiePhotographers.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       personalIcon: file(relativePath: { eq: "personal-website.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       unixShellIcon: file(relativePath: { eq: "unix-shell/cowsay.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       lyricsGeniusIcon: file(relativePath: { eq: "lyricsGenius/home.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       AESChipionsIcon: file(relativePath: { eq: "AESChipions/github.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       todoNumeroUnoIcon: file(relativePath: { eq: "todoNumeroUno/home.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -68,7 +68,7 @@ const Home: React.FC = () => {
         relativePath: { eq: "cpu-schedule/cpu-schedule.png" }
       ) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
