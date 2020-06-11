@@ -19,6 +19,14 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve("./src/templates/blog-template.tsx")
+        }
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Osama Adam's Portfolio`,
@@ -35,14 +43,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/assets`
-      }
-    },
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        defaultLayouts: {
-          default: require.resolve("./src/templates/blog-template.tsx")
-        }
       }
     },
     `gatsby-plugin-react-helmet`,

@@ -37,8 +37,6 @@ const BlogLayout: React.FC<Props> = (props) => {
     }))
   ];
 
-  console.log(props);
-
   return (
     <>
       <Seo title={frontmatter.title} meta={[...metadata, ...profile]} />
