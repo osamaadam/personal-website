@@ -28,6 +28,7 @@ const Seo: React.FC<Props> = ({
           title
           description
           author
+          siteUrl
         }
       }
       siteImage: file(relativePath: { eq: "personal-website.png" }) {
@@ -41,7 +42,9 @@ const Seo: React.FC<Props> = ({
   `);
 
   const metaDescription = description || site.siteMetadata.description;
-  const metaImage = image || siteImage.childImageSharp.fixed.srcWebp;
+  const metaImage =
+    site.siteMetadata.siteUrl +
+    (image || siteImage.childImageSharp.fixed.srcWebp);
 
   return (
     <Helmet
@@ -58,6 +61,10 @@ const Seo: React.FC<Props> = ({
           content: `portfolio, web developer, Egypt, React, Node, frontend, backend, web`
         },
         {
+          property: `og:url`,
+          content: site.siteMetadata.siteUrl
+        },
+        {
           property: `og:title`,
           content: title
         },
@@ -72,6 +79,10 @@ const Seo: React.FC<Props> = ({
         {
           property: `og:type`,
           content: `website`
+        },
+        {
+          property: `fb:app_id`,
+          content: `268071231205307`
         },
         {
           name: `twitter:card`,
