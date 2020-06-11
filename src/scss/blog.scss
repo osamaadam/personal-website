@@ -1,11 +1,17 @@
 @import "layout.scss";
 
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+  padding: 1em;
+}
+
 .blog-card {
-  background-color: var(--paperBackground);
-  border-radius: 1em;
-  margin: 1em auto;
-  padding: 1.5em;
-  min-width: 280px;
-  box-shadow: 0 6px 6px -6px black;
+  flex: 1;
+  padding: 1em;
+  width: 100%;
   max-width: 75em;
 }

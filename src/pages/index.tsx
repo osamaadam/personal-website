@@ -5,7 +5,6 @@ import ContactForm from "../components/ContactForm";
 import GithubLink from "../components/GithubLink";
 import Layout from "../components/Layout";
 import LinkedinLink from "../components/LinkedinLink";
-import NavBar from "../components/NavBar";
 import ProjectIcon from "../components/ProjectIcon";
 import Seo from "../components/Seo";
 import SkillsColumn from "../components/SkillsColumn";
