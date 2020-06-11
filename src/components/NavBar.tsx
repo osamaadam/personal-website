@@ -85,6 +85,21 @@ const NavBar: React.FC<Props> = ({ refs }) => {
     };
   }, []);
 
+  const directories = [
+    {
+      path: "/#",
+      name: "Home"
+    },
+    {
+      path: "/#projects",
+      name: "Projects"
+    },
+    {
+      path: "/#contact",
+      name: "Contact"
+    }
+  ];
+
   return (
     <>
       <SwipeableDrawer
@@ -101,63 +116,35 @@ const NavBar: React.FC<Props> = ({ refs }) => {
               <img src={logo} alt="logo" />
             </li>
           </Link>
-          <Link to="/#">
-            <li className="drawer__item">Home</li>
-          </Link>
-          <Link to="/#projects">
-            <li className="drawer__item">Projects</li>
-          </Link>
-          <Link to="/#contact">
-            <li className="drawer__item">Contact</li>
-          </Link>
+          {directories.map((directory) => (
+            <Link
+              to={directory.path}
+              key={directory.path}
+              data-nav={directory.name.toLowerCase()}
+            >
+              <li className="drawer__item">{directory.name}</li>
+            </Link>
+          ))}
         </ul>
       </SwipeableDrawer>
       <nav className="navbar" ref={navbar}>
-        <ul className="navlinks">
+        <ul className="navlinks" id="navbar-links">
           <HamburgerMenu handleClick={() => setOpenDrawer(true)} />
           <Link to="/#" className="no-style-link">
             <li className="navlinks__logo">
               <img src={logo} alt="logo" />
             </li>
           </Link>
-          <Link to="/#" className="no-style-link">
-            <li
-              className={`navlinks__link navlinks__home ${
-                location === "/" &&
-                ((refs &&
-                  scrollPos < refs["projects"]?.current?.offsetTop! - 70) ||
-                  scrollPos === 0)
-                  ? `navlinks__link--highlighted`
-                  : ``
-              }`}
+          {directories.map((directory) => (
+            <Link
+              to={directory.path}
+              className="no-style-link navlinks__link"
+              data-nav={directory.name.toLowerCase()}
+              key={directory.path}
             >
-              Home
-            </li>
-          </Link>
-          <Link to="/#projects" className="no-style-link">
-            <li
-              className={`navlinks__link ${
-                refs &&
-                scrollPos >= refs["projects"]?.current?.offsetTop! - 70 &&
-                scrollPos < refs["contact"]?.current?.offsetTop! - 70
-                  ? `navlinks__link--highlighted`
-                  : ``
-              }`}
-            >
-              Projects
-            </li>
-          </Link>
-          <Link to="/#contact" className="no-style-link">
-            <li
-              className={`navlinks__link ${
-                refs && scrollPos >= refs["contact"]?.current?.offsetTop! - 70
-                  ? `navlinks__link--highlighted`
-                  : ``
-              }`}
-            >
-              Contact
-            </li>
-          </Link>
+              <li>{directory.name}</li>
+            </Link>
+          ))}
           <div className="navbar__switch-container">
             <label className="switch">
               <input

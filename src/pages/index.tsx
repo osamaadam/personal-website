@@ -79,13 +79,52 @@ const Home: React.FC = () => {
   const contact = React.useRef(null);
   const refMap: Refs = { projects, contact };
 
+  React.useEffect(() => {
+    const sections = document.querySelectorAll("section");
+    const navbarLinks = document.querySelector("#navbar-links");
+    const length = navbarLinks?.children.length || 0;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const entryId = entry.target.id;
+          if (entry.isIntersecting) {
+            for (let i = 0; i < length; i++) {
+              if (navbarLinks?.children[i].dataset.nav === entryId)
+                navbarLinks?.children[i].classList.add(
+                  "navlinks__link--highlighted"
+                );
+              else if (
+                navbarLinks?.children[i].classList.contains(
+                  "navlinks__link--highlighted"
+                )
+              )
+                navbarLinks?.children[i].classList.remove(
+                  "navlinks__link--highlighted"
+                );
+            }
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <>
       <Seo title="Osama Adam" />
       <NavBar refs={refMap} />
       <Layout>
         <div className="home-container">
-          <div className="home-container__brief">
+          <section className="home-container__brief" id="home">
             <div className="home-profile-paper card">
               <div className="home-info-area">
                 <Img
@@ -162,8 +201,12 @@ const Home: React.FC = () => {
                 </ul>
               </div>
             </div>
-          </div>
-          <div className="card projects" ref={refMap["projects"]} id="projects">
+          </section>
+          <section
+            className="card projects"
+            ref={refMap["projects"]}
+            id="projects"
+          >
             <h1>Projects</h1>
             <ul className="projects__list">
               <ProjectIcon
@@ -202,7 +245,7 @@ const Home: React.FC = () => {
                 icon={data.todoNumeroUnoIcon.childImageSharp.fluid}
               />
             </ul>
-          </div>
+          </section>
           <ContactForm reference={contact} />
         </div>
       </Layout>

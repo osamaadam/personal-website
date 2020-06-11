@@ -29,7 +29,7 @@ const ContactForm: React.FC<Props> = ({ reference }) => {
   };
 
   return (
-    <div className="card contact" ref={reference} id="contact">
+    <section className="card contact" ref={reference} id="contact">
       <h1 className="contact__title">Contact</h1>
       <form
         action={process.env.EMAIL_API}
@@ -86,7 +86,7 @@ const ContactForm: React.FC<Props> = ({ reference }) => {
           </button>
         </div>
       </form>
-    </div>
+    </section>
   );
 };
 
