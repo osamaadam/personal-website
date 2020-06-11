@@ -66,7 +66,7 @@ const Seo: React.FC<Props> = ({
           content: metaDescription
         },
         {
-          name: `og:image`,
+          property: `og:image`,
           content: metaImage
         },
         {
