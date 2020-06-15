@@ -19,14 +19,6 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        defaultLayouts: {
-          default: require.resolve("./src/templates/blog-template.tsx")
-        }
-      }
-    },
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Osama Adam's Portfolio`,
