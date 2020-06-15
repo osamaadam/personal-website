@@ -2,7 +2,6 @@ import React from "react";
 import GithubLink from "./GithubLink";
 import LinkedinLink from "./LinkedinLink";
 
-
 const Footer = () => (
   <footer className="footer">
     <div className="social-links">

@@ -74,10 +74,6 @@ const Home: React.FC = () => {
     }
   `);
 
-  const projects = React.useRef(null);
-  const contact = React.useRef(null);
-  const refMap: Refs = { projects, contact };
-
   React.useEffect(() => {
     const sections = document.querySelectorAll("section");
     const navbarLinks = document.querySelector("#navbar-links");
@@ -132,7 +128,7 @@ const Home: React.FC = () => {
                 />
                 <div className="home-info">
                   <h1>Osama Adam</h1>
-                  <p>Software Developer</p>
+                  <p>Web Developer</p>
                   <div className="social-links">
                     <GithubLink />
                     <LinkedinLink />
@@ -156,17 +152,23 @@ const Home: React.FC = () => {
               <div className="card">
                 <h1>Skills</h1>
                 <ul className="brief__list">
-                  <li>Familiarity with Progressive Web Apps (PWAs)</li>
-                  <p>
-                    This one isn't though because it'd be an unnecessary burden.
-                    An example project is in the showcase!
-                  </p>
-                  <li>Experience with the MERN stack</li>
-                  <p>
-                    MongoDB? Express? React? Node? I've got all bases covered.
-                  </p>
-                  <li>Git magician</li>
-                  <p>99% guarantee of not ruining the git history.</p>
+                  <li>
+                    <h3>Familiarity with Progressive Web Apps (PWAs)</h3>
+                    <p>
+                      This one isn't though because it'd be an unnecessary
+                      burden. An example project is in the showcase!
+                    </p>
+                  </li>
+                  <li>
+                    <h3>Experience with the MERN stack</h3>
+                    <p>
+                      MongoDB? Express? React? Node? I've got all bases covered.
+                    </p>
+                  </li>
+                  <li>
+                    <h3>Git magician</h3>
+                    <p>99% guarantee of not ruining the git history.</p>
+                  </li>
                 </ul>
               </div>
               <div className="card">
@@ -174,7 +176,7 @@ const Home: React.FC = () => {
                 <ul className="stack">
                   <SkillsColumn
                     columnTitle="frontend"
-                    highlighted={["TypeScript", "SCSS"]}
+                    highlighted={["React", "SCSS"]}
                     normal={["HTML"]}
                   />
                   <SkillsColumn
@@ -182,14 +184,14 @@ const Home: React.FC = () => {
                     highlighted={["Node", "MongoDB"]}
                   />
                   <SkillsColumn
-                    columnTitle="tech"
-                    highlighted={["React", "Express"]}
-                    normal={["Mongoose", "Bootstrap"]}
+                    columnTitle="frameworks"
+                    highlighted={["Express", "Gatsby", "Mongoose"]}
+                    normal={["Bootstrap"]}
                   />
                   <SkillsColumn
                     columnTitle="tools"
-                    highlighted={["Git", "VSCode", "NPM/Yarn"]}
-                    normal={["Heroku"]}
+                    highlighted={["Typescript", "Git", "NPM/Yarn"]}
+                    normal={["Docker", "Heroku"]}
                   />
                   <SkillsColumn
                     columnTitle="additional languages"
@@ -200,11 +202,7 @@ const Home: React.FC = () => {
               </div>
             </div>
           </section>
-          <section
-            className="card projects"
-            ref={refMap["projects"]}
-            id="projects"
-          >
+          <section className="card projects" id="projects">
             <h1>Projects</h1>
             <ul className="projects__list">
               <ProjectIcon
@@ -244,7 +242,7 @@ const Home: React.FC = () => {
               />
             </ul>
           </section>
-          <ContactForm reference={contact} />
+          <ContactForm />
         </div>
       </Layout>
     </>

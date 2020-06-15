@@ -28,7 +28,7 @@
   },
   {
     "title": "Personal Website",
-    "description": "This is the Website you're currently on. It was created using Gatsby and is purely a static website. You may think the design is minimal because I got lazy and I'm not a great web designer. And you'd be partially correct. But, I got better reasoning behind the minimal design. The website is built with speed and performance in mind. The project is stylized purely using SCSS. No external UI libraries were used.",
+    "description": "This is the Website you're currently on. It was created using Gatsby and is purely a static website. You may think the design is minimal because I got lazy and I'm not a great web designer. And you'd be partially correct. But, I got better reasoning behind the minimal design, the website is built with speed and performance in mind. The project is stylized purely using SCSS. No external UI libraries were used (other than the drawer which is imported from material-ui).",
     "repository": "https://github.com/osamaadam/personal-website",
     "url": "https://osamaadam.tech",
     "icon": "personal-website.png",
@@ -36,7 +36,7 @@
   },
   {
     "title": "todoNumeroUno",
-    "description": "The magnum opus, the chef d'oeuvre, the masterpiece, my first ever todo list. Sadly this one isn't hosted. If only the world knew what I was withholding! So yeah, nothing special about this one, it's a todolist built in React with the worst backend known to mankind using Node and Mongodb.",
+    "description": "The magnum opus, the chef d'oeuvre, the masterpiece, my first ever todo list. Of course I was going to show off my first project ever. This bad boy is featuring React, and Bootstrap for the frontend, Node, and MongoDB for the backend. The quality is definately questionable but it's nice to reflect on this and think about how much better things are now.",
     "repository": "https://github.com/osamaadam/todoNumeroUno",
     "path": "todo-numero-uno"
   },

@@ -2,11 +2,7 @@ import React from "react";
 import useSnackbar from "../hooks/useSnackbar";
 import "../scss/contact-form.scss";
 
-interface Props {
-  reference: React.RefObject<HTMLDivElement>;
-}
-
-const ContactForm: React.FC<Props> = ({ reference }) => {
+const ContactForm: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.target;
@@ -29,7 +25,7 @@ const ContactForm: React.FC<Props> = ({ reference }) => {
   };
 
   return (
-    <section className="card contact" ref={reference} id="contact">
+    <section className="card contact" id="contact">
       <h1 className="contact__title">Contact</h1>
       <form
         action={process.env.EMAIL_API}
