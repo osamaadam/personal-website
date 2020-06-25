@@ -71,6 +71,13 @@ const Home: React.FC = () => {
           }
         }
       }
+      angularTodo: file(relativePath: { eq: "angular-todo.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1200) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `);
 
@@ -214,6 +221,11 @@ const Home: React.FC = () => {
                 title="Personal Website"
                 pathname="/projects/personal-website"
                 icon={data.personalIcon.childImageSharp.fluid}
+              />
+              <ProjectIcon
+                title="Angular Todo"
+                pathname="/projects/angular-todo"
+                icon={data.angularTodo.childImageSharp.fluid}
               />
               <ProjectIcon
                 title="CPU Schedule"

@@ -8,6 +8,13 @@
     "path": "indie-photographers"
   },
   {
+    "title": "Angular Todo",
+    "description": "Angular Todo is a simple todo list application built using Angular. It has a Node backend with a Mongo database, deployed on Heroku as a Docker image. Check the README to know more.",
+    "repository": "https://github.com/osamaadam/angular-todo",
+    "url": "https://ng-do.herokuapp.com",
+    "path": "angular-todo"
+  },
+  {
     "title": "AESChipions",
     "description": "AESChipions is a team effort between myself and Mohamed Nour. It was the final project of Chipions; which is a student program for digital design engineering. The project is basically an AES encryption system (counter mode) written entirely in Verilog.",
     "repository": "https://github.com/mohamednour98/AESchipions",
