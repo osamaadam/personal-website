@@ -9,6 +9,9 @@ import ProjectIcon from "../components/ProjectIcon";
 import Seo from "../components/Seo";
 import SkillsColumn from "../components/SkillsColumn";
 import "../scss/index.scss";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
+
+const GITHUB_PROFILE = "https://github.com/osamaadam";
 
 const Home: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -128,11 +131,18 @@ const Home: React.FC = () => {
           <section className="home-container__brief" id="home">
             <div className="home-profile-paper card">
               <div className="home-info-area">
-                <Img
-                  fluid={data.profile.childImageSharp.fluid}
-                  alt="Osama Adam"
-                  className="profile-picture"
-                />
+                <OutboundLink
+                  href={GITHUB_PROFILE}
+                  title="Github profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Img
+                    fluid={data.profile.childImageSharp.fluid}
+                    alt="Osama Adam"
+                    className="profile-picture"
+                  />
+                </OutboundLink>
                 <div className="home-info">
                   <h1>Osama Adam</h1>
                   <p>Web Developer</p>

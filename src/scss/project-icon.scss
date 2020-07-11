@@ -8,11 +8,13 @@
 
   &__img {
     grid-area: 1 / 1 / 2 / 2;
+    transition: opacity 400ms ease-out;
   }
   &__text {
     grid-area: 1 / 1 / 2 / 2;
     margin: auto;
     opacity: 0;
+    transition: opacity 400ms ease-out;
   }
 
   &:hover {
