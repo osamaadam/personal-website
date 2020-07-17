@@ -2,12 +2,7 @@
 
 This is a Gatsby app I'm working on to showcase my abilities and achievements.
 You may check the deployed website at
-<a
-href="https://osamaadam.tech"
-title="Osama Adam"
-target="_blank">
-https://osamaadam.tech
-</a>.
+[osamaadam.tech](https://osamaadam.tech).
 
 ## Goals
 

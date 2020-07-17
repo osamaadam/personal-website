@@ -56,7 +56,7 @@ const NavBar: React.FC = () => {
 
   const directories = [
     {
-      path: "/#",
+      path: "/",
       name: "Home"
     },
     {
@@ -100,7 +100,7 @@ const NavBar: React.FC = () => {
       <nav className="navbar" ref={navbar}>
         <ul className="navlinks" id="navbar-links">
           <HamburgerMenu handleClick={() => setOpenDrawer(true)} />
-          <Link to="/#" className="no-style-link">
+          <Link to="/" className="no-style-link">
             <li className="navlinks__logo">
               <img src={logo} alt="logo" />
             </li>
