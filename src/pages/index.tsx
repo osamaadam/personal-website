@@ -95,6 +95,7 @@ const Home: React.FC = () => {
           const entryId = entry.target.id;
           if (entry.isIntersecting) {
             for (let i = 0; i < length; i++) {
+              // @ts-ignore
               if (navbarLinks?.children[i].dataset.nav === entryId)
                 navbarLinks?.children[i].classList.add(
                   "navlinks__link--highlighted"
