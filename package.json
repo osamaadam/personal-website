@@ -25,6 +25,8 @@
     "typescript": "^3.9.5"
   },
   "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
     "prettier": "^2.0.5"
   },
   "keywords": [
@@ -32,12 +34,14 @@
   ],
   "license": "MIT",
   "scripts": {
+    "prebuild": "gulp",
     "build": "gatsby build",
     "develop": "gatsby develop -H 0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "yarn run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "gulp": "gulp"
   },
   "repository": {
     "type": "git",
