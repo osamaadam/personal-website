@@ -28,6 +28,9 @@ const NavBar: React.FC = () => {
     if (theme) {
       typeof window !== "undefined" && localStorage.setItem("theme", theme);
       document.documentElement.setAttribute("data-theme", theme);
+      document.dispatchEvent(
+        new CustomEvent("theme-change", { detail: theme })
+      );
     }
   }, [theme]);
 

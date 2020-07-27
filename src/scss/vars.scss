@@ -20,17 +20,6 @@ html[data-theme="light"] {
   --highlightColorComplement: #f67dfc;
 }
 
-html[data-theme="dark"] {
-  .social-links {
-    img {
-      filter: invert(1);
-      &:hover {
-        background-color: var(--highlightColorComplement);
-      }
-    }
-  }
-}
-
 $maxWidth: 800px;
 
 $regular: 400;
