@@ -9,7 +9,7 @@ interface Props {
 
 const SocialLink: React.FC<Props> = ({ title, url, icon }) => {
   const [theme, setTheme] = React.useState(
-    document.documentElement.dataset.theme
+    typeof window !== "undefined" && document.documentElement.dataset.theme
   );
 
   const changeTheme = (event: any) => setTheme(event.detail);
