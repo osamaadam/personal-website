@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-type Files = "indiePhotographers.png" | "personal-website.png";
+type Files = "indiePhotographers.png" | "personal-website.png" | "npm.png";
 
 const useStaticImage = (fileName: Files) => {
   const data = useStaticQuery(graphql`
@@ -19,16 +19,25 @@ const useStaticImage = (fileName: Files) => {
           }
         }
       }
+      npm: file(relativePath: { eq: "npm.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1200) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `);
 
   switch (fileName) {
-    case "indiePhotographers.png": {
+    case "indiePhotographers.png":
       return data.indie;
-    }
-    case "personal-website.png": {
+    case "personal-website.png":
       return data.personal;
-    }
+    case "npm.png":
+      return data.npm;
+    default:
+      return null;
   }
 };
 

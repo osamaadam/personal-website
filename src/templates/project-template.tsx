@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../components/Layout";
-import NavBar from "../components/NavBar";
 import Seo from "../components/Seo";
 import Showcase from "../components/Showcase";
 import useStaticImage from "../hooks/useStaticImage";

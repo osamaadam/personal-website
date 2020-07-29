@@ -1,5 +1,13 @@
 [
   {
+    "title": "react-easy-facebook",
+    "description": "A React hook to facilitate working with Facebook's OAuth while providing a stellar Typescript implementation for for code hinting and specificity.",
+    "repository": "https://github.com/osamaadam/react-easy-facebook",
+    "url": "https://www.npmjs.com/package/react-easy-facebook",
+    "icon": "npm.png",
+    "path": "react-easy-facebook"
+  },
+  {
     "title": "Indie Photographers",
     "description": "Indie Photographers is a hub for well, indie photographers. The app is a PWA created through create-react-app. The frontend is a React app with Material-UI on top. The backend is mostly a node RESTful API with Express on top and MongoDB for a database. It's important to mention that this is a concept app not an actual commercial product. Nevertheless, this is a perfect showcase and reflection of my skills at this point in my career.",
     "repository": "https://github.com/osamaadam/indie-photographers",
