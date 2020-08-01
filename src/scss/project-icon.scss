@@ -1,15 +1,18 @@
 .project-icon {
   display: grid;
   align-items: center;
+  justify-content: center;
   user-select: none;
   cursor: pointer;
 
   &__img {
-    grid-area: 1 / 1 / 2 / 2;
+    grid-area: 1 / 1 / -1 / -1;
     transition: opacity 400ms ease-out;
+    width: 250px;
   }
+
   &__text {
-    grid-area: 1 / 1 / 2 / 2;
+    grid-area: 1 / 1 / -1 / -1;
     margin: auto;
     opacity: 0;
     transition: opacity 400ms ease-out;

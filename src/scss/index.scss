@@ -114,16 +114,9 @@
   }
   &__list {
     list-style: none;
-    width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3em;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 300px));
+    gap: 2em;
     justify-content: center;
-  }
-}
-
-@media (max-width: 800px) {
-  .projects__list {
-    grid-template-columns: repeat(auto-fit, minmax(min-content, 300px));
   }
 }
