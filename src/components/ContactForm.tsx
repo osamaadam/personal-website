@@ -5,8 +5,8 @@ import "../scss/contact-form.scss";
 const ContactForm: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const form = event.target;
-    const data = new FormData(form as HTMLFormElement);
+    const form = event.target as HTMLFormElement;
+    const data = new FormData(form);
 
     try {
       await fetch(process.env.GATSBY_EMAIL_API!, {
