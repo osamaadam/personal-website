@@ -9,8 +9,9 @@ exports.createPages = async ({ actions, graphql }) => {
     query {
       allMarkdownRemark {
         nodes {
+          id
           frontmatter {
-            slug
+            title
           }
         }
       }
@@ -18,10 +19,14 @@ exports.createPages = async ({ actions, graphql }) => {
   `);
 
   blogQuery.data.allMarkdownRemark.nodes.forEach((node) => {
+    const { title } = node.frontmatter;
+    const { id } = node;
+    const slug = title.trim().toLowerCase().replace(/\s/, "-");
+
     createPage({
-      path: node.frontmatter.slug,
+      path: `blog/${slug}`,
       component: blogTemplate,
-      context: { slug: node.frontmatter.slug }
+      context: { id }
     });
   });
 

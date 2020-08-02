@@ -13,7 +13,6 @@ interface Props {
         author: string;
         title: string;
         date: string;
-        slug: string;
       };
     };
   };
@@ -44,13 +43,12 @@ const BlogTemplate: React.FC<Props> = ({ data }) => {
 export default BlogTemplate;
 
 export const pageQuery = graphql`
-  query($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+  query($id: String!) {
+    markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
         title
         date(fromNow: true)
-        slug
         author
       }
     }
