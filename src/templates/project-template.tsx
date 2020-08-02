@@ -2,14 +2,14 @@ import React from "react";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import Showcase from "../components/Showcase";
-import useStaticImage from "../hooks/useStaticImage";
+import useStaticImage, { Files } from "../hooks/useStaticImage";
 
 type Project = {
   title: string;
   description: string;
   repository: string;
   url?: string;
-  icon?: any;
+  icon?: Files;
 };
 
 interface Props {
@@ -26,7 +26,7 @@ const ProjectTemplate: React.FC<Props> = ({ pageContext: { project } }) => {
       <Seo
         title={project.title}
         description={project.description}
-        image={img?.childImageSharp.fluid.srcWebp}
+        image={img?.childImageSharp.fluid.src}
       />
       <Layout>
         <Showcase

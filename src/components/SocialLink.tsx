@@ -1,10 +1,10 @@
-import React from "react";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
+import React from "react";
 
 interface Props {
   title: string;
   url: string;
-  icon: string | typeof import("*.svg");
+  icon: string;
 }
 
 const SocialLink: React.FC<Props> = ({ title, url, icon }) => {

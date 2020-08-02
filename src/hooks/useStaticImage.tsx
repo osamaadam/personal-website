@@ -1,9 +1,19 @@
 import { graphql, useStaticQuery } from "gatsby";
+import { FluidObject } from "gatsby-image";
 
-type Files = "indiePhotographers.png" | "personal-website.png" | "npm.png";
+export type Files =
+  | "indiePhotographers.png"
+  | "personal-website.png"
+  | "npm.png";
 
-const useStaticImage = (fileName: Files) => {
-  const data = useStaticQuery(graphql`
+const useStaticImage = (fileName?: Files) => {
+  const data = useStaticQuery<{
+    [key: string]: {
+      childImageSharp: {
+        fluid: FluidObject;
+      };
+    };
+  }>(graphql`
     query {
       personal: file(relativePath: { eq: "personal-website.png" }) {
         childImageSharp {

@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
+import Img, { GatsbyImageProps } from "gatsby-image";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 import React from "react";
 import ContactForm from "../components/ContactForm";
 import GithubLink from "../components/GithubLink";
@@ -9,14 +10,17 @@ import ProjectIcon from "../components/ProjectIcon";
 import Seo from "../components/Seo";
 import SkillsColumn from "../components/SkillsColumn";
 import "../scss/index.scss";
-import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 const GITHUB_PROFILE = "https://github.com/osamaadam";
 
 const Home: React.FC = () => {
-  const data = useStaticQuery(graphql`
+  const data = useStaticQuery<{
+    [key: string]: {
+      childImageSharp: GatsbyImageProps;
+    };
+  }>(graphql`
     query {
-      profile: file(relativePath: { eq: "profile.jpg" }) {
+      profile: file(relativePath: { eq: "profile.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid_withWebp
@@ -153,7 +157,7 @@ const Home: React.FC = () => {
                 </OutboundLink>
                 <div className="home-info">
                   <h1>Osama Adam</h1>
-                  <p>Web Developer</p>
+                  <p>Software Developer</p>
                   <div className="social-links">
                     <GithubLink />
                     <LinkedinLink />
@@ -221,7 +225,7 @@ const Home: React.FC = () => {
                   <SkillsColumn
                     columnTitle="additional languages"
                     highlighted={["C++", "C"]}
-                    normal={["Python", "Java"]}
+                    normal={["Python"]}
                   />
                 </ul>
               </div>
@@ -233,47 +237,47 @@ const Home: React.FC = () => {
               <ProjectIcon
                 title="Indie Photographers"
                 pathname="/projects/indie-photographers"
-                icon={data.indie.childImageSharp.fluid}
+                icon={data.indie.childImageSharp}
               />
               <ProjectIcon
                 title="Personal Website"
                 pathname="/projects/personal-website"
-                icon={data.personalIcon.childImageSharp.fluid}
+                icon={data.personalIcon.childImageSharp}
               />
               <ProjectIcon
                 title="react-easy-facebook"
                 pathname="/projects/react-easy-facebook"
-                icon={data.npm.childImageSharp.fluid}
+                icon={data.npm.childImageSharp}
               />
               <ProjectIcon
                 title="Angular Todo"
                 pathname="/projects/angular-todo"
-                icon={data.angularTodo.childImageSharp.fluid}
+                icon={data.angularTodo.childImageSharp}
               />
               <ProjectIcon
                 title="CPU Schedule"
                 pathname="/projects/cpu-schedule"
-                icon={data.cpuScheduleIcon.childImageSharp.fluid}
+                icon={data.cpuScheduleIcon.childImageSharp}
               />
               <ProjectIcon
                 title="Unix Shell"
                 pathname="/projects/unix-shell"
-                icon={data.unixShellIcon.childImageSharp.fluid}
+                icon={data.unixShellIcon.childImageSharp}
               />
               <ProjectIcon
                 title="Lyrics Genius"
                 pathname="/projects/lyrics-genius"
-                icon={data.lyricsGeniusIcon.childImageSharp.fluid}
+                icon={data.lyricsGeniusIcon.childImageSharp}
               />
               <ProjectIcon
                 title="AESChipions"
                 pathname="/projects/aes-chipions"
-                icon={data.AESChipionsIcon.childImageSharp.fluid}
+                icon={data.AESChipionsIcon.childImageSharp}
               />
               <ProjectIcon
                 title="todoNumeroUno"
                 pathname="/projects/todo-numero-uno"
-                icon={data.todoNumeroUnoIcon.childImageSharp.fluid}
+                icon={data.todoNumeroUnoIcon.childImageSharp}
               />
             </ul>
           </section>

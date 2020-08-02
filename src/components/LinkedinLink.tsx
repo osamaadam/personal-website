@@ -1,13 +1,22 @@
 import React from "react";
 import SocialLink from "./SocialLink";
-import * as linkedin from "../assets/linkedin.svg";
+import { useStaticQuery, graphql } from "gatsby";
 
 const LinkedinLink = () => {
+  const data = useStaticQuery<{ file: { publicURL: string } }>(
+    graphql`
+      query {
+        file(relativePath: { eq: "linkedin.svg" }) {
+          publicURL
+        }
+      }
+    `
+  );
   return (
     <SocialLink
       title="Linkedin Profile"
-      url="https://www.linkedin.com/in/osamaadam98/"
-      icon={linkedin}
+      url="https://linkedin.com/in/osamaadam98/"
+      icon={data.file.publicURL}
     />
   );
 };

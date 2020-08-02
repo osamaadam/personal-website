@@ -1,13 +1,23 @@
+import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import SocialLink from "./SocialLink";
-import * as github from "../assets/github.svg";
 
 const GithubLink = () => {
+  const data = useStaticQuery<{ file: { publicURL: string } }>(
+    graphql`
+      query {
+        file(relativePath: { eq: "github.svg" }) {
+          publicURL
+        }
+      }
+    `
+  );
+
   return (
     <SocialLink
       title="GitHub Profile"
       url="https://github.com/osamaadam"
-      icon={github}
+      icon={data.file.publicURL}
     />
   );
 };
