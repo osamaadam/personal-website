@@ -85,7 +85,7 @@ const NavBar: React.FC = () => {
         <ul className="drawer__list">
           <Link to="/#">
             <li className="drawer__logo">
-              <img src={logo} alt="logo" />
+              <img src={logo} alt="site-logo" />
             </li>
           </Link>
           {directories.map((directory) => (

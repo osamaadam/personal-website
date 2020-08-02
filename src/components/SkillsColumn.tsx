@@ -21,7 +21,7 @@ const SkillsColumn: React.FC<Props> = ({
   return (
     <>
       <li className="stack__li">
-        <h4>{columnTitle}</h4>
+        <h3>{columnTitle.toUpperCase()}</h3>
         <ul>
           {Highlighted}
           {Normal}

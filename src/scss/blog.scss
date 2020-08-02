@@ -1,17 +1,9 @@
-@import "layout.scss";
-
-.blog-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100vw;
-  height: 100%;
-  padding: 1em;
-}
-
-.blog-card {
-  flex: 1;
-  padding: 1em;
-  width: 100%;
-  max-width: 75em;
+.blog {
+  &__container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1em;
+    gap: 1em;
+  }
 }

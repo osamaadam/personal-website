@@ -1,14 +1,14 @@
-import Img, { FluidObject } from "gatsby-image";
+import Img, { FluidObject, GatsbyImageProps } from "gatsby-image";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 import React from "react";
 import "../scss/showcase.scss";
-import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 interface Props {
   title: string;
   description: string;
   repository: string;
   url?: string;
-  icon?: FluidObject;
+  icon?: GatsbyImageProps;
   images?: FluidObject[];
   className?: string;
   elementRef?: React.RefObject<HTMLDivElement>;
@@ -50,7 +50,7 @@ const Showcase: React.FC<Props> = ({
               rel="noopener noreferrer"
               className="showcase__logo__img"
             >
-              <Img fluid={icon} alt={`${title}'s logo`} />
+              <Img fluid={icon.fluid} alt={`${title}'s logo`} />
             </OutboundLink>
             <OutboundLink
               href={url}

@@ -15,7 +15,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         />
       </Helmet>
       <NavBar />
-      <main>{children}</main>
+      <main className="main-container">{children}</main>
       <SnackBar />
       <Footer />
     </div>
