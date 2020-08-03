@@ -20,7 +20,7 @@ const Home: React.FC = () => {
     };
   }>(graphql`
     query {
-      profile: file(relativePath: { eq: "profile.jpeg" }) {
+      profile: file(relativePath: { eq: "authors/osama-adam.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid_withWebp

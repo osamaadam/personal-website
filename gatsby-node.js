@@ -12,6 +12,8 @@ exports.createPages = async ({ actions, graphql }) => {
           id
           frontmatter {
             title
+            author
+            banner
           }
         }
       }
@@ -19,14 +21,16 @@ exports.createPages = async ({ actions, graphql }) => {
   `);
 
   blogQuery.data.allMarkdownRemark.nodes.forEach((node) => {
-    const { title } = node.frontmatter;
+    const { title, author, banner } = node.frontmatter;
+    const authorHyphen = author.toLowerCase().replace(/\s/, "-");
+
     const { id } = node;
     const slug = title.trim().toLowerCase().replace(/\s/, "-");
 
     createPage({
       path: `blog/${slug}`,
       component: blogTemplate,
-      context: { id }
+      context: { id, author: `/authors/${authorHyphen}/`, banner }
     });
   });
 

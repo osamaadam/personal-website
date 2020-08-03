@@ -8,7 +8,7 @@ module.exports = {
     description:
       "Portfolio website for web developer, Osama Adam. " +
       "Browse to see Osama Adam's projects and to contact him.",
-    author: `@osamaadam98`,
+    author: `https://github.com/osamadam`,
     siteUrl: `https://osamaadam.tech`
   },
   plugins: [
@@ -24,7 +24,7 @@ module.exports = {
         name: `Osama Adam's Portfolio`,
         short_name: `Osama Adam`,
         start_url: `/`,
-        background_color: `#303030`,
+        background_color: `#131415`,
         theme_color: `#ffc107`,
         display: `standalone`,
         icon: `src/assets/favicon.svg`

@@ -6,4 +6,39 @@
     padding: 1em;
     gap: 1em;
   }
+  &__banner {
+    max-height: 40vh;
+  }
+  &__tags {
+    display: flex;
+    gap: 1em;
+    margin-top: 0.5em;
+  }
+  &__tag {
+    padding: 0.3em;
+    &::before {
+      content: "#";
+    }
+  }
+  &__details-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  &__author-avatar {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+  }
+  &__author-url {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: inherit;
+    &:hover,
+    &:focus {
+      color: var(--highlightColor);
+      text-decoration: none;
+    }
+  }
 }

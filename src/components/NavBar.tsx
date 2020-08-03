@@ -83,7 +83,7 @@ const NavBar: React.FC = () => {
         onClick={() => setOpenDrawer(false)}
       >
         <ul className="drawer__list">
-          <Link to="/#">
+          <Link to="/">
             <li className="drawer__logo">
               <img src={logo} alt="site-logo" />
             </li>
