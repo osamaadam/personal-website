@@ -10,6 +10,8 @@ interface Props {
   data: {
     markdownRemark: {
       html: string;
+      timeToRead: number;
+      excerpt: string;
       frontmatter: {
         author: string;
         title: string;
@@ -29,7 +31,7 @@ interface Props {
 
 const BlogTemplate: React.FC<Props> = ({ data }) => {
   const { author, markdownRemark, banner } = data;
-  const { html, frontmatter } = markdownRemark;
+  const { html, frontmatter, excerpt } = markdownRemark;
 
   return (
     <>
@@ -39,6 +41,7 @@ const BlogTemplate: React.FC<Props> = ({ data }) => {
           // @ts-ignore
           banner?.childImageSharp.fluid.src || author?.childImageSharp.fluid.src
         }
+        description={excerpt}
       />
       <Layout>
         {banner && (
@@ -83,6 +86,8 @@ export const pageQuery = graphql`
   query($id: String!, $author: String, $banner: String) {
     markdownRemark(id: { eq: $id }) {
       html
+      excerpt
+      timeToRead
       frontmatter {
         title
         date(fromNow: true)
