@@ -15,6 +15,8 @@ interface Props {
   }[];
 }
 
+const location = typeof window !== "undefined" && (window.location as Location);
+
 const Seo: React.FC<Props> = ({
   lang = "en-US",
   title = "Osama Adam",
@@ -68,7 +70,7 @@ const Seo: React.FC<Props> = ({
         },
         {
           property: `og:url`,
-          content: site.siteMetadata.siteUrl
+          content: location ? location.href : site.siteMetadata.siteUrl
         },
         {
           property: `og:title`,
