@@ -83,7 +83,7 @@ const NavBar: React.FC = () => {
         onClick={() => setOpenDrawer(false)}
       >
         <ul className="drawer__list">
-          <Link to="/">
+          <Link to="/" aria-label="Home">
             <li className="drawer__logo">
               <img src={logo} alt="site-logo" />
             </li>
@@ -94,6 +94,7 @@ const NavBar: React.FC = () => {
               key={directory.path}
               data-nav={directory.name.toLowerCase()}
               className="no-style-link drawer__item"
+              aria-label={directory.name}
             >
               <li>{directory.name}</li>
             </Link>
@@ -101,9 +102,9 @@ const NavBar: React.FC = () => {
         </ul>
       </SwipeableDrawer>
       <nav className="navbar" ref={navbar}>
-        <ul className="navlinks" id="navbar-links">
+        <div className="navlinks" id="navbar-links">
           <HamburgerMenu handleClick={() => setOpenDrawer(true)} />
-          <Link to="/" className="no-style-link">
+          <Link to="/" className="no-style-link" aria-label="Home">
             <li className="navlinks__logo">
               <img src={logo} alt="logo" />
             </li>
@@ -131,7 +132,7 @@ const NavBar: React.FC = () => {
               <span className="slider round" />
             </label>
           </div>
-        </ul>
+        </div>
       </nav>
     </>
   );

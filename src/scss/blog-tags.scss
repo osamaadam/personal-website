@@ -1,0 +1,13 @@
+.blog {
+  &__tags {
+    display: flex;
+    gap: 1em;
+    margin-top: 0.5em;
+  }
+  &__tag {
+    padding: 0.3em;
+    &::before {
+      content: "#";
+    }
+  }
+}

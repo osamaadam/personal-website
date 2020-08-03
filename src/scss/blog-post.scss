@@ -1,0 +1,12 @@
+.blog {
+  &__container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1em;
+    gap: 1em;
+  }
+  &__banner {
+    max-height: 40vh;
+  }
+}

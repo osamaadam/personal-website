@@ -1,5 +1,8 @@
 const projects = require("./content/projects.json");
 const blogTemplate = require.resolve("./src/templates/blog.template.tsx");
+const blogpostTemplate = require.resolve(
+  "./src/templates/blogpost.template.tsx"
+);
 const projectTemplate = require.resolve("./src/templates/project.template.tsx");
 
 exports.createPages = async ({ actions, graphql }) => {
@@ -7,30 +10,65 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const blogQuery = await graphql(`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
         nodes {
           id
+          timeToRead
+          excerpt
           frontmatter {
             title
             author
-            banner
+            authorUrl
+            date(fromNow: true)
+            tags
+            banner {
+              childImageSharp {
+                fluid {
+                  aspectRatio
+                  base64
+                  sizes
+                  src
+                  srcSet
+                  srcSetWebp
+                  srcWebp
+                }
+              }
+            }
+            authorImg {
+              childImageSharp {
+                fluid {
+                  aspectRatio
+                  base64
+                  sizes
+                  src
+                  srcSet
+                  srcSetWebp
+                  srcWebp
+                }
+              }
+            }
           }
         }
       }
     }
   `);
 
+  createPage({
+    path: `/blog`,
+    component: blogTemplate,
+    context: { data: blogQuery.data.allMarkdownRemark }
+  });
+
   blogQuery.data.allMarkdownRemark.nodes.forEach((node) => {
-    const { title, author, banner } = node.frontmatter;
-    const authorHyphen = author.toLowerCase().replace(/\s/, "-");
+    const { title } = node.frontmatter;
 
     const { id } = node;
     const slug = title.trim().toLowerCase().replace(/\s/, "-");
 
     createPage({
-      path: `blog/${slug}`,
-      component: blogTemplate,
-      context: { id, author: `/authors/${authorHyphen}/`, banner }
+      path: `/blog/${slug}`,
+      component: blogpostTemplate,
+      context: { id }
     });
   });
 

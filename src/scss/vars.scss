@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
+@import "reset.scss";
 
 html {
   --highlightColor: #ffc107;
-  --highlightColorComplement: #003ef8;
+  --highlightColorComplement: #0745ff;
   --backgroundColor: #131415;
   --paperBackground: #222;
   --primaryColor: #fff;
@@ -27,6 +28,7 @@ html[data-theme="light"] {
 }
 
 .no-style-link {
+  color: inherit;
   &:hover {
     text-decoration: none;
   }

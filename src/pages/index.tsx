@@ -182,20 +182,20 @@ const Home: React.FC = () => {
                 <h1>Skills</h1>
                 <ul className="brief__list">
                   <li>
-                    <h3>Familiarity with Progressive Web Apps (PWAs)</h3>
+                    <h2>Familiarity with Progressive Web Apps (PWAs)</h2>
                     <p>
                       This one isn't though because it'd be an unnecessary
                       burden. An example project is in the showcase!
                     </p>
                   </li>
                   <li>
-                    <h3>Experience with the MERN stack</h3>
+                    <h2>Experience with the MERN stack</h2>
                     <p>
                       MongoDB? Express? React? Node? I've got all bases covered.
                     </p>
                   </li>
                   <li>
-                    <h3>Git magician</h3>
+                    <h2>Git magician</h2>
                     <p>99% guarantee of not ruining the git history.</p>
                   </li>
                 </ul>
@@ -204,26 +204,26 @@ const Home: React.FC = () => {
                 <h1>Stack</h1>
                 <ul className="stack">
                   <SkillsColumn
-                    columnTitle="frontend"
+                    columnTitle="Frontend"
                     highlighted={["React", "SCSS"]}
                     normal={["HTML"]}
                   />
                   <SkillsColumn
-                    columnTitle="backend"
+                    columnTitle="Backend"
                     highlighted={["Node", "MongoDB"]}
                   />
                   <SkillsColumn
-                    columnTitle="frameworks"
+                    columnTitle="Frameworks"
                     highlighted={["Express", "Gatsby", "Mongoose"]}
                     normal={["Bootstrap"]}
                   />
                   <SkillsColumn
-                    columnTitle="tools"
+                    columnTitle="Tools"
                     highlighted={["Typescript", "Git", "NPM/Yarn"]}
                     normal={["Docker", "Heroku"]}
                   />
                   <SkillsColumn
-                    columnTitle="additional languages"
+                    columnTitle="Additional languages"
                     highlighted={["C++", "C"]}
                     normal={["Python"]}
                   />

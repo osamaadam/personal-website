@@ -1,27 +1,12 @@
 .blog {
-  &__container {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 1em;
-    gap: 1em;
-  }
-  &__banner {
-    max-height: 40vh;
-  }
-  &__tags {
+  &__header {
     display: flex;
-    gap: 1em;
-    margin-top: 0.5em;
-  }
-  &__tag {
-    padding: 0.3em;
-    &::before {
-      content: "#";
-    }
+    flex-direction: column;
+    gap: 0.5em;
   }
   &__details-container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 0.5em;
   }
@@ -35,10 +20,23 @@
     align-items: center;
     gap: 0.5em;
     color: inherit;
+    font-size: 1.01em;
     &:hover,
     &:focus {
       color: var(--highlightColor);
       text-decoration: none;
+    }
+  }
+  &__extra {
+    opacity: 0.85;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  &__crumbs {
+    &::before {
+      content: "•";
+      margin-right: 0.5em;
     }
   }
 }
