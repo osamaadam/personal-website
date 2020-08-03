@@ -10,6 +10,7 @@ type Project = {
   description: string;
   repository: string;
   url?: string;
+  path: string;
 };
 
 interface Props {
@@ -33,6 +34,7 @@ const ProjectTemplate: React.FC<Props> = ({
       description={project.description}
       // @ts-ignore
       image={data?.icon?.childImageSharp.fluid?.src}
+      path={`/projects/${project.path}`}
     />
     <Layout>
       <Showcase

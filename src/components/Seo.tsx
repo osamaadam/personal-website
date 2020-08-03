@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 interface Props {
   lang?: string;
   title: string;
+  path?: string;
   image?: string;
   description?: string;
   cardType?: `summary` | `summary_large_image`;
@@ -15,11 +16,10 @@ interface Props {
   }[];
 }
 
-const location = typeof window !== "undefined" && (window.location as Location);
-
 const Seo: React.FC<Props> = ({
   lang = "en-US",
   title = "Osama Adam",
+  path = "/",
   image,
   description,
   cardType = `summary`,
@@ -46,6 +46,7 @@ const Seo: React.FC<Props> = ({
   `);
 
   const metaDescription = description || site.siteMetadata.description;
+  const metaUrl = site.siteMetadata.siteUrl + path;
   const metaImage =
     site.siteMetadata.siteUrl +
     (image || siteImage.childImageSharp.fixed.srcWebp);
@@ -70,7 +71,7 @@ const Seo: React.FC<Props> = ({
         },
         {
           property: `og:url`,
-          content: location ? location.href : site.siteMetadata.siteUrl
+          content: metaUrl
         },
         {
           property: `og:title`,

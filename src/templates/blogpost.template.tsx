@@ -31,16 +31,17 @@ interface Props {
 
 const BlogTemplate: React.FC<Props> = ({ data }) => {
   const { html, frontmatter, excerpt, timeToRead } = data.markdownRemark;
+  const slug = frontmatter.title.trim().toLowerCase().replace(/\s/, "-");
+
   return (
     <>
       <Seo
         title={`${frontmatter.title} • ${timeToRead} min read`}
         image={
-          // @ts-ignore
           frontmatter.banner?.childImageSharp.fluid.src ||
-          // @ts-ignore
           frontmatter.authorImg?.childImageSharp.fluid.src
         }
+        path={`/blog/${slug}`}
         description={excerpt}
         cardType="summary_large_image"
       />
