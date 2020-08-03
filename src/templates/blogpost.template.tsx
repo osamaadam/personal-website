@@ -41,7 +41,7 @@ const BlogTemplate: React.FC<Props> = ({ data }) => {
           frontmatter.banner?.childImageSharp.fluid.src ||
           frontmatter.authorImg?.childImageSharp.fluid.src
         }
-        path={`/blog/${slug}`}
+        path={`/blog/${slug}/`}
         description={excerpt}
         cardType="summary_large_image"
       />

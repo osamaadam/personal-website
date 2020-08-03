@@ -32,7 +32,7 @@ interface Props {
 const Blog: React.FC<Props> = ({ pageContext: { data } }) => {
   return (
     <>
-      <Seo title="Blog" />
+      <Seo title="Blog" path="/blog/" />
       <Layout>
         <div className="blog-main__container">
           {data.nodes.map((node: any) => (
