@@ -54,7 +54,7 @@ exports.createPages = async ({ actions, graphql }) => {
   `);
 
   createPage({
-    path: `/blog`,
+    path: `/blog/`,
     component: blogTemplate,
     context: { data: blogQuery.data.allMarkdownRemark }
   });
@@ -66,7 +66,7 @@ exports.createPages = async ({ actions, graphql }) => {
     const slug = title.trim().toLowerCase().replace(/\s/, "-");
 
     createPage({
-      path: `/blog/${slug}`,
+      path: `/blog/${slug}/`,
       component: blogpostTemplate,
       context: { id }
     });
@@ -74,7 +74,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   projects.forEach((project) => {
     createPage({
-      path: `/projects/${project.path}`,
+      path: `/projects/${project.path}/`,
       component: projectTemplate,
       context: { project, icon: project.icon }
     });

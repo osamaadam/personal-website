@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import { GatsbyImageProps } from "gatsby-image";
+import { FluidObject } from "gatsby-image";
 import React from "react";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
@@ -19,7 +19,7 @@ interface Props {
   };
   data: {
     icon?: {
-      childImageSharp: GatsbyImageProps;
+      childImageSharp: { fluid: FluidObject };
     };
   };
 }
@@ -32,7 +32,6 @@ const ProjectTemplate: React.FC<Props> = ({
     <Seo
       title={project.title}
       description={project.description}
-      // @ts-ignore
       image={data?.icon?.childImageSharp.fluid?.src}
       path={`/projects/${project.path}`}
     />
