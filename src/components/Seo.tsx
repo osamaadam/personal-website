@@ -22,6 +22,20 @@ interface Props {
   }[];
 }
 
+interface Query {
+  siteImage: {
+    publicURL: string;
+  };
+  site: {
+    siteMetadata: {
+      title: string;
+      description: string;
+      author: string;
+      siteUrl: string;
+    };
+  };
+}
+
 const Seo: React.FC<Props> = ({
   lang = "en-US",
   title = "Osama Adam",
@@ -32,7 +46,7 @@ const Seo: React.FC<Props> = ({
   article,
   meta = [{}],
 }) => {
-  const { site, siteImage } = useStaticQuery(graphql`
+  const { site, siteImage } = useStaticQuery<Query>(graphql`
     query {
       site {
         siteMetadata {
@@ -42,21 +56,15 @@ const Seo: React.FC<Props> = ({
           siteUrl
         }
       }
-      siteImage: file(relativePath: { eq: "personal-website.jpg" }) {
-        childImageSharp {
-          fixed(width: 256) {
-            src
-          }
-        }
+      siteImage: file(relativePath: { eq: "favicon.svg" }) {
+        publicURL
       }
     }
   `);
 
   const metaDescription = description || site.siteMetadata.description;
   const metaUrl = site.siteMetadata.siteUrl + path;
-  const metaImage =
-    site.siteMetadata.siteUrl +
-    (image || siteImage.childImageSharp.fixed.srcWebp);
+  const metaImage = site.siteMetadata.siteUrl + (image || siteImage.publicURL);
 
   const metaTags = article?.tags?.map((tag) => ({
     name: "article:tag",
