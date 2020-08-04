@@ -21,7 +21,7 @@ const Showcase: React.FC<Props> = ({
   url = repository,
   icon,
   className = "",
-  elementRef
+  elementRef,
 }) => {
   const appUrl = url !== repository ? url : undefined;
   return (

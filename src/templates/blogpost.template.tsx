@@ -5,6 +5,7 @@ import BlogHeader from "../components/BlogHeader";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import "../scss/blog-post.scss";
+import moment from "moment";
 
 interface Props extends PageProps {
   data: {
@@ -15,7 +16,7 @@ interface Props extends PageProps {
       frontmatter: {
         author: string;
         title: string;
-        date: string;
+        date: number;
         authorUrl?: string;
         tags?: string[];
         banner?: {
@@ -45,6 +46,11 @@ const BlogTemplate: React.FC<Props> = ({ data }) => {
         path={`/blog/${slug}/`}
         description={excerpt}
         cardType="summary_large_image"
+        article={{
+          author: frontmatter.author,
+          publishTime: moment(frontmatter.date).toISOString(),
+          tags: frontmatter.tags,
+        }}
       />
       <Layout>
         {frontmatter.banner && (

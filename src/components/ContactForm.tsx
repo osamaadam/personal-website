@@ -12,9 +12,9 @@ const ContactForm: React.FC = () => {
       await fetch(process.env.GATSBY_EMAIL_API!, {
         method: "POST",
         headers: {
-          Accept: "application/json"
+          Accept: "application/json",
         },
-        body: data
+        body: data,
       });
       form.reset();
       useSnackbar("Email sent!", "success");

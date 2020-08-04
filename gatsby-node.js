@@ -56,7 +56,7 @@ exports.createPages = async ({ actions, graphql }) => {
   createPage({
     path: `/blog/`,
     component: blogTemplate,
-    context: { data: blogQuery.data.allMarkdownRemark }
+    context: { data: blogQuery.data.allMarkdownRemark },
   });
 
   blogQuery.data.allMarkdownRemark.nodes.forEach((node) => {
@@ -68,7 +68,7 @@ exports.createPages = async ({ actions, graphql }) => {
     createPage({
       path: `/blog/${slug}/`,
       component: blogpostTemplate,
-      context: { id }
+      context: { id },
     });
   });
 
@@ -76,7 +76,7 @@ exports.createPages = async ({ actions, graphql }) => {
     createPage({
       path: `/projects/${project.path}/`,
       component: projectTemplate,
-      context: { project, icon: project.icon }
+      context: { project, icon: project.icon },
     });
   });
 };

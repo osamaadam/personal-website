@@ -9,7 +9,7 @@ interface Props {
 const SkillsColumn: React.FC<Props> = ({
   columnTitle,
   highlighted = [],
-  normal = []
+  normal = [],
 }) => {
   const Highlighted = highlighted.map((element, index) => (
     <li key={index}>

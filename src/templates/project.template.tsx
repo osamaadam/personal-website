@@ -26,7 +26,7 @@ interface Props extends PageProps {
 
 const ProjectTemplate: React.FC<Props> = ({
   pageContext: { project },
-  data
+  data,
 }) => (
   <>
     <Seo

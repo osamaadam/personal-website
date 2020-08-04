@@ -1,5 +1,5 @@
 require("dotenv").config({
-  path: ".env"
+  path: ".env",
 });
 
 module.exports = {
@@ -9,14 +9,14 @@ module.exports = {
       "Portfolio website for web developer, Osama Adam. " +
       "Browse to see Osama Adam's projects and to contact him.",
     author: `https://github.com/osamadam`,
-    siteUrl: `https://osamaadam.tech`
+    siteUrl: `https://osamaadam.tech`,
   },
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GATSBY_ANALYTICS
-      }
+        trackingId: process.env.GATSBY_ANALYTICS,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -27,22 +27,22 @@ module.exports = {
         background_color: `#131415`,
         theme_color: `#ffc107`,
         display: `standalone`,
-        icon: `src/assets/favicon.svg`
-      }
+        icon: `src/assets/favicon.svg`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/assets`
-      }
+        path: `${__dirname}/src/assets`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog`,
-        path: `${__dirname}/src/blog`
-      }
+        path: `${__dirname}/src/blog`,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -51,11 +51,11 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: "language-"
-            }
-          }
-        ]
-      }
+              classPrefix: "language-",
+            },
+          },
+        ],
+      },
     },
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-sitemap`,
@@ -63,6 +63,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-sass`
-  ]
+    `gatsby-plugin-sass`,
+  ],
 };

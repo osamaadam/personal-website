@@ -60,16 +60,16 @@ const NavBar: React.FC = () => {
   const directories = [
     {
       path: "/",
-      name: "Home"
+      name: "Home",
     },
     {
       path: "/#projects",
-      name: "Projects"
+      name: "Projects",
     },
     {
       path: "/#contact",
-      name: "Contact"
-    }
+      name: "Contact",
+    },
   ];
 
   return (

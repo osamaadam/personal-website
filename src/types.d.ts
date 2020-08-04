@@ -31,7 +31,7 @@ interface BlogQueryNode {
   frontmatter: {
     author: string;
     title: string;
-    date: string;
+    date: number;
     authorUrl?: string;
     tags?: string[];
     banner?: {

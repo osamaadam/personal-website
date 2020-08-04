@@ -9,6 +9,12 @@ interface Props {
   image?: string;
   description?: string;
   cardType?: `summary` | `summary_large_image`;
+  article?: {
+    author: string;
+    publishTime: string;
+    modifiedTime?: string;
+    tags?: string[];
+  };
   meta?: {
     name?: string;
     content?: string;
@@ -23,7 +29,8 @@ const Seo: React.FC<Props> = ({
   image,
   description,
   cardType = `summary`,
-  meta = [{}]
+  article,
+  meta = [{}],
 }) => {
   const { site, siteImage } = useStaticQuery(graphql`
     query {
@@ -37,7 +44,7 @@ const Seo: React.FC<Props> = ({
       }
       siteImage: file(relativePath: { eq: "personal-website.jpg" }) {
         childImageSharp {
-          fixed(width: 512) {
+          fixed(width: 256) {
             src
           }
         }
@@ -51,68 +58,91 @@ const Seo: React.FC<Props> = ({
     site.siteMetadata.siteUrl +
     (image || siteImage.childImageSharp.fixed.srcWebp);
 
+  const metaTags = article?.tags?.map((tag) => ({
+    name: "article:tag",
+    content: tag,
+  })) || [{}];
+
+  const metaArticle = [
+    {
+      name: "article:published_time",
+      content: article?.publishTime,
+    },
+    {
+      name: "article:modified_time",
+      content: article?.modifiedTime || article?.publishTime,
+    },
+    {
+      name: "article:author",
+      content: article?.author,
+    },
+  ];
+
+  const allArticle = article ? [...metaTags, ...metaArticle] : [];
+
   return (
     <Helmet
       htmlAttributes={{ lang }}
       title={title}
       meta={[
         ...meta,
+        ...allArticle,
         {
           name: `google-site-verification`,
-          content: `ecpqjxee4mz4eahliyzYMwVjTK74l7EzOksdwcRMSqI`
+          content: `ecpqjxee4mz4eahliyzYMwVjTK74l7EzOksdwcRMSqI`,
         },
         {
           name: `description`,
-          content: metaDescription
+          content: metaDescription,
         },
         {
           name: `keywords`,
-          content: `portfolio, web developer, Egypt, React, Node, frontend, backend, web`
+          content: `portfolio, web developer, Egypt, React, Node, frontend, backend, web`,
         },
         {
           property: `og:url`,
-          content: metaUrl
+          content: metaUrl,
         },
         {
           property: `og:title`,
-          content: title
+          content: title,
         },
         {
           property: `og:description`,
-          content: metaDescription
+          content: metaDescription,
         },
         {
           property: `og:image`,
-          content: metaImage
+          content: metaImage,
         },
         {
           property: `og:type`,
-          content: `website`
+          content: article ? "article" : "website",
         },
         {
           property: `fb:app_id`,
-          content: `268071231205307`
+          content: `268071231205307`,
         },
         {
           name: `twitter:card`,
-          content: cardType
+          content: cardType,
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author
+          content: site.siteMetadata.author,
         },
         {
           name: `twitter:title`,
-          content: title
+          content: title,
         },
         {
           name: `twitter:description`,
-          content: metaDescription
+          content: metaDescription,
         },
         {
           name: `twitter:image`,
-          content: metaImage
-        }
+          content: metaImage,
+        },
       ]}
     />
   );
