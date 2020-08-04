@@ -31,7 +31,7 @@ interface Props {
 
 const BlogTemplate: React.FC<Props> = ({ data }) => {
   const { html, frontmatter, excerpt, timeToRead } = data.markdownRemark;
-  const slug = frontmatter.title.trim().toLowerCase().replace(/\s/, "-");
+  const slug = frontmatter.title.trim().toLowerCase().replace(/\s/g, "-");
 
   return (
     <>

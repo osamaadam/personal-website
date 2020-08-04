@@ -38,7 +38,7 @@ const Seo: React.FC<Props> = ({
       siteImage: file(relativePath: { eq: "personal-website.jpg" }) {
         childImageSharp {
           fixed(width: 512) {
-            srcWebp
+            src
           }
         }
       }

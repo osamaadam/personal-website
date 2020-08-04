@@ -9,7 +9,7 @@ const BlogCard: React.FC<{
   node: BlogQueryNode;
 }> = ({ node }) => {
   const { frontmatter } = node;
-  const url = frontmatter.title.trim().toLowerCase().replace(/\s/, "-");
+  const url = frontmatter.title.trim().toLowerCase().replace(/\s/g, "-");
 
   return (
     <article className="blog-card card">

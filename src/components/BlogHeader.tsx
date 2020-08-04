@@ -12,12 +12,12 @@ interface Props {
 const location = typeof window !== "undefined" && (window.location as Location);
 
 const BlogHeader: React.FC<Props> = ({ frontmatter }) => {
-  const url = frontmatter.title.trim().toLowerCase().replace(/\s/, "-");
+  const url = frontmatter.title.trim().toLowerCase().replace(/\s/g, "-");
   return (
     <>
       <Tags tags={frontmatter.tags} />
       <section className="blog__header">
-        {location && location.pathname !== `/blog/${url}` ? (
+        {location && location.pathname !== `/blog/${url}/` ? (
           <Link to={`/blog/${url}/`}>
             <h1>{frontmatter.title}</h1>
           </Link>
