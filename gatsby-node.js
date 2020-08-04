@@ -19,7 +19,7 @@ exports.createPages = async ({ actions, graphql }) => {
             title
             author
             authorUrl
-            date(fromNow: true)
+            date(formatString: "MMMM Do")
             tags
             banner {
               childImageSharp {
@@ -60,9 +60,9 @@ exports.createPages = async ({ actions, graphql }) => {
   });
 
   blogQuery.data.allMarkdownRemark.nodes.forEach((node) => {
-    const { title } = node.frontmatter;
+    const { id, frontmatter } = node;
+    const { title } = frontmatter;
 
-    const { id } = node;
     const slug = title.trim().toLowerCase().replace(/\s/g, "-");
 
     createPage({

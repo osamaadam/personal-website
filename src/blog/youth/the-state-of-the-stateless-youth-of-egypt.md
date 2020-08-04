@@ -12,7 +12,7 @@ It's August, the weather couldn't be worse. We're still on lockdown, I'm contemp
 one thing on my mind, military service. I feel as if my life is on halt. I can't commit to any plans because I know I'll have to
 abandon them next year. I had plans for this summer too which were mainly to find an internship, I thought it'd be a lot of studying
 and problem solving but it turned out to be more of a rejection and ghosting experience. I'm fighting among my peers for slave
-labour and I can't even get it. Imposted syndrome hits hard sometimes, but even most of my more qualified peers are also sharing my
+labour and I can't even get it. Imposter syndrome hits hard sometimes, but even most of my more qualified peers are also sharing my
 exact same struggle. This was my last summer as a free man and I can't help but feel the guilt that I have wasted it. I know I
 haven't wasted it, I've accumulated more knowledge this summer than I did my whole life, still I feel like I'm missing out.
 

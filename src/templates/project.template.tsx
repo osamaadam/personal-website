@@ -1,4 +1,4 @@
-import { graphql } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 import { FluidObject } from "gatsby-image";
 import React from "react";
 import Layout from "../components/Layout";
@@ -13,7 +13,7 @@ type Project = {
   path: string;
 };
 
-interface Props {
+interface Props extends PageProps {
   pageContext: {
     project: Project;
   };

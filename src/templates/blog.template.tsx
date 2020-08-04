@@ -1,11 +1,12 @@
+import { PageProps } from "gatsby";
+import { FluidObject } from "gatsby-image";
 import React from "react";
-import Layout from "../components/Layout";
 import BlogCard from "../components/BlogCard";
-import { GatsbyImageProps } from "gatsby-image";
-import "../scss/blog-main.scss";
+import Layout from "../components/Layout";
 import Seo from "../components/Seo";
+import "../scss/blog-main.scss";
 
-interface Props {
+interface Props extends PageProps {
   pageContext: {
     data: {
       nodes: {
@@ -18,10 +19,10 @@ interface Props {
           authorUrl?: string;
           tags?: string[];
           banner?: {
-            childImageSharp: GatsbyImageProps;
+            childImageSharp: { fluid: FluidObject };
           };
           authorImg?: {
-            childImageSharp: GatsbyImageProps;
+            childImageSharp: { fluid: FluidObject };
           };
         };
       }[];

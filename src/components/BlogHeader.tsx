@@ -1,10 +1,10 @@
-import React from "react";
-import { OutboundLink } from "gatsby-plugin-google-analytics";
-import Tags from "./Tags";
+import { Link } from "gatsby";
 import Img from "gatsby-image";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
+import React from "react";
 import "../scss/blog-header.scss";
 import { BlogQueryNode } from "../types";
-import { Link } from "gatsby";
+import Tags from "./Tags";
 
 interface Props {
   frontmatter: BlogQueryNode["frontmatter"];

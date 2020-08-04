@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, PageProps } from "gatsby";
 import Img, { GatsbyImageProps } from "gatsby-image";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import React from "react";
@@ -13,7 +13,7 @@ import "../scss/index.scss";
 
 const GITHUB_PROFILE = "https://github.com/osamaadam";
 
-const Home: React.FC = () => {
+const Home: React.FC<PageProps> = () => {
   const data = useStaticQuery<{
     [key: string]: {
       childImageSharp: GatsbyImageProps;

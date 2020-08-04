@@ -1,12 +1,12 @@
-import { graphql } from "gatsby";
-import Img, { GatsbyImageProps, FluidObject } from "gatsby-image";
+import { graphql, PageProps } from "gatsby";
+import Img, { FluidObject } from "gatsby-image";
 import React from "react";
 import BlogHeader from "../components/BlogHeader";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import "../scss/blog-post.scss";
 
-interface Props {
+interface Props extends PageProps {
   data: {
     markdownRemark: {
       html: string;
@@ -74,7 +74,7 @@ export const pageQuery = graphql`
       timeToRead
       frontmatter {
         title
-        date(fromNow: true)
+        date(formatString: "MMMM Do")
         author
         authorUrl
         tags
