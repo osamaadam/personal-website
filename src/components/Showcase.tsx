@@ -9,6 +9,7 @@ interface Props {
   repository: string;
   url?: string;
   icon?: GatsbyImageProps;
+  svg?: string;
   images?: FluidObject[];
   className?: string;
   elementRef?: React.RefObject<HTMLDivElement>;
@@ -20,6 +21,7 @@ const Showcase: React.FC<Props> = ({
   repository,
   url = repository,
   icon,
+  svg,
   className = "",
   elementRef,
 }) => {
@@ -51,6 +53,31 @@ const Showcase: React.FC<Props> = ({
               className="showcase__logo__img"
             >
               <Img fluid={icon.fluid} alt={`${title}'s logo`} />
+            </OutboundLink>
+            <OutboundLink
+              href={url}
+              title={title}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="showcase__logo__text"
+            >
+              <p>
+                <span className="highlight">{title}</span>
+              </p>
+            </OutboundLink>
+          </div>
+        )}
+
+        {svg && (
+          <div className="showcase__logo">
+            <OutboundLink
+              href={url}
+              title={title}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="showcase__logo__img"
+            >
+              <img src={svg} alt={`${title}'s logo`} />
             </OutboundLink>
             <OutboundLink
               href={url}

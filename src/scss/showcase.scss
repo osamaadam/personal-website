@@ -9,6 +9,7 @@
   flex-wrap: wrap;
   width: auto;
   height: 100%;
+  gap: 1em;
 
   &__desc {
     flex: 4;
@@ -37,6 +38,9 @@
       grid-area: 1 / 1 / 2 / 2;
       border-radius: 50%;
       transition: opacity 400ms ease-out;
+      img {
+        width: 100%;
+      }
     }
     &__text {
       grid-area: 1 / 1 / 2 / 2;

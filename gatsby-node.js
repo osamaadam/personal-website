@@ -76,7 +76,7 @@ exports.createPages = async ({ actions, graphql }) => {
     createPage({
       path: `/projects/${project.path}/`,
       component: projectTemplate,
-      context: { project, icon: project.icon },
+      context: { project, icon: project.icon, svg: project.svg },
     });
   });
 };

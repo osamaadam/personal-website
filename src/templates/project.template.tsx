@@ -21,6 +21,9 @@ interface Props extends PageProps {
     icon?: {
       childImageSharp: { fluid: FluidObject };
     };
+    svg?: {
+      publicURL: string;
+    };
   };
 }
 
@@ -42,6 +45,7 @@ const ProjectTemplate: React.FC<Props> = ({
         repository={project.repository}
         description={project.description}
         icon={data.icon?.childImageSharp}
+        svg={data.svg?.publicURL}
       />
     </Layout>
   </>
@@ -50,13 +54,16 @@ const ProjectTemplate: React.FC<Props> = ({
 export default ProjectTemplate;
 
 export const pageQuery = graphql`
-  query($icon: String) {
+  query($icon: String, $svg: String) {
     icon: file(relativePath: { eq: $icon }) {
       childImageSharp {
         fluid(maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
+    }
+    svg: file(relativePath: { eq: $svg }) {
+      publicURL
     }
   }
 `;

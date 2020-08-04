@@ -16,7 +16,8 @@ const GITHUB_PROFILE = "https://github.com/osamaadam";
 const Home: React.FC<PageProps> = () => {
   const data = useStaticQuery<{
     [key: string]: {
-      childImageSharp: GatsbyImageProps;
+      childImageSharp?: GatsbyImageProps;
+      publicURL?: string;
     };
   }>(graphql`
     query {
@@ -34,12 +35,8 @@ const Home: React.FC<PageProps> = () => {
           }
         }
       }
-      personalIcon: file(relativePath: { eq: "personal-website.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+      personalIcon: file(relativePath: { eq: "favicon.svg" }) {
+        publicURL
       }
       unixShellIcon: file(relativePath: { eq: "unix-shell/cowsay.png" }) {
         childImageSharp {
@@ -78,19 +75,11 @@ const Home: React.FC<PageProps> = () => {
           }
         }
       }
-      angularTodo: file(relativePath: { eq: "angular-todo.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+      angularTodo: file(relativePath: { eq: "angular.svg" }) {
+        publicURL
       }
-      npm: file(relativePath: { eq: "npm.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
+      npm: file(relativePath: { eq: "npm.svg" }) {
+        publicURL
       }
     }
   `);
@@ -150,7 +139,7 @@ const Home: React.FC<PageProps> = () => {
                   rel="noopener noreferrer"
                 >
                   <Img
-                    fluid={data.profile.childImageSharp.fluid}
+                    fluid={data.profile.childImageSharp?.fluid}
                     alt="Osama Adam"
                     className="profile-picture"
                   />
@@ -242,17 +231,17 @@ const Home: React.FC<PageProps> = () => {
               <ProjectIcon
                 title="Personal Website"
                 pathname="/projects/personal-website/"
-                icon={data.personalIcon.childImageSharp}
+                svg={data.personalIcon.publicURL}
               />
               <ProjectIcon
                 title="react-easy-facebook"
                 pathname="/projects/react-easy-facebook/"
-                icon={data.npm.childImageSharp}
+                svg={data.npm.publicURL}
               />
               <ProjectIcon
                 title="Angular Todo"
                 pathname="/projects/angular-todo/"
-                icon={data.angularTodo.childImageSharp}
+                svg={data.angularTodo.publicURL}
               />
               <ProjectIcon
                 title="CPU Schedule"
