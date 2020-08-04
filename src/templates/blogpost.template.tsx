@@ -31,6 +31,7 @@ interface Props extends PageProps {
 
 const BlogTemplate: React.FC<Props> = ({ data }) => {
   const { html, frontmatter, excerpt, timeToRead } = data.markdownRemark;
+
   const slug = frontmatter.title.trim().toLowerCase().replace(/\s/g, "-");
 
   return (
@@ -74,7 +75,7 @@ export const pageQuery = graphql`
       timeToRead
       frontmatter {
         title
-        date(formatString: "MMMM Do")
+        date
         author
         authorUrl
         tags

@@ -1,6 +1,6 @@
 ---
 title: "Hello World"
-date: "2020-08-03T15:48:09.525Z"
+date: 1596469689525
 author: "Osama Adam"
 authorImg: ../../assets/authors/osama-adam.jpeg
 authorUrl: "https://github.com/osamaadam"

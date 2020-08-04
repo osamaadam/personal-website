@@ -19,7 +19,7 @@ exports.createPages = async ({ actions, graphql }) => {
             title
             author
             authorUrl
-            date(formatString: "MMMM Do")
+            date
             tags
             banner {
               childImageSharp {

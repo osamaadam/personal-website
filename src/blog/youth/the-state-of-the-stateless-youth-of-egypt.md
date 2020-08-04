@@ -1,11 +1,11 @@
 ---
 title: "The state of the stateless youth of Egypt"
-date: "2020-08-04T01:57:22.356Z"
+date: 1596550333439
 author: "Osama Adam"
 authorImg: ../../assets/authors/osama-adam.jpeg
 authorUrl: "https://github.com/osamaadam"
 banner: are-ya-winning.jpg
-tags: ["social", "think piece"]
+tags: ["social", "personal"]
 ---
 
 It's August, the weather couldn't be worse. We're still on lockdown, I'm contemplating my plans for the next year. But I only have

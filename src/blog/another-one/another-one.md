@@ -1,6 +1,6 @@
 ---
 title: "Another One"
-date: "2020-08-01"
+date: 1596240000000
 author: "Osama Adam"
 authorImg: ../../assets/authors/osama-adam.jpeg
 ---
