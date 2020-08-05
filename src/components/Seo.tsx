@@ -24,7 +24,11 @@ interface Props {
 
 interface Query {
   siteImage: {
-    publicURL: string;
+    childImageSharp: {
+      fixed: {
+        src: string;
+      };
+    };
   };
   site: {
     siteMetadata: {
@@ -56,15 +60,20 @@ const Seo: React.FC<Props> = ({
           siteUrl
         }
       }
-      siteImage: file(relativePath: { eq: "favicon.svg" }) {
-        publicURL
+      siteImage: file(relativePath: { eq: "favicon.png" }) {
+        childImageSharp {
+          fixed(width: 256) {
+            src
+          }
+        }
       }
     }
   `);
 
   const metaDescription = description || site.siteMetadata.description;
   const metaUrl = site.siteMetadata.siteUrl + path;
-  const metaImage = site.siteMetadata.siteUrl + (image || siteImage.publicURL);
+  const metaImage =
+    site.siteMetadata.siteUrl + (image || siteImage.childImageSharp.fixed.src);
 
   const metaTags = article?.tags?.map((tag) => ({
     name: "article:tag",
