@@ -18,13 +18,31 @@ You may check the deployed website at
 ### Install dependencies
 
 ```sh
--$ yarn
+yarn
 ```
 
 ### Run app
 
 ```sh
--$ yarn start
+yarn start
 ```
 
 The app should be available on port 8000 (default Gatsby port)
+
+## Blog post template
+
+```mdx
+---
+title: "Article title"
+date: UNIX time, ex: 1596592718668
+author: "Author name as in plain English"
+authorImg: relative path to author image, ex: ../../assets/authors/osama-adam.jpeg
+authorUrl: "link to profile, use anything here, linkedin, twitter, anything"
+banner: relative path to the banner image, ex: are-ya-winning.jpg
+tags: ["list", "of", "tags"]
+---
+
+// body of the article
+```
+
+Feel free to add your own blog post in a pull request.
