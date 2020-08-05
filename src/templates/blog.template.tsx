@@ -31,6 +31,18 @@ interface Props extends PageProps {
 }
 
 const Blog: React.FC<Props> = ({ pageContext: { data } }) => {
+  React.useEffect(() => {
+    const blogNav =
+      typeof window !== "undefined" &&
+      document.querySelector(`[data-nav="blog"]`);
+
+    if (blogNav) blogNav.classList.add("navlinks__link--highlighted");
+
+    return () => {
+      if (blogNav) blogNav.classList.remove("navlinks__link--highlighted");
+    };
+  }, []);
+
   return (
     <>
       <Seo title="Blog" path="/blog/" />

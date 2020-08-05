@@ -70,6 +70,10 @@ const NavBar: React.FC = () => {
       path: "/#contact",
       name: "Contact",
     },
+    {
+      path: "/blog/",
+      name: "Blog",
+    },
   ];
 
   return (
