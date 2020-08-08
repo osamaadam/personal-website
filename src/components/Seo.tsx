@@ -62,7 +62,7 @@ const Seo: React.FC<Props> = ({
       }
       siteImage: file(relativePath: { eq: "favicon.png" }) {
         childImageSharp {
-          fixed(width: 256) {
+          fixed(width: 512) {
             src
           }
         }
