@@ -6,11 +6,12 @@ import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import "../scss/blog-post.scss";
 import moment from "moment";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 interface Props extends PageProps {
   data: {
-    markdownRemark: {
-      html: string;
+    mdx: {
+      body: string;
       timeToRead: number;
       excerpt: string;
       frontmatter: {
@@ -31,7 +32,7 @@ interface Props extends PageProps {
 }
 
 const BlogTemplate: React.FC<Props> = ({ data }) => {
-  const { html, frontmatter, excerpt, timeToRead } = data.markdownRemark;
+  const { body, frontmatter, excerpt, timeToRead } = data.mdx;
 
   const slug = frontmatter.title.trim().toLowerCase().replace(/\s/g, "-");
 
@@ -61,10 +62,9 @@ const BlogTemplate: React.FC<Props> = ({ data }) => {
         )}
         <article className="blog__container">
           <BlogHeader frontmatter={frontmatter} />
-          <section
-            className="blog__body"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+          <article className="blog__body">
+            <MDXRenderer>{body}</MDXRenderer>
+          </article>
         </article>
       </Layout>
     </>
@@ -75,8 +75,8 @@ export default BlogTemplate;
 
 export const pageQuery = graphql`
   query($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
+    mdx(id: { eq: $id }) {
+      body
       excerpt
       timeToRead
       frontmatter {

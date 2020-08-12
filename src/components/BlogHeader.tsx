@@ -18,7 +18,7 @@ const BlogHeader: React.FC<Props> = ({ frontmatter }) => {
   return (
     <>
       <Tags tags={frontmatter.tags} />
-      <section className="blog__header">
+      <article className="blog__header">
         {location && location.pathname !== `/blog/${url}/` ? (
           <Link to={`/blog/${url}/`}>
             <h1>{frontmatter.title}</h1>
@@ -45,7 +45,7 @@ const BlogHeader: React.FC<Props> = ({ frontmatter }) => {
             <i className="blog__crumbs">{date}</i>
           </div>
         </div>
-      </section>
+      </article>
     </>
   );
 };

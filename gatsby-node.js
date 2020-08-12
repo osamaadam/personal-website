@@ -10,7 +10,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const blogQuery = await graphql(`
     query {
-      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
         nodes {
           id
           timeToRead
@@ -56,10 +56,10 @@ exports.createPages = async ({ actions, graphql }) => {
   createPage({
     path: `/blog/`,
     component: blogTemplate,
-    context: { data: blogQuery.data.allMarkdownRemark },
+    context: { data: blogQuery.data.allMdx },
   });
 
-  blogQuery.data.allMarkdownRemark.nodes.forEach((node) => {
+  blogQuery.data.allMdx.nodes.forEach((node) => {
     const { id, frontmatter } = node;
     const { title } = frontmatter;
 
