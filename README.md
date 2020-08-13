@@ -1,5 +1,7 @@
 # Portfolio Website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/921f376b-a2e3-415e-ac9d-81a99850a5a0/deploy-status)](https://app.netlify.com/sites/osamaadam/deploys)
+
 This is a Gatsby app I'm working on to showcase my abilities and achievements.
 You may check the deployed website at
 [osamaadam.tech](https://osamaadam.tech).
