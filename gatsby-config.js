@@ -24,7 +24,7 @@ module.exports = {
         name: `Osama Adam's Portfolio`,
         short_name: `Osama Adam`,
         start_url: `/`,
-        background_color: `#131415`,
+        background_color: `#222222`,
         theme_color: `#ffc107`,
         display: `standalone`,
         icon: `src/assets/favicon.svg`,
