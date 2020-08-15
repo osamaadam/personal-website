@@ -14,11 +14,7 @@ const BlogCard: React.FC<{
   return (
     <article className="blog-card card">
       {frontmatter.banner && (
-        <Link
-          to={`/blog/${url}/`}
-          className="no-style-link"
-          aria-label={frontmatter.title}
-        >
+        <Link to={url} className="no-style-link" aria-label={frontmatter.title}>
           <Img
             fluid={frontmatter.banner.childImageSharp.fluid}
             className="blog-card__image"
@@ -28,7 +24,7 @@ const BlogCard: React.FC<{
       )}
       <div className="blog-card__details">
         <BlogHeader frontmatter={frontmatter} />
-        <Link to={`/blog/${url}/`} className="no-style-link">
+        <Link to={url} className="no-style-link">
           <p>{node.excerpt}</p>
         </Link>
       </div>

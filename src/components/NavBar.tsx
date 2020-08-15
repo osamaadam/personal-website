@@ -71,7 +71,7 @@ const NavBar: React.FC = () => {
       name: "Contact",
     },
     {
-      path: "/blog/",
+      path: "/blog",
       name: "Blog",
     },
   ];

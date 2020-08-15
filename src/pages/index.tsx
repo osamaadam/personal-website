@@ -225,47 +225,47 @@ const Home: React.FC<PageProps> = () => {
             <ul className="projects__list">
               <ProjectIcon
                 title="Indie Photographers"
-                pathname="/projects/indie-photographers/"
+                pathname="/projects/indie-photographers"
                 icon={data.indie.childImageSharp}
               />
               <ProjectIcon
                 title="Personal Website"
-                pathname="/projects/personal-website/"
+                pathname="/projects/personal-website"
                 svg={data.personalIcon.publicURL}
               />
               <ProjectIcon
                 title="react-easy-facebook"
-                pathname="/projects/react-easy-facebook/"
+                pathname="/projects/react-easy-facebook"
                 svg={data.npm.publicURL}
               />
               <ProjectIcon
                 title="Angular Todo"
-                pathname="/projects/angular-todo/"
+                pathname="/projects/angular-todo"
                 svg={data.angularTodo.publicURL}
               />
               <ProjectIcon
                 title="CPU Schedule"
-                pathname="/projects/cpu-schedule/"
+                pathname="/projects/cpu-schedule"
                 icon={data.cpuScheduleIcon.childImageSharp}
               />
               <ProjectIcon
                 title="Unix Shell"
-                pathname="/projects/unix-shell/"
+                pathname="/projects/unix-shell"
                 icon={data.unixShellIcon.childImageSharp}
               />
               <ProjectIcon
                 title="Lyrics Genius"
-                pathname="/projects/lyrics-genius/"
+                pathname="/projects/lyrics-genius"
                 icon={data.lyricsGeniusIcon.childImageSharp}
               />
               <ProjectIcon
                 title="AESChipions"
-                pathname="/projects/aes-chipions/"
+                pathname="/projects/aes-chipions"
                 icon={data.AESChipionsIcon.childImageSharp}
               />
               <ProjectIcon
                 title="todoNumeroUno"
-                pathname="/projects/todo-numero-uno/"
+                pathname="/projects/todo-numero-uno"
                 icon={data.todoNumeroUnoIcon.childImageSharp}
               />
             </ul>

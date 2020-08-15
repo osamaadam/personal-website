@@ -19,8 +19,8 @@ const BlogHeader: React.FC<Props> = ({ frontmatter }) => {
     <>
       <Tags tags={frontmatter.tags} />
       <article className="blog__header">
-        {location && location.pathname !== `/blog/${url}/` ? (
-          <Link to={`/blog/${url}/`}>
+        {location && location.pathname !== `/blog/${url}` ? (
+          <Link to={url}>
             <h1>{frontmatter.title}</h1>
           </Link>
         ) : (

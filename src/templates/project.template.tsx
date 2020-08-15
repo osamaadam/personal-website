@@ -36,7 +36,7 @@ const ProjectTemplate: React.FC<Props> = ({
       title={project.title}
       description={project.description}
       image={data?.icon?.childImageSharp.fluid?.src}
-      path={`/projects/${project.path}/`}
+      path={`/projects/${project.path}`}
     />
     <Layout>
       <Showcase
