@@ -4,7 +4,7 @@ module.exports = {
     description:
       "Portfolio website for web developer, Osama Adam. " +
       "Browse to see Osama Adam's projects and to contact him.",
-    author: `https://github.com/osamadam`,
+    author: `Osama Adam <https://github.com/osamaadam>`,
     siteUrl: `https://osamaadam.tech`,
   },
   plugins: [
