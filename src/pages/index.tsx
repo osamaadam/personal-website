@@ -1,5 +1,5 @@
-import { graphql, useStaticQuery, PageProps } from "gatsby";
-import Img, { GatsbyImageProps } from "gatsby-image";
+import { graphql, PageProps, useStaticQuery } from "gatsby";
+import Img, { GatsbyImageProps, FluidObject } from "gatsby-image";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import React from "react";
 import ContactForm from "../components/ContactForm";
@@ -16,7 +16,9 @@ const GITHUB_PROFILE = "https://github.com/osamaadam";
 const Home: React.FC<PageProps> = () => {
   const data = useStaticQuery<{
     [key: string]: {
-      childImageSharp?: GatsbyImageProps;
+      childImageSharp?: {
+        fluid: FluidObject;
+      };
       publicURL?: string;
     };
   }>(graphql`
@@ -138,11 +140,13 @@ const Home: React.FC<PageProps> = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Img
-                    fluid={data.profile.childImageSharp?.fluid}
-                    alt="Osama Adam"
-                    className="profile-picture"
-                  />
+                  {data.profile.childImageSharp && (
+                    <Img
+                      fluid={data.profile.childImageSharp.fluid}
+                      alt="Osama Adam"
+                      className="profile-picture"
+                    />
+                  )}
                 </OutboundLink>
                 <div className="home-info">
                   <h1>Osama Adam</h1>
