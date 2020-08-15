@@ -9,7 +9,7 @@ const ContactForm: React.FC = () => {
     const data = new FormData(form);
 
     try {
-      await fetch(process.env.GATSBY_EMAIL_API!, {
+      await fetch("https://formspree.io/xqkyadkl", {
         method: "POST",
         headers: {
           Accept: "application/json",
