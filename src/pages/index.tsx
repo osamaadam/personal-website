@@ -1,5 +1,5 @@
 import { graphql, PageProps, useStaticQuery } from "gatsby";
-import Img, { GatsbyImageProps, FluidObject } from "gatsby-image";
+import Img, { FluidObject } from "gatsby-image";
 import { OutboundLink } from "gatsby-plugin-google-analytics";
 import React from "react";
 import ContactForm from "../components/ContactForm";
