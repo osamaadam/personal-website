@@ -37,7 +37,8 @@
     "gulp": "^4.0.2",
     "gulp-imagemin": "^7.1.0",
     "husky": "^4.2.5",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1"
   },
   "keywords": [
     "gatsby"
@@ -62,7 +63,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn prettier"
+      "pre-commit": "pretty-quick --staged"
     }
   }
 }
