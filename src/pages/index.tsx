@@ -160,9 +160,9 @@ const Home: React.FC<PageProps> = () => {
               <div className="home-bio">
                 <p>
                   I'm an Electronics and Communication Engineering student.
-                  Currently going through my junior year. I like to create so
-                  naturally I started learning web development and this is where
-                  we are right now.
+                  Currently interning at Mentor Graphics as a Full Stack Web
+                  Developer on Calibre, working on existing projects and
+                  deploying new features and bug fixes weekly.
                   <br />
                   Throughout this page, I'll be showcasing my most significant
                   projects and accomplishments. I mostly work with React, Node,
@@ -198,7 +198,7 @@ const Home: React.FC<PageProps> = () => {
                 <ul className="stack">
                   <SkillsColumn
                     columnTitle="Frontend"
-                    highlighted={["React", "SCSS"]}
+                    highlighted={["React", "Angular", "SCSS"]}
                     normal={["HTML"]}
                   />
                   <SkillsColumn
@@ -207,7 +207,7 @@ const Home: React.FC<PageProps> = () => {
                   />
                   <SkillsColumn
                     columnTitle="Frameworks"
-                    highlighted={["Express", "Gatsby", "Mongoose"]}
+                    highlighted={["Express", "Gatsby"]}
                     normal={["Bootstrap"]}
                   />
                   <SkillsColumn
