@@ -15,7 +15,7 @@ const LinkedinLink = () => {
   return (
     <SocialLink
       title="Linkedin Profile"
-      url="https://linkedin.com/in/osamaadam98/"
+      url="https://linkedin.com/in/osamaadamm/"
       icon={data.file.publicURL}
     />
   );

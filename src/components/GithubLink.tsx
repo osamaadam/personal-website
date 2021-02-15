@@ -16,7 +16,7 @@ const GithubLink = () => {
   return (
     <SocialLink
       title="GitHub Profile"
-      url="https://github.com/osamaadam/personal-website"
+      url="https://github.com/osamaadam"
       icon={data.file.publicURL}
     />
   );
