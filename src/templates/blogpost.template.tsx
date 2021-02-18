@@ -36,6 +36,18 @@ const BlogTemplate: React.FC<Props> = ({ data }) => {
 
   const slug = frontmatter.title.trim().toLowerCase().replace(/\s/g, "-");
 
+  React.useEffect(() => {
+    const blogNav =
+      typeof window !== "undefined" &&
+      document.querySelector(`[data-nav="blog"]`);
+
+    if (blogNav) blogNav.classList.add("navlinks__link--highlighted");
+
+    return () => {
+      if (blogNav) blogNav.classList.remove("navlinks__link--highlighted");
+    };
+  }, []);
+
   return (
     <>
       <Seo

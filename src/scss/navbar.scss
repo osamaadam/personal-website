@@ -48,8 +48,9 @@
   &__link {
     font-size: 1em;
     cursor: pointer;
-    padding: 1.2em 0.5em;
+    padding: 1em 0.5em;
     color: var(--primaryColor);
+    border-radius: 5px;
     &--highlighted {
       background-color: var(--highlightColor);
       color: var(--backgroundColor);

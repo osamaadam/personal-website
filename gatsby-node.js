@@ -63,7 +63,11 @@ exports.createPages = async ({ actions, graphql }) => {
     const { id, frontmatter } = node;
     const { title } = frontmatter;
 
-    const slug = title.trim().toLowerCase().replace(/\s/g, "-");
+    const slug = title
+      .trim()
+      .toLowerCase()
+      .replace(/\s/g, "-")
+      .replace(/[^A-Za-z0-9 -]/g, "");
 
     createPage({
       path: `/blog/${slug}`,
