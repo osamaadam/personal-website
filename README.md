@@ -4,7 +4,7 @@
 
 This is a Gatsby app I'm working on to showcase my abilities and achievements.
 You may check the deployed website at
-[osamaadam.tech](https://osamaadam.tech).
+[osamaadam.me](https://osamaadam.me).
 
 ## Goals
 
