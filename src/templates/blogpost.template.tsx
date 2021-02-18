@@ -34,7 +34,11 @@ interface Props extends PageProps {
 const BlogTemplate: React.FC<Props> = ({ data }) => {
   const { body, frontmatter, excerpt, timeToRead } = data.mdx;
 
-  const slug = frontmatter.title.trim().toLowerCase().replace(/\s/g, "-");
+  const slug = frontmatter.title
+    .trim()
+    .toLowerCase()
+    .replace(/\s/g, "-")
+    .replace(/[^A-Za-z0-9 -]/g, "");
 
   React.useEffect(() => {
     const blogNav =
