@@ -3,7 +3,7 @@
   "private": true,
   "description": "A website showcasing Osama Adam's work projects and contact details.",
   "version": "1.0.0",
-  "author": "Osama Adam @osamaadam98",
+  "author": "Osama Adam @osamaadamm",
   "dependencies": {
     "@material-ui/core": "^4.10.1",
     "@mdx-js/mdx": "^1.6.16",
