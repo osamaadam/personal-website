@@ -46,6 +46,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "postbuild": "cp _redirects public/",
     "develop": "gatsby develop -H 0.0.0.0",
     "prettier": "prettier --write \"**/*.{js,jsx,json,md,ts,tsx,css,scss}\"",
     "start": "yarn run develop",
