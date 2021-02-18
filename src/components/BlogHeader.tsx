@@ -13,7 +13,12 @@ interface Props {
 const location = typeof window !== "undefined" && (window.location as Location);
 
 const BlogHeader: React.FC<Props> = ({ frontmatter }) => {
-  const url = frontmatter.title.trim().toLowerCase().replace(/\s/g, "-");
+  const url = frontmatter.title
+    .trim()
+    .toLowerCase()
+    .replace(/\s/g, "-")
+    .replace(/[^A-Za-z0-9 -]/g, "");
+
   const date = moment(frontmatter.date).fromNow();
   return (
     <>
