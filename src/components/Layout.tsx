@@ -1,11 +1,12 @@
 import React, { ReactNode } from "react";
+import { Helmet } from "react-helmet";
 import "../scss/layout.scss";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
-import SnackBar from "./SnackBar";
-import { Helmet } from "react-helmet";
+import { useLocation } from "@reach/router";
 
 const Layout = ({ children }: { children: ReactNode }) => {
+  const location = useLocation();
   return (
     <div className="layout-container">
       <Helmet>
@@ -16,8 +17,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
       </Helmet>
       <NavBar />
       <main className="main-container">{children}</main>
-      <SnackBar />
-      <Footer />
+      {location.pathname !== "/" && <Footer />}
     </div>
   );
 };

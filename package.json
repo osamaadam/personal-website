@@ -5,7 +5,6 @@
   "version": "1.0.0",
   "author": "Osama Adam @osamaadamm",
   "dependencies": {
-    "@material-ui/core": "^4.10.1",
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
     "@types/moment": "^2.13.0",
