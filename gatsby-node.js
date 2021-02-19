@@ -1,9 +1,7 @@
-const projects = require("./content/projects.json");
 const blogTemplate = require.resolve("./src/templates/blog.template.tsx");
 const blogpostTemplate = require.resolve(
   "./src/templates/blogpost.template.tsx"
 );
-const projectTemplate = require.resolve("./src/templates/project.template.tsx");
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -73,14 +71,6 @@ exports.createPages = async ({ actions, graphql }) => {
       path: `/blog/${slug}`,
       component: blogpostTemplate,
       context: { id },
-    });
-  });
-
-  projects.forEach((project) => {
-    createPage({
-      path: `/projects/${project.path}`,
-      component: projectTemplate,
-      context: { project, icon: project.icon, svg: project.svg },
     });
   });
 };

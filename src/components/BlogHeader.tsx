@@ -22,7 +22,6 @@ const BlogHeader: React.FC<Props> = ({ frontmatter }) => {
   const date = moment(frontmatter.date).fromNow();
   return (
     <>
-      <Tags tags={frontmatter.tags} />
       <article className="blog__header">
         {location && location.pathname !== `/blog/${url}` ? (
           <Link to={url}>
@@ -32,22 +31,8 @@ const BlogHeader: React.FC<Props> = ({ frontmatter }) => {
           <h1>{frontmatter.title}</h1>
         )}
         <div className="blog__details-container">
-          <OutboundLink
-            href={frontmatter.authorUrl || "#"}
-            className="blog__author-url"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {frontmatter.authorImg?.childImageSharp && (
-              <Img
-                fluid={frontmatter.authorImg.childImageSharp.fluid}
-                className="blog__author-avatar"
-              />
-            )}
-            <i>{frontmatter.author}</i>
-          </OutboundLink>
           <div className="blog__extra">
-            <i className="blog__crumbs">{date}</i>
+            <i>{date}</i>
           </div>
         </div>
       </article>
