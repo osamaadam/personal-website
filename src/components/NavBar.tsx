@@ -3,6 +3,10 @@ import React from "react";
 import "../scss/navbar.scss";
 import { useLocation } from "@reach/router";
 import ThemeSwitch from "./ThemeSwitch";
+// @ts-ignore
+import HomeIcon from "../assets/home.svg";
+// @ts-ignore
+import BlogIcon from "../assets/blog.svg";
 
 const NavBar: React.FC = () => {
   const [theme, setTheme] = React.useState(
@@ -39,7 +43,10 @@ const NavBar: React.FC = () => {
                   : ""
               }`}
             >
-              {link.name}
+              <span className="navlinks__link-icon">
+                <link.icon />
+              </span>
+              <span className="navlinks__link-name">{link.name}</span>
             </Link>
           ))}
         </div>
@@ -54,11 +61,13 @@ const links = [
     name: "Home",
     anchor: "/",
     regex: new RegExp(/^\/$/),
+    icon: HomeIcon,
   },
   {
     name: "Blog",
     anchor: "/blog",
     regex: new RegExp(/^\/blog.*/),
+    icon: BlogIcon,
   },
 ];
 

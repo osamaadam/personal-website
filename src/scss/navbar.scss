@@ -33,14 +33,25 @@
   text-transform: uppercase;
 
   &__link {
-    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
     cursor: pointer;
     padding: 1em 0.5em;
     color: var(--primaryColor);
     border-radius: 5px;
+    svg {
+      fill: var(--primaryColor);
+    }
     &--highlighted {
       background-color: var(--highlightColor);
       color: var(--backgroundColor);
+      svg {
+        fill: var(--backgroundColor);
+      }
+    }
+    &-icon {
+      display: none;
     }
   }
 }
@@ -55,5 +66,11 @@
     flex: 1;
     display: flex;
     justify-content: center;
+    &-name {
+      display: none;
+    }
+    &-icon {
+      display: block;
+    }
   }
 }
