@@ -1,23 +1,19 @@
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 import React from "react";
-import SocialLink from "./SocialLink";
-import { useStaticQuery, graphql } from "gatsby";
+// @ts-ignore
+import LinkedinIcon from "../assets/linkedin.svg";
+
+const LINKEDIN_LINK = "https://linkedin.com/in/osamaadamm/";
 
 const LinkedinLink = () => {
-  const data = useStaticQuery<{ file: { publicURL: string } }>(
-    graphql`
-      query {
-        file(relativePath: { eq: "linkedin.svg" }) {
-          publicURL
-        }
-      }
-    `
-  );
   return (
-    <SocialLink
-      title="Linkedin Profile"
-      url="https://linkedin.com/in/osamaadamm/"
-      icon={data.file.publicURL}
-    />
+    <OutboundLink
+      href={LINKEDIN_LINK}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <LinkedinIcon height="40" width="40" alt="Linkedin link" />
+    </OutboundLink>
   );
 };
 

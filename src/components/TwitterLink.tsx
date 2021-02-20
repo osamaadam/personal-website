@@ -1,24 +1,15 @@
-import { graphql, useStaticQuery } from "gatsby";
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 import React from "react";
-import SocialLink from "./SocialLink";
+// @ts-ignore
+import TwitterIcon from "../assets/twitter.svg";
+
+const TWITTER_LINK = "https://twitter.com/osamaadamm";
 
 const TwitterLink = () => {
-  const data = useStaticQuery<{ file: { publicURL: string } }>(
-    graphql`
-      query {
-        file(relativePath: { eq: "twitter.svg" }) {
-          publicURL
-        }
-      }
-    `
-  );
-
   return (
-    <SocialLink
-      title="Twitter profile"
-      url="https://twitter.com/osamaadamm"
-      icon={data.file.publicURL}
-    />
+    <OutboundLink href={TWITTER_LINK} target="_blank" rel="noopener noreferrer">
+      <TwitterIcon height="40" width="40" alt="Facebook link" />
+    </OutboundLink>
   );
 };
 

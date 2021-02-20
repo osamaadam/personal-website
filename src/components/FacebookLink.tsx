@@ -1,24 +1,19 @@
-import { graphql, useStaticQuery } from "gatsby";
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 import React from "react";
-import SocialLink from "./SocialLink";
+// @ts-ignore
+import FacebookIcon from "../assets/facebook.svg";
+
+const FACEBOOK_LINK = "https://facebook.com/osamaadamme";
 
 const FacebookLink = () => {
-  const data = useStaticQuery<{ file: { publicURL: string } }>(
-    graphql`
-      query {
-        file(relativePath: { eq: "facebook.svg" }) {
-          publicURL
-        }
-      }
-    `
-  );
-
   return (
-    <SocialLink
-      title="Facebook profile"
-      url="https://facebook.com/osamaadamme"
-      icon={data.file.publicURL}
-    />
+    <OutboundLink
+      href={FACEBOOK_LINK}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <FacebookIcon height="40" width="40" alt="Facebook link" />
+    </OutboundLink>
   );
 };
 

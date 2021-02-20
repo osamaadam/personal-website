@@ -268,22 +268,15 @@ input:checked + .slider:before {
   a {
     margin: 0 0.5em;
   }
-  img {
-    transition-property: background-color;
+  svg {
+    transition-property: fill;
     transition-duration: 250ms;
     transition-timing-function: ease-out;
     border-radius: 50%;
     user-select: none;
-
-    &[data-theme="dark"] {
-      filter: invert(1);
-      &:hover {
-        background-color: var(--highlightColorComplement);
-      }
-    }
-
-    &:hover[data-theme="light"] {
-      background-color: var(--highlightColor);
+    fill: var(--primaryColor);
+    &:hover {
+      fill: var(--highlightColor);
     }
   }
 }
@@ -293,4 +286,10 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+@media (pointer: none), (pointer: coarse) {
+  .footer {
+    margin-bottom: 3.5em;
+  }
 }

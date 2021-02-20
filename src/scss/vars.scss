@@ -2,7 +2,6 @@
 
 html {
   --highlightColor: #ffc107;
-  --highlightColorComplement: #0745ff;
   --backgroundColor: #131415;
   --paperBackground: #222;
   --primaryColor: #fff;
@@ -23,7 +22,6 @@ html[data-theme="light"] {
   --paperBackground: #fafafa;
   --primaryColor: rgba(0, 0, 0, 0.87);
   --highlightColor: #098203;
-  --highlightColorComplement: #f67dfc;
 }
 
 .no-style-link {

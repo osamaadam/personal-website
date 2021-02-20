@@ -1,0 +1,17 @@
+.theme-switch {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  padding: 1em;
+  svg {
+    fill: var(--primaryColor);
+    transition-property: fill;
+    transition-timing-function: ease-out;
+    transition-duration: 250ms;
+
+    &:hover,
+    &:focus {
+      fill: var(--highlightColor);
+    }
+  }
+}

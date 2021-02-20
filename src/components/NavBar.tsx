@@ -2,8 +2,7 @@ import { Link } from "gatsby";
 import React from "react";
 import "../scss/navbar.scss";
 import { useLocation } from "@reach/router";
-
-const logo = require("../assets/favicon.svg") as string;
+import ThemeSwitch from "./ThemeSwitch";
 
 const NavBar: React.FC = () => {
   const [theme, setTheme] = React.useState<string | undefined>(
@@ -36,6 +35,7 @@ const NavBar: React.FC = () => {
         <div className="navlinks" id="navbar-links">
           {links.map((link) => (
             <Link
+              key={link.anchor}
               to={link.anchor}
               className={`no-style-link navlinks__link ${
                 link.regex.test(location.pathname)
@@ -43,23 +43,11 @@ const NavBar: React.FC = () => {
                   : ""
               }`}
             >
-              <li>{link.name}</li>
+              {link.name}
             </Link>
           ))}
-          <div className="navbar__switch-container">
-            <label className="switch">
-              <input
-                type="checkbox"
-                id="theme-toggle"
-                name="theme-toggle"
-                checked={theme === "light" ? true : false}
-                onChange={changeTheme}
-                aria-label="theme toggle"
-              />
-              <span className="slider round" />
-            </label>
-          </div>
         </div>
+        <ThemeSwitch theme={theme} setTheme={setTheme} />
       </nav>
     </>
   );
