@@ -46,5 +46,3 @@ tags: ["list", "of", "tags"]
 
 // body of the article
 ```
-
-Feel free to add your own blog post in a pull request.

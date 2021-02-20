@@ -16,23 +16,21 @@ const BlogCard: React.FC<{
     .replace(/[^A-Za-z0-9 -]/g, "");
 
   return (
-    <article className="blog-card card">
-      {frontmatter.banner && (
-        <Link to={url} className="no-style-link" aria-label={frontmatter.title}>
+    <Link to={url} className="no-style-link" aria-label={frontmatter.title}>
+      <article className="blog-card card">
+        {frontmatter.banner && (
           <Img
             fluid={frontmatter.banner.childImageSharp.fluid}
             className="blog-card__image"
             alt="blog banner"
           />
-        </Link>
-      )}
-      <div className="blog-card__details">
-        <BlogHeader frontmatter={frontmatter} />
-        <Link to={url} className="no-style-link">
+        )}
+        <div className="blog-card__details">
+          <BlogHeader frontmatter={frontmatter} />
           <p>{node.excerpt}</p>
-        </Link>
-      </div>
-    </article>
+        </div>
+      </article>
+    </Link>
   );
 };
 

@@ -5,7 +5,7 @@ import { useLocation } from "@reach/router";
 import ThemeSwitch from "./ThemeSwitch";
 
 const NavBar: React.FC = () => {
-  const [theme, setTheme] = React.useState<string | undefined>(
+  const [theme, setTheme] = React.useState(
     typeof window !== "undefined" && localStorage.getItem("theme")
       ? (localStorage.getItem("theme") as string)
       : "dark"
@@ -15,11 +15,7 @@ const NavBar: React.FC = () => {
 
   const navbar = React.useRef<HTMLElement | null>(null);
 
-  const changeTheme = (event: any) => {
-    setTheme(event.target.checked ? "light" : "dark");
-  };
-
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (theme) {
       typeof window !== "undefined" && localStorage.setItem("theme", theme);
       document.documentElement.setAttribute("data-theme", theme);

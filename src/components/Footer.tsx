@@ -2,8 +2,6 @@ import { OutboundLink } from "gatsby-plugin-google-gtag";
 import React from "react";
 import SocialLinks from "./SocialLinks";
 
-const date = new Date().getFullYear();
-
 const GITHUB_PROFILE = "https://github.com/osamaadam";
 
 const Footer = () => {
@@ -20,7 +18,7 @@ const Footer = () => {
         >
           Osama Adam
         </OutboundLink>
-        , {date} &copy;
+        , on caffeine.
       </small>
     </footer>
   );

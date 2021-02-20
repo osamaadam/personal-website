@@ -9,8 +9,8 @@ const ThemeSwitch = ({
   theme,
   setTheme,
 }: {
-  theme?: string;
-  setTheme: React.Dispatch<React.SetStateAction<string | undefined>>;
+  theme: string;
+  setTheme: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   const toggleTheme = () => {
     const currentTheme = theme;
