@@ -1,6 +1,6 @@
 import { graphql, Link, PageProps, useStaticQuery } from "gatsby";
 import Img, { FluidObject } from "gatsby-image";
-import { OutboundLink } from "gatsby-plugin-google-analytics";
+import { OutboundLink } from "gatsby-plugin-google-gtag";
 import React from "react";
 import FacebookLink from "../components/FacebookLink";
 import GithubLink from "../components/GithubLink";
