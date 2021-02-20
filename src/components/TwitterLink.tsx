@@ -8,7 +8,7 @@ const TWITTER_LINK = "https://twitter.com/osamaadamm";
 const TwitterLink = () => {
   return (
     <OutboundLink href={TWITTER_LINK} target="_blank" rel="noopener noreferrer">
-      <TwitterIcon height="40" width="40" alt="Facebook link" />
+      <TwitterIcon height="40" width="40" alt="Twitter link" />
     </OutboundLink>
   );
 };

@@ -7,6 +7,7 @@ import GithubLink from "../components/GithubLink";
 import Layout from "../components/Layout";
 import LinkedinLink from "../components/LinkedinLink";
 import Seo from "../components/Seo";
+import SocialLinks from "../components/SocialLinks";
 import TwitterLink from "../components/TwitterLink";
 import "../scss/index.scss";
 
@@ -60,12 +61,7 @@ const Home: React.FC<PageProps> = () => {
                   <a href="mailto:osamaadamme@gmail.com">
                     osamaadamme@gmail.com
                   </a>
-                  <div className="social-links">
-                    <FacebookLink />
-                    <TwitterLink />
-                    <GithubLink />
-                    <LinkedinLink />
-                  </div>
+                  <SocialLinks />
                 </div>
               </div>
               <div className="home-bio">

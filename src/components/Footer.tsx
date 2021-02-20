@@ -1,9 +1,6 @@
 import { OutboundLink } from "gatsby-plugin-google-gtag";
 import React from "react";
-import FacebookLink from "./FacebookLink";
-import GithubLink from "./GithubLink";
-import LinkedinLink from "./LinkedinLink";
-import TwitterLink from "./TwitterLink";
+import SocialLinks from "./SocialLinks";
 
 const date = new Date().getFullYear();
 
@@ -12,12 +9,7 @@ const GITHUB_PROFILE = "https://github.com/osamaadam";
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="social-links">
-        <FacebookLink />
-        <TwitterLink />
-        <GithubLink />
-        <LinkedinLink />
-      </div>
+      <SocialLinks />
       <small>
         Created by{" "}
         <OutboundLink
