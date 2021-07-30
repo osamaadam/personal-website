@@ -18,7 +18,7 @@
     "gatsby-plugin-react-helmet": "^3.3.3",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-robots-txt": "^1.5.1",
-    "gatsby-plugin-sass": "^2.3.3",
+    "gatsby-plugin-sass": "^4.10.0",
     "gatsby-plugin-sharp": "^2.6.27",
     "gatsby-plugin-sitemap": "^2.4.11",
     "gatsby-plugin-typescript": "^2.4.18",
@@ -26,11 +26,11 @@
     "gatsby-source-filesystem": "^2.3.24",
     "gatsby-transformer-sharp": "^2.5.13",
     "moment": "^2.27.0",
-    "node-sass": "^4.13.1",
     "prismjs": "^1.21.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
+    "sass": "^1.36.0",
     "typescript": "^3.9.5"
   },
   "devDependencies": {
