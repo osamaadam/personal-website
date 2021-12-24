@@ -58,6 +58,10 @@
     "type": "git",
     "url": "https://github.com/osamaadam/personal-website"
   },
+  "engines": {
+    "node": ">=12.x",
+    "yarn": "1.x"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
