@@ -21,7 +21,7 @@ const Home: React.FC<PageProps> = () => {
               <div className="home-info-area">
                 <div className="home-info">
                   <h1>Osama Adam</h1>
-                  <p>Software Developer</p>
+                  <p>Software Engineer</p>
                   <a href="mailto:osamaadamme@gmail.com">
                     osamaadamme@gmail.com
                   </a>
@@ -36,16 +36,16 @@ const Home: React.FC<PageProps> = () => {
                   </p>
                   <br />
                   <p>
-                    Anyways, I'm currently on the look out for new opportunities
+                    Anyways, I'm currently on the lookout for new opportunities
                     since I just recently finished my mandatory military
                     service.
                   </p>
                   <br />
-                  <p>
+                  <div>
                     Find me at:
                     <ul className="links-list">
                       {LINKS.map((link) => (
-                        <li>
+                        <li key={link.href}>
                           <OutboundLink
                             href={link.href}
                             target="_blank"
@@ -56,7 +56,7 @@ const Home: React.FC<PageProps> = () => {
                         </li>
                       ))}
                     </ul>
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>

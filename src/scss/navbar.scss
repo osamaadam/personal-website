@@ -12,11 +12,16 @@
   position: sticky;
   top: 0;
   bottom: auto;
-  // transition-property: top;
-  // transition-duration: 250ms;
-  // transition-timing-function: ease-out;
   transition: top 250ms ease-out, background-color 250ms ease-out,
     color 250ms ease-out;
+  &__container {
+    max-width: var(--max-width);
+    display: flex;
+    flex: 1;
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 1rem;
+  }
   &__switch-container {
     margin-left: auto;
   }
@@ -45,11 +50,12 @@
       fill: var(--primaryColor);
     }
     &--highlighted {
-      background-color: var(--highlightColor);
-      color: var(--backgroundColor);
+      color: var(--highlightColor);
       svg {
         fill: var(--backgroundColor);
       }
+      text-decoration: underline;
+      font-weight: bold;
     }
     &-icon {
       display: none;
@@ -63,6 +69,9 @@
     bottom: 0;
     top: auto;
     padding: 0;
+    &__container {
+      padding: 0;
+    }
   }
   .navlinks {
     height: 100%;

@@ -32,25 +32,27 @@ const NavBar: React.FC = () => {
   return (
     <>
       <nav className="navbar" ref={navbar}>
-        <div className="navlinks" id="navbar-links">
-          {links.map((link) => (
-            <Link
-              key={link.anchor}
-              to={link.anchor}
-              className={`no-style-link navlinks__link ${
-                link.regex.test(location.pathname)
-                  ? "navlinks__link--highlighted"
-                  : ""
-              }`}
-            >
-              {/* <span className="navlinks__link-icon">
+        <div className="navbar__container">
+          <div className="navlinks" id="navbar-links">
+            {links.map((link) => (
+              <Link
+                key={link.anchor}
+                to={link.anchor}
+                className={`no-style-link navlinks__link ${
+                  link.regex.test(location.pathname)
+                    ? "navlinks__link--highlighted"
+                    : ""
+                }`}
+              >
+                {/* <span className="navlinks__link-icon">
                 <link.icon />
               </span> */}
-              <span className="navlinks__link-name">{link.name}</span>
-            </Link>
-          ))}
+                <span className="navlinks__link-name">{link.name}</span>
+              </Link>
+            ))}
+          </div>
+          <ThemeSwitch theme={theme} setTheme={setTheme} />
         </div>
-        <ThemeSwitch theme={theme} setTheme={setTheme} />
       </nav>
     </>
   );
