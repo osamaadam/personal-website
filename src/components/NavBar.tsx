@@ -1,7 +1,7 @@
+import { useLocation } from "@reach/router";
 import { Link } from "gatsby";
 import React from "react";
 import "../scss/navbar.scss";
-import { useLocation } from "@reach/router";
 import ThemeSwitch from "./ThemeSwitch";
 // @ts-ignore
 import HomeIcon from "../assets/home.svg";
@@ -43,9 +43,9 @@ const NavBar: React.FC = () => {
                   : ""
               }`}
             >
-              <span className="navlinks__link-icon">
+              {/* <span className="navlinks__link-icon">
                 <link.icon />
-              </span>
+              </span> */}
               <span className="navlinks__link-name">{link.name}</span>
             </Link>
           ))}
@@ -58,13 +58,13 @@ const NavBar: React.FC = () => {
 
 const links = [
   {
-    name: "Home",
+    name: "/home/adam",
     anchor: "/",
     regex: new RegExp(/^\/$/),
     icon: HomeIcon,
   },
   {
-    name: "Blog",
+    name: "~/blog",
     anchor: "/blog",
     regex: new RegExp(/^\/blog.*/),
     icon: BlogIcon,

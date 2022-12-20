@@ -1,38 +1,16 @@
-import { graphql, Link, PageProps, useStaticQuery } from "gatsby";
-import Img, { FluidObject } from "gatsby-image";
+import { PageProps } from "gatsby";
 import { OutboundLink } from "gatsby-plugin-google-gtag";
 import React from "react";
-import FacebookLink from "../components/FacebookLink";
-import GithubLink from "../components/GithubLink";
 import Layout from "../components/Layout";
-import LinkedinLink from "../components/LinkedinLink";
 import Seo from "../components/Seo";
-import SocialLinks from "../components/SocialLinks";
-import TwitterLink from "../components/TwitterLink";
 import "../scss/index.scss";
 
-const GITHUB_PROFILE = "https://github.com/osamaadam";
+const LINKS = [
+  new URL("https://github.com/osamaadam"),
+  new URL("https://linkedin.com/in/osamaadamm"),
+];
 
 const Home: React.FC<PageProps> = () => {
-  const data = useStaticQuery<{
-    [key: string]: {
-      childImageSharp?: {
-        fluid: FluidObject;
-      };
-      publicURL?: string;
-    };
-  }>(graphql`
-    query {
-      profile: file(relativePath: { eq: "authors/osama-adam.jpeg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `);
-
   return (
     <>
       <Seo title="Osama Adam" />
@@ -41,33 +19,45 @@ const Home: React.FC<PageProps> = () => {
           <section className="home-container__brief" id="home">
             <div className="home-profile-paper">
               <div className="home-info-area">
-                <OutboundLink
-                  href={GITHUB_PROFILE}
-                  title="Github profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {data.profile.childImageSharp && (
-                    <Img
-                      fluid={data.profile.childImageSharp.fluid}
-                      alt="Osama Adam"
-                      className="profile-picture"
-                    />
-                  )}
-                </OutboundLink>
                 <div className="home-info">
                   <h1>Osama Adam</h1>
                   <p>Software Developer</p>
                   <a href="mailto:osamaadamme@gmail.com">
                     osamaadamme@gmail.com
                   </a>
-                  <SocialLinks />
                 </div>
               </div>
               <div className="home-bio">
-                <p>
-                  Hi! I'm Osama, and this is my <Link to="/blog">blog</Link>.
-                </p>
+                <div>
+                  <p>
+                    Hi, I'm a former Software Engineer Intern at Siemens DISW's
+                    Calibre. I write blogposts when the stars align (they
+                    haven't aligned in forever).
+                  </p>
+                  <br />
+                  <p>
+                    Anyways, I'm currently on the look out for new opportunities
+                    since I just recently finished my mandatory military
+                    service.
+                  </p>
+                  <br />
+                  <p>
+                    Find me at:
+                    <ul className="links-list">
+                      {LINKS.map((link) => (
+                        <li>
+                          <OutboundLink
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {link.hostname + link.pathname}
+                          </OutboundLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </p>
+                </div>
               </div>
             </div>
           </section>

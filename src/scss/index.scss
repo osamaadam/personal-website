@@ -20,7 +20,6 @@ body {
   grid-template-rows: minmax(min-content, 20%) 1fr;
   gap: 1em;
   padding: 1em;
-  place-items: center;
 }
 
 .home-info-area {
@@ -28,7 +27,6 @@ body {
   width: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .profile-picture {
@@ -50,19 +48,21 @@ body {
 
 .home-info {
   justify-self: start;
-  align-self: center;
-  padding: 0 1em;
-  margin: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  h1 {
-    text-align: center;
-  }
+  font-family: var(--code-font);
   p {
     font-weight: 500;
-    text-align: center;
+    font-family: var(--code-font);
   }
+}
+
+.links-list {
+  list-style: none;
+  margin: 0.7em 0.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
 }
 
 .home-bio {
@@ -121,5 +121,19 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(50px, 300px));
     gap: 2em;
     justify-content: center;
+  }
+}
+
+p {
+  font-family: Helvetica, sans-serif;
+}
+
+a[target="_blank"] {
+  &::after {
+    content: " ↗";
+    vertical-align: top;
+    position: relative;
+    top: -0.4em;
+    font-size: 0.8em;
   }
 }

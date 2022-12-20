@@ -27,12 +27,12 @@
 
 .navlinks {
   font-weight: 500;
+  font-family: var(--code-font);
   list-style: none;
   display: flex;
   align-items: center;
   user-select: none;
   width: 100%;
-  text-transform: uppercase;
 
   &__link {
     display: flex;
@@ -41,7 +41,6 @@
     cursor: pointer;
     padding: 1em 0.5em;
     color: var(--primaryColor);
-    border-radius: 5px;
     svg {
       fill: var(--primaryColor);
     }
@@ -73,12 +72,6 @@
       display: flex;
       justify-content: center;
       padding: 0.5em 1em;
-      &-name {
-        display: none;
-      }
-      &-icon {
-        display: block;
-      }
     }
   }
 }

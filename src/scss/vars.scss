@@ -15,13 +15,14 @@ html {
   --medium: 500;
   --bold: 700;
   scroll-behavior: smooth;
+  --code-font: "Fira Mono", Consolas, Mono;
 }
 
 html[data-theme="light"] {
   --backgroundColor: #eee;
   --paperBackground: #fafafa;
   --primaryColor: rgba(0, 0, 0, 0.87);
-  --highlightColor: #098203;
+  --highlightColor: #275dcb;
 }
 
 .no-style-link {
