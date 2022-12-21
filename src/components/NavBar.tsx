@@ -3,10 +3,6 @@ import { Link } from "gatsby";
 import React from "react";
 import "../scss/navbar.scss";
 import ThemeSwitch from "./ThemeSwitch";
-// @ts-ignore
-import HomeIcon from "../assets/home.svg";
-// @ts-ignore
-import BlogIcon from "../assets/blog.svg";
 
 const NavBar: React.FC = () => {
   const [theme, setTheme] = React.useState(
@@ -34,7 +30,7 @@ const NavBar: React.FC = () => {
       <nav className="navbar" ref={navbar}>
         <div className="navbar__container">
           <div className="navlinks" id="navbar-links">
-            {links.map((link) => (
+            {LINKS.map((link) => (
               <Link
                 key={link.anchor}
                 to={link.anchor}
@@ -44,9 +40,6 @@ const NavBar: React.FC = () => {
                     : ""
                 }`}
               >
-                {/* <span className="navlinks__link-icon">
-                <link.icon />
-              </span> */}
                 <span className="navlinks__link-name">{link.name}</span>
               </Link>
             ))}
@@ -58,18 +51,16 @@ const NavBar: React.FC = () => {
   );
 };
 
-const links = [
+const LINKS = [
   {
     name: "/home/adam",
     anchor: "/",
     regex: new RegExp(/^\/$/),
-    icon: HomeIcon,
   },
   {
     name: "~/blog",
     anchor: "/blog",
     regex: new RegExp(/^\/blog.*/),
-    icon: BlogIcon,
   },
 ];
 

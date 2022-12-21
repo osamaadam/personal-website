@@ -29,28 +29,12 @@ body {
   flex-direction: column;
 }
 
-.profile-picture {
-  min-width: 200px;
-  width: 100%;
-  max-width: 20vmin;
-  border-radius: 50%;
-  justify-content: center;
-  border: 0.2em solid var(--highlightColor);
-  user-select: none;
-  transition-property: border-width;
-  transition-duration: 300ms;
-  transition-timing-function: ease-out;
-}
-
-.profile-picture:hover {
-  border-width: 0.4em;
-}
-
 .home-info {
   justify-self: start;
   display: flex;
   flex-direction: column;
   font-family: var(--code-font);
+  font-size: 24px;
   p {
     font-weight: 500;
     font-family: var(--code-font);
