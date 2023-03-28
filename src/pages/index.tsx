@@ -30,15 +30,9 @@ const Home: React.FC<PageProps> = () => {
               <div className="home-bio">
                 <div>
                   <p>
-                    Hi, I'm a former Software Engineer Intern at Siemens DISW's
-                    Calibre. I write blogposts when the stars align (they
+                    Hi, I'm a former Software Engineering Intern at Siemens
+                    DISW's Calibre. I write blogposts when the stars align (they
                     haven't aligned in forever).
-                  </p>
-                  <br />
-                  <p>
-                    Anyways, I'm currently on the lookout for new opportunities
-                    since I just recently finished my mandatory military
-                    service.
                   </p>
                   <br />
                   <div>
