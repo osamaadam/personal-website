@@ -2,13 +2,12 @@ import { OutboundLink } from "gatsby-plugin-google-gtag";
 import React from "react";
 // @ts-ignore
 import LinkedinIcon from "../assets/linkedin.svg";
-
-const LINKEDIN_LINK = "https://linkedin.com/in/osamaadamm/";
+import { LINKS } from "../constants";
 
 const LinkedinLink = () => {
   return (
     <OutboundLink
-      href={LINKEDIN_LINK}
+      href={LINKS.LINKEDIN.href}
       target="_blank"
       rel="noopener noreferrer"
     >

@@ -2,13 +2,12 @@ import { OutboundLink } from "gatsby-plugin-google-gtag";
 import React from "react";
 // @ts-ignore
 import FacebookIcon from "../assets/facebook.svg";
-
-const FACEBOOK_LINK = "https://facebook.com/osamaadamme";
+import { LINKS } from "../constants";
 
 const FacebookLink = () => {
   return (
     <OutboundLink
-      href={FACEBOOK_LINK}
+      href={LINKS.FACEBOOK.href}
       target="_blank"
       rel="noopener noreferrer"
     >

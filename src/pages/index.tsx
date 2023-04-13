@@ -4,11 +4,9 @@ import React from "react";
 import Layout from "../components/Layout";
 import Seo from "../components/Seo";
 import "../scss/index.scss";
+import { LINKS as L } from "../constants.ts";
 
-const LINKS = [
-  new URL("https://github.com/osamaadam"),
-  new URL("https://linkedin.com/in/osamaadamm"),
-];
+const LINKS = [L.GITHUB, L.LINKEDIN];
 
 const Home: React.FC<PageProps> = () => {
   return (
@@ -22,17 +20,14 @@ const Home: React.FC<PageProps> = () => {
                 <div className="home-info">
                   <h1>Osama Adam</h1>
                   <p>Software Engineer</p>
-                  <a href="mailto:osamaadamme@gmail.com">
-                    osamaadamme@gmail.com
-                  </a>
+                  <a href={L.EMAIL.href}>osamaadamme@gmail.com</a>
                 </div>
               </div>
               <div className="home-bio">
                 <div>
                   <p>
-                    Hi, I'm a former Software Engineering Intern at Siemens
-                    DISW's Calibre. I write blogposts when the stars align (they
-                    haven't aligned in forever).
+                    Hi, my name is Osama, and I'm a Software Engineer at
+                    Saloodo!.
                   </p>
                   <br />
                   <div>

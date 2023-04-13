@@ -1,8 +1,7 @@
 import { OutboundLink } from "gatsby-plugin-google-gtag";
 import React from "react";
 import SocialLinks from "./SocialLinks";
-
-const GITHUB_PROFILE = "https://github.com/osamaadam";
+import { LINKS } from "../constants";
 
 const Footer = () => {
   return (
@@ -11,7 +10,7 @@ const Footer = () => {
       <small>
         Created by{" "}
         <OutboundLink
-          href={GITHUB_PROFILE}
+          href={LINKS.TWITTER.href}
           title="Github profile"
           target="_blank"
           rel="noopener noreferrer"
